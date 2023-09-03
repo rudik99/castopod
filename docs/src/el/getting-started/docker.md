@@ -1,35 +1,29 @@
 ---
-title: Official Docker images
+title: Επίσημες εικόνες Docker
 sidebarDepth: 3
 ---
 
-# Official Docker images
+# Επίσημες εικόνες του Docker
 
-Castopod pushes 3 Docker images to the Docker Hub during its automated build
-process:
+Το Castopod αποστέλλει 3 εικόνες Docker στο Docker Hub κατά τη διάρκεια της αυτοματοποιημένης διαδικασίας κατασκευής:
 
-- [**`castopod/castopod`**](https://hub.docker.com/r/castopod/castopod): an all
-  in one castopod image using nginx unit
-- [**`castopod/app`**](https://hub.docker.com/r/castopod/app): the app bundle
-  with all of Castopod dependencies
-- [**`castopod/web-server`**](https://hub.docker.com/r/castopod/web-server): an
-  Nginx configuration for Castopod
+- [**`castopod/castopod`**](https://hub.docker.com/r/castopod/castopod): μια εικόνα για το Castopod που περιλαμβάνει όλα τα απαιτούμενα στοιχεία, χρησιμοποιώντας το nginx unit
+- [**`castopod/app`**](https://hub.docker.com/r/castopod/app): το πακέτο εφαρμογής με όλες τις εξαρτήσεις του Castopod
+- [**`castopod/web-server`**](https://hub.docker.com/r/castopod/web-server): μια διαμόρφωση του Nginx για το Castopod
 
-Additionally, Castopod requires a MySQL-compatible database. A Redis database
-can be added as a cache handler.
+Επιπλέον, το Castopod απαιτεί μια βάση δεδομένων που είναι συμβατή με το MySQL. Μια βάση δεδομένων Redis μπορεί επίσης να προστεθεί ως διαχειριστής προσωρινής αποθήκευσης.
 
-## Supported tags
+## Υποστηριζόμενες ετικέτες
 
-- `develop` [unstable], latest development branch build
-- `beta` [stable], latest beta version build
-- `latest` [stable], latest version build
-- `1.x.x` [stable], specific version build (since `1.0.0`)
+- `develop` [ασταθής], η τελευταία έκδοση του κλαδιού ανάπτυξης
+- `beta` [σταθερή], η πιο πρόσφατη έκδοση βήτα
+- `1.x.x` [σταθερή], συγκεκριμένη έκδοση (από το `1.0.0` και μετά)
 
-## Example usage
+## Παράδειγμα χρήσης
 
-1.  Install [docker](https://docs.docker.com/get-docker/) and
-    [docker-compose](https://docs.docker.com/compose/install/)
-2.  Create a `docker-compose.yml` file with the following:
+1. Εγκαταστήστε το [docker](https://docs.docker.com/get-docker/) και το
+[docker-compose](https://docs.docker.com/compose/install/)
+2. Δημιουργήστε ένα αρχείο `docker-compose.yml` με τα παρακάτω στοιχεία:
 
     ```yml
     version: "3.7"
@@ -87,13 +81,11 @@ can be added as a cache handler.
       castopod-db:
     ```
 
-    You have to adapt some variables to your needs (e.g. `CP_BASEURL`,
-    `MYSQL_ROOT_PASSWORD`, `MYSQL_PASSWORD` and `CP_ANALYTICS_SALT`).
+    Θα πρέπει να προσαρμόσετε ορισμένες μεταβλητές στις ανάγκες σας (π.χ. `CP_BASEURL`, `MYSQL_ROOT_PASSWORD`, `MYSQL_PASSWORD` και `CP_ANALYTICS_SALT`).
 
-3.  Setup a reverse proxy for TLS (SSL/HTTPS)
+3. Ρυθμίστε ένα αντίστροφο πρόξενο για το TLS (SSL/HTTPS)
 
-    TLS is mandatory for ActivityPub to work. This job can easily be handled by
-    a reverse proxy, for example with [Caddy](https://caddyserver.com/):
+    Το TLS είναι υποχρεωτικό για να λειτουργήσει το ActivityPub. Αυτή η λειτουργία μπορεί να διαχειριστεί εύκολα από ένα αντίστροφο πρόξενο, για παράδειγμα το [Caddy](https://caddyserver.com/):
 
     ```
     #castopod
@@ -102,57 +94,41 @@ can be added as a cache handler.
     }
     ```
 
-4.  Run `docker-compose up -d`, wait for it to initialize and head on to
-    `https://castopod.example.com/cp-install` to finish setting up Castopod!
+4. Εκτελέστε `docker-compose up -d`, περιμένετε να ολοκληρωθεί η αρχικοποίηση στο
+    `https://castopod.example.com/cp-install` για να ολοκληρώσετε τη διαμόρφωση του Castopod!
 
-5.  You're all set, start podcasting! 🎙️🚀
+5. Είστε έτοιμοι, αρχίστε να δημιουργείτε περιεχόμενο podcast! 🎙️🚀
 
-## Environment Variables
+## Μεταβλητές περιβάλλοντος
 
-- **castopod/castopod** and **castopod/app**
+- **castopod/castopod** και **castopod/app**
 
-  | Variable name                         | Type (`default`)        | Default          |
-  | ------------------------------------- | ----------------------- | ---------------- |
-  | **`CP_BASEURL`**                      | string                  | `undefined`      |
-  | **`CP_MEDIA_BASEURL`**                | ?string                 | `CP_BASEURL`     |
-  | **`CP_ADMIN_GATEWAY`**                | ?string                 | `"cp-admin"`     |
-  | **`CP_AUTH_GATEWAY`**                 | ?string                 | `"cp-auth"`      |
-  | **`CP_ANALYTICS_SALT`**               | string                  | `undefined`      |
-  | **`CP_DATABASE_HOSTNAME`**            | ?string                 | `"mariadb"`      |
-  | **`CP_DATABASE_NAME`**                | ?string                 | `MYSQL_DATABASE` |
-  | **`CP_DATABASE_USERNAME`**            | ?string                 | `MYSQL_USER`     |
-  | **`CP_DATABASE_PASSWORD`**            | ?string                 | `MYSQL_PASSWORD` |
-  | **`CP_DATABASE_PREFIX`**              | ?string                 | `"cp_"`          |
-  | **`CP_CACHE_HANDLER`**                | [`"file"` or `"redis"`] | `"file"`         |
-  | **`CP_REDIS_HOST`**                   | ?string                 | `"localhost"`    |
-  | **`CP_REDIS_PASSWORD`**               | ?string                 | `null`           |
-  | **`CP_REDIS_PORT`**                   | ?number                 | `6379`           |
-  | **`CP_REDIS_DATABASE`**               | ?number                 | `0`              |
-  | **`CP_EMAIL_SMTP_HOST`**              | ?string                 | `undefined`      |
-  | **`CP_EMAIL_FROM`**                   | ?string                 | `undefined`      |
-  | **`CP_EMAIL_SMTP_USERNAME`**          | ?string                 | `"localhost"`    |
-  | **`CP_EMAIL_SMTP_PASSWORD`**          | ?string                 | `null`           |
-  | **`CP_EMAIL_SMTP_PORT`**              | ?number                 | `25`             |
-  | **`CP_EMAIL_SMTP_CRYPTO`**            | [`"tls"` or `"ssl"`]    | `"tls"`          |
-  | **`CP_ENABLE_2FA`**                   | ?boolean                | `undefined`      |
-  | **`CP_MEDIA_FILE_MANAGER`**           | ?string                 | `undefined`      |
-  | **`CP_MEDIA_S3_ENDPOINT`**            | ?string                 | `undefined`      |
-  | **`CP_MEDIA_S3_KEY`**                 | ?string                 | `undefined`      |
-  | **`CP_MEDIA_S3_SECRET`**              | ?string                 | `undefined`      |
-  | **`CP_MEDIA_S3_REGION`**              | ?string                 | `undefined`      |
-  | **`CP_MEDIA_S3_BUCKET`**              | ?string                 | `undefined`      |
-  | **`CP_MEDIA_S3_PROTOCOL`**            | ?number                 | `undefined`      |
-  | **`CP_MEDIA_S3_PATH_STYLE_ENDPOINT`** | ?boolean                | `undefined`      |
-  | **`CP_MEDIA_S3_KEY_PREFIX`**          | ?string                 | `undefined`      |
-  | **`CP_DISABLE_HTTPS`**                | ?[`0` or `1`]           | `undefined`      |
-  | **`CP_MAX_BODY_SIZE`**                | ?number (with suffix)   | `512M`           |
-  | **`CP_PHP_MEMORY_LIMIT`**             | ?number (with suffix)   | `512M`           |
-  | **`CP_TIMEOUT`**                      | ?number                 | `900`            |
-
-- **castopod/web-server**
-
-  | Variable name          | Type                  | Default |
-  | ---------------------- | --------------------- | ------- |
-  | **`CP_APP_HOSTNAME`**  | ?string               | `"app"` |
-  | **`CP_MAX_BODY_SIZE`** | ?number (with suffix) | `512M`  |
-  | **`CP_TIMEOUT`**       | ?number               | `900`   |
+  | Όνομα μεταβλητής             | Τύπος (`default`)        | Προεπιλογή          |
+  | ----------------------------- | -------------------------- | ---------------- |
+  | **`CP_BASEURL`**              | string                     | `undefined`      |
+  | **`CP_MEDIA_BASEURL`**        | ?string                    | `CP_BASEURL`     |
+  | **`CP_ADMIN_GATEWAY`**        | ?string                    | `"cp-admin"`     |
+  | **`CP_AUTH_GATEWAY`**         | ?string                    | `"cp-auth"`      |
+  | **`CP_ANALYTICS_SALT`**       | string                     | `undefined`      |
+  | **`CP_DATABASE_HOSTNAME`**    | ?string                    | `"mariadb"`      |
+  | **`CP_DATABASE_NAME`**        | ?string                    | `MYSQL_DATABASE` |
+  | **`CP_DATABASE_USERNAME`**    | ?string                    | `MYSQL_USER`     |
+  | **`CP_DATABASE_PASSWORD`**    | ?string                    | `MYSQL_PASSWORD` |
+  | **`CP_DATABASE_PREFIX`**      | ?string                    | `"cp_"`          |
+  | **`CP_CACHE_HANDLER`**        | [`"file"` ή `"redis"`]     | `"file"`         |
+  | **`CP_REDIS_HOST`**           | ?string                    | `"localhost"`    |
+  | **`CP_REDIS_PASSWORD`**       | ?string                    | `null`           |
+  | **`CP_REDIS_PORT`**           | ?number                    | `6379`           |
+  | **`CP_REDIS_DATABASE`**       | ?number                    | `0`              |
+  | **`CP_EMAIL_SMTP_HOST`**      | ?string                    | `undefined`      |
+  | **`CP_EMAIL_FROM`**           | ?string                    | `undefined`      |
+  | **`CP_EMAIL_SMTP_USERNAME`**  | ?string                    | `"localhost"`    |
+  | **`CP_EMAIL_SMTP_PASSWORD`**  | ?string                    | `null`           |
+  | **`CP_EMAIL_SMTP_PORT`**      | ?number                    | `25`             |
+  | **`CP_EMAIL_SMTP_CRYPTO`**    | [`"tls"` ή `"ssl"`]        | `"tls"`          |
+  | **`CP_ENABLE_2FA`**           | ?boolean                   | `undefined`      |
+  | **`CP_MEDIA_FILE_MANAGER`**   | ?string                    | `undefined`      |
+  | **`CP_MEDIA_S3_ENDPOINT`**    | ?string                    | `undefined`      |
+  | **`CP_MEDIA_S3_KEY`**         | ?string                    | `undefined`      |
+  | **`CP_MEDIA_S3_SECRET`**      | ?string                    | `undefined`      |
+  | **`CP_MEDIA_S3_REGION`**      | ?string                    | `undefined

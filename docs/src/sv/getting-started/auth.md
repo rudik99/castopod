@@ -1,87 +1,86 @@
 ---
-title: Authentication & Authorization
+titel: Autentisering och behörighet
 sidebarDepth: 3
 ---
 
-# Authentication & Authorization
+# Autentisering och behörighet
 
-Castopod handles authentication and authorization using `codeigniter/shield`
-coupled with custom rules. Roles and permissions are defined at two levels:
+Castopod hanterar autentisering och behörighet med hjälp av `codeigniter/shield` med anpassade regler. Roller och behörigheter definieras på två nivåer:
 
-1. [instance wide](#1-instance-wide-roles-and-permissions)
-2. [per podcast](#2-per-podcast-roles-and-permissions)
+1. [På instansnivå](#1-roller-och-behorigheter-pa-instansniva)
+2. [Per podcast](#2-roller-och-behorigheter-per-podcast)
 
-## 1. Instance wide roles and permissions
+## 1. Roller och behörigheter på instansnivå
 
-### Instance roles
+### Roller på instansen
 
 <!-- AUTH-INSTANCE-ROLES-LIST:START - Do not remove or modify this section -->
 
-| role        | description                         | permissions                                                                                |
-| ----------- | ----------------------------------- | ------------------------------------------------------------------------------------------ |
-| Super admin | Has complete control over Castopod. | admin.\*, podcasts.\*, users.manage, persons.manage, pages.manage, fediverse.manage-blocks |
-| Manager     | Manages Castopod's content.         | podcasts.create, podcasts.import, persons.manage, pages.manage                             |
-| Podcaster   | General users of Castopod.          | admin.access                                                                               |
+| roll          | beskrivning                               | behörigheter                                                                                   |
+| ------------- | ----------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Super admin   | Har full kontroll över Castopod.          | admin.\*, podcasts.\*, users.manage, persons.manage, pages.manage, fediverse.manage-blocks    |
+| Manager       | Hanterar Castopods innehåll.              | podcasts.create, podcasts.import, persons.manage, pages.manage                                |
+| Podcaster     | Allmänna användare av Castopod.           | admin.access                                                                                  |
 
 <!-- AUTH-INSTANCE-ROLES-LIST:END -->
 
-### Instance permissions
+### Behörigheter på instansen
 
 <!-- AUTH-INSTANCE-PERMISSIONS-LIST:START - Do not remove or modify this section -->
 
-| permission              | description                                                        |
-| ----------------------- | ------------------------------------------------------------------ |
-| admin.access            | Can access the Castopod admin area.                                |
-| admin.settings          | Can access the Castopod settings.                                  |
-| users.manage            | Can manage Castopod users.                                         |
-| persons.manage          | Can manage persons.                                                |
-| pages.manage            | Can manage pages.                                                  |
-| podcasts.view           | Can view all podcasts.                                             |
-| podcasts.create         | Can create new podcasts.                                           |
-| podcasts.import         | Can import podcasts.                                               |
-| fediverse.manage-blocks | Can block fediverse actors/domains from interacting with Castopod. |
+| behörighet                | beskrivning                                               |
+| ------------------------- | --------------------------------------------------------- |
+| admin.access              | Kan komma åt Castopods administrationsområde.             |
+| admin.settings            | Kan komma åt Castopods inställningar.                     |
+| users.manage              | Kan hantera Castopod-användare.                           |
+| persons.manage            | Kan hantera personer.                                     |
+| pages.manage              | Kan hantera sidor.                                        |
+| podcasts.view             | Kan se alla podcasts.                                     |
+| podcasts.create           | Kan skapa nya podcasts.                                   |
+| podcasts.import           | Kan importera podcasts.                                   |
+| fediverse.manage-blocks   | Kan blockera fediverse-aktörer/domäner från att interagera med Castopod. |
 
 <!-- AUTH-INSTANCE-PERMISSIONS-LIST:END -->
 
-## 2. Per podcast roles and permissions
+## 2. Roller och behörigheter per podcast
 
-### Per podcast roles
+### Roller per podcast
 
 <!-- AUTH-PODCAST-ROLES-LIST:START - Do not remove or modify this section -->
 
-| role   | description                                               | permissions                                                                                                                                                                                                                                                                                 |
-| ------ | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Admin  | Has complete control of podcast #{id}.                    | \*                                                                                                                                                                                                                                                                                          |
-| Editor | Manages content and publications of podcast #{id}.        | view, edit, manage-import, manage-persons, manage-platforms, manage-publications, manage-notifications, interact-as, episodes.view, episodes.create, episodes.edit, episodes.delete, episodes.manage-persons, episodes.manage-clips, episodes.manage-publications, episodes.manage-comments |
-| Author | Manages content of podcast #{id} but cannot publish them. | view, manage-persons, episodes.view, episodes.create, episodes.edit, episodes.manage-persons, episodes.manage-clips                                                                                                                                                                         |
-| Guest  | General contributor of the podcast #{id}.                 | view, episodes.view                                                                                                                                                                                                                                                                         |
+| roll     | beskrivning                                        | behörigheter                                                                                                                                                                                                                   |
+| -------- | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Admin    | Har fullständig kontroll över podcast #{id}.        | \*                                                                                                                                                                                                                             |
+| Redaktör | Hanterar innehåll och publicering för podcast #{id}. | view, edit, manage-import, manage-persons, manage-platforms, manage-publications, manage-notifications, interact-as, episodes.view, episodes.create, episodes.edit, episodes.delete, episodes.manage-persons, episodes.manage-clips, episodes.manage-publications, episodes.manage-comments |
+| Författare  | Hanterar innehållet för podcast #{id}, men kan inte publicera det. | view, manage-persons, episodes.view, episodes.create, episodes.edit, episodes.manage-persons, episodes.manage-clips                                                                                                                                                                 |
+| Gäst  | Allmän medarbetare för podcast #{id}.                  | view, episodes.view                                                                                                                                                                                                                   |
 
 <!-- AUTH-PODCAST-ROLES-LIST:END -->
 
-### Per podcast permissions
+### Behörigheter per podcast
 
 <!-- AUTH-PODCAST-PERMISSIONS-LIST:START - Do not remove or modify this section -->
 
-| permission                   | description                                                              |
-| ---------------------------- | ------------------------------------------------------------------------ |
-| view                         | Can view dashboard and analytics of podcast #{id}.                       |
-| edit                         | Can edit podcast #{id}.                                                  |
-| delete                       | Can delete podcast #{id}.                                                |
-| manage-import                | Can synchronize imported podcast #{id}.                                  |
-| manage-persons               | Can manage subscriptions of podcast #{id}.                               |
-| manage-subscriptions         | Can manage subscriptions of podcast #{id}.                               |
-| manage-contributors          | Can manage contributors of podcast #{id}.                                |
-| manage-platforms             | Can set/remove platform links of podcast #{id}.                          |
-| manage-publications          | Can publish podcast #{id}.                                               |
-| manage-notifications         | Can view and mark notifications as read for podcast #{id}.               |
-| interact-as                  | Can interact as the podcast #{id} to favourite, share or reply to posts. |
-| episodes.view                | Can view dashboard and analytics of podcast #{id}.                       |
-| episodes.create              | Can create episodes for podcast #{id}.                                   |
-| episodes.edit                | Can edit podcast #{id}.                                                  |
-| episodes.delete              | Can delete podcast #{id}.                                                |
-| episodes.manage-persons      | Can manage subscriptions of podcast #{id}.                               |
-| episodes.manage-clips        | Can manage video clips or soundbites of podcast #{id}.                   |
-| episodes.manage-publications | Can publish podcast #{id}.                                               |
-| episodes.manage-comments     | Can create/remove episode comments of podcast #{id}.                     |
+| behörighet                      | beskrivning                                                                             |
+| ------------------------------- | --------------------------------------------------------------------------------------- |
+| view                            | Kan visa podcast #{id}s instrumentpanel och analysera.                                   |
+| edit                            | Kan redigera podcast #{id}.                                                             |
+| delete                          | Kan ta bort podcast #{id}.                                                              |
+| manage-imports                  | Kan synkronisera importerad podcast #{id}.                                               |
+| manage-persons                  | Kan hantera prenumerationer för podcast #{id}.                                           |
+| manage-subscriptions            | Kan hantera prenumerationer för podcast #{id}.                                           |
+| manage-contributors             | Kan hantera medarbetare för podcast #{id}.                                               |
+| manage-platforms                | Kan konfigurera/ta bort länkar till podcast #{id}s plattform.                           |
+| manage-publications             | Kan publicera podcast #{id}.                                                            |
+| manage-notifications            | Kan visa och markera meddelanden som lästa för podcast #{id}.                           |
+| interact-as                     | Kan interagera som podcast #{id} för att lägga till, dela eller svara på meddelanden.    |
+| episodes.view                   | Kan visa podcast #{id}s instrumentpanel och analysera.                                   |
+| episodes.create                 | Kan skapa episoder för podcast #{id}.                                                   |
+| episodes.edit                   | Kan redigera podcast #{id}.                                                             |
+| episodes.delete                 | Kan ta bort podcast #{id}.                                                              |
+| episodes.manage-persons         | Kan hantera prenumerationer för podcast #{id}.                                           |
+| episodes.manage-clips           | Kan hantera videoklipp eller ljudklipp för podcast #{id}.                                |
+| episodes.manage-publications    | Kan publicera podcast #{id}.                                                            |
+| episodes.manage-comments        | Kan skapa/ta bort kommentarer för podcast #{id}s episod.                                 |
 
 <!-- AUTH-PODCAST-PERMISSIONS-LIST:END -->

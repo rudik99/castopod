@@ -1,109 +1,110 @@
 ---
-title: Update
+title: Ενημέρωση
 sidebarDepth: 3
 ---
 
-# How to update Castopod?
+# Πώς να εγκαταστήσετε το Castopod;
 
-After installing Castopod, you may want to update your instance to the latest
-version in order to enjoy the latest features ✨, bug fixes 🐛 and performance
-improvements ⚡.
+Μετά την εγκατάσταση του Castopod, μπορείτε να ενημερώσετε την έκδοσή σας στην
+πιο πρόσφατη έκδοση για να απολαύσετε τις τελευταίες δυνατότητες ✨, τις
+διορθώσεις σφαλμάτων 🐛 και τις βελτιώσεις της απόδοσης ⚡.
 
-## Update instructions
+## Οδηγίες ενημέρωσης
 
-0. ⚠️ Before any update, we highly recommend you backup your Castopod files and
-   database.
+0. ⚠️ Πριν από κάθε ενημέρωση, συστήνουμε ιδιαίτερα να δημιουργήσετε αντίγραφο
+   ασφαλείας των αρχείων Castopod και της βάσης δεδομένων σας.
 
-   - cf.
-     [Should I make a backup before updating?](#should-i-make-a-backup-before-updating)
+   - βλέπε
+     [Πρέπει να κάνω αντίγραφο ασφαλείας πριν από την ενημέρωση;](#πρέπει-να-κάνω-αντίγραφο-ασφαλείας-πριν-από-την-ενημέρωση)
 
-1. Go to the
-   [releases page](https://code.castopod.org/adaures/castopod/-/releases) and
-   see if your instance is up to date with the latest Castopod version
+1. Μεταβείτε στη
+   [σελίδα κυκλοφορίας](https://code.castopod.org/adaures/castopod/-/releases) και
+   δείτε αν η έκδοσή σας είναι ενημερωμένη με την πιο πρόσφατη έκδοση του Castopod.
 
-   - cf.
-     [Where can I find my Castopod version?](#where-can-i-find-my-castopod-version)
+   - βλέπε
+     [Πού μπορώ να βρω την έκδοση του Castopod μου;](#πού-μπορώ-να-βρω-την-έκδοση-του-castopod-μου;)
 
-2. Download the latest release package named `Castopod Package`, you may choose
-   between the `zip` or `tar.gz` archives
+2. Κατεβάστε το πακέτο της τελευταίας έκδοσης με την ονομασία `Castopod Package`,
+   μπορείτε να επιλέξετε ανάμεσα στα αρχεία `zip` ή `tar.gz`.
 
-   - ⚠️ Make sure you download the Castopod Package and **NOT** the Source Code
-   - Note that you can also download the latest package from
-     [castopod.org](https://castopod.org/)
+   - ⚠️ Βεβαιωθείτε ότι κατεβάζετε το Castopod Package και **ΌΧΙ** τον Πηγαίο Κώδικα.
+   - Σημειώστε ότι μπορείτε επίσης να κατεβάσετε το πιο πρόσφατο πακέτο από το
+     [castopod.org](https://castopod.org/).
 
-3. On your server:
+3. Στο δικό σας διακομιστή:
 
-   - Remove all files except `.env` and `public/media`
-   - Copy the new files from the downloaded package into your server
+   - Διαγράψτε όλα τα αρχεία εκτός από το `.env` και το `public/media`
+   - Αντιγράψτε τα νέα αρχεία από το κατεβασμένο πακέτο στον δικό σας διακομιστή
 
-     ::: info Note
+     ::: info Σημείωση
 
-     You may need to reset files permissions as during the install process.
-     Check [Security Concerns](./security.md).
+     Μπορεί να χρειαστεί να επανακαθορίσετε τα δικαιώματα αρχείων όπως
+     κάνατε κατά τη διάρκεια της διαδικασίας εγκατάστασης.
+     Δείτε [Ανησυχίες Ασφαλείας](./security.md).
 
      :::
 
-4. Update your database schema from your `Castopod Admin` > `About` page or by
-   running:
+4. Ενημερώστε το σχήμα της βάσης δεδομένων σας από τη σελίδα `Castopod Admin` >
+   `Σχετικά` ή εκτελώντας:
 
    ```bash
    php spark castopod:database-update
    ```
 
-5. Clear your cache from your `Castopod Admin` > `Settings` > `general` >
-   `Housekeeping`
-6. ✨ Enjoy your fresh instance, you're all done!
+5. Καθαρίστε τη μνήμη cache από τη σελίδα `Castopod Admin` > `Ρυθμίσεις` >
+   `Γενικές` > `Συντήρηση`.
+6. ✨Απολαύστε τη νέα σας έκδοση, ολοκληρώσατε!
 
-::: info Note
+::: info Σημείωση
 
-Releases may come with additional update instructions (see
-[releases page](https://code.castopod.org/adaures/castopod/-/releases)).
+Οι εκδόσεις μπορεί να συνοδεύονται από πρόσθετες οδηγίες ενημέρωσης
+(βλ. [Σελίδα Σημειώσεων Έκδοσης](https://code.castopod.org/adaures/castopod/-/releases)).
 
-- cf.
-  [I haven't updated my instance in a long time… What should I do?](#i-havent-updated-my-instance-in-a-long-time-what-should-i-do)
+- βλέπε
+  [Δεν έχω ενημερώσει την έκδοσή μου για καιρό… Τι πρέπει να κάνω;](#δεν-έχω-ενημερώσει-την-έκδοσή-μου-για-καιρό-τι-πρέπει-να-κάνω;)
 
 :::
 
-## Fully Automated updates
+## Πλήρως αυτοματοποιημένες ενημερώσεις
 
-> Coming soon... 👀
+> Έρχονται σύντομα... 👀
 
-## Frequently asked questions (FAQ)
+## Συχνές Ερωτήσεις (FAQ)
 
-### Where can I find my Castopod version?
+### Πού μπορώ να βρω την έκδοση του Castopod μου;
 
-Go to your Castopod admin panel, the version is displayed on the bottom left
-corner.
+Μεταβείτε στον πίνακα διαχείρισης του Castopod, η έκδοση εμφανίζεται στην
+κάτω αριστερή γωνία.
 
-Alternatively, you can find the version in the `app > Config > Constants.php`
-file.
+Μπορείτε επίσης να βρείτε την έκδοση στο αρχείο `> Configuration > Constantes.php`.
 
-### I haven't updated my instance in a long time… What should I do?
+### Δεν έχω ενημερώσει την έκδοσή μου για καιρό… Τι πρέπει να κάνω;
 
-No problem! Just get the latest release as described above. Only, when going
-through the release instructions (4), perform them sequentially, from the oldest
-to the newest.
+Κανένα πρόβλημα! Απλά αποκτήστε την τελευταία έκδοση, όπως περιγράφεται
+παραπάνω. Όταν εκτελείτε τις οδηγίες ενημέρωσης (4), εκκινήστε τις
+σειριακά, από την παλαιότερη στην πιο πρόσφατη.
 
-> You may want to backup your instance depending on how long you haven't updated
-> Castopod.
+> Θα πρέπει να αποθηκεύσετε την έκδοση σας με βάση την ημερομηνία της
+> τελευταίας ενημέρωσης του Castopod.
 
-For example, if you're on `v1.0.0-alpha.42` and would like to upgrade to
-`v1.0.0-beta.1`:
+Για παράδειγμα, αν βρίσκεστε στην `v1.0.0-alpha.42` και θέλετε να
+ενημερώσετε στην `v1.0.0-beta.1`:
 
-0. (highly recommended) Make a backup of your files and database.
+0. (ισχυρά συνιστάται) Δημιουργήστε αντίγραφο ασφαλείας των αρχείων σας και της
+   βάσης δεδομένων.
 
-1. Download the latest release, overwrite your files whilst keeping `.env` and
-   `public/media`.
+1. Κατεβάστε την τελευταία έκδοση, αντικαταστήστε τα αρχεία σας κρατώντας τα
+   `.env` και `public/media`.
 
-2. Go through each release update instructions sequentially (from oldest to
-   newest) starting with `v1.0.0-alpha.43`, `v1.0.0-alpha.44`,
-   `v1.0.0-alpha.45`, …, `v1.0.0-beta.1`.
+2. Εκτελέστε τις οδηγίες ενημέρωσης μία-μία (από την παλαιότερη στην
+   πιο πρόσφατη).
 
-3. ✨ Enjoy your fresh instance, you're all done!
+3. ✨ Η νέα σας έκδοση είναι έτοιμη!
 
-### Should I make a backup before updating?
+### Πρέπει να κάνω αντίγραφο ασφαλείας πριν από την ενημέρωση;
 
-We advise you do, so you don't lose everything if anything goes wrong!
+Σας συνιστούμε να το κάνετε, για να μην χάσετε τίποτα αν κάτι πάει στραβά!
 
-More generally, we advise you make regular backups of your Castopod files and
-database to prevent you from losing it all…
+Γενικότερα, σας συνιστούμε να κάνετε τακτικά αντίγραφα ασφαλείας των
+αρχείων Castopod και της βάσης δεδομένων σας για να αποφύγετε την
+απώλεια όλων των δεδομένων σας...

@@ -1,154 +1,108 @@
 ---
-title: Guidelines
+title: Pautas
 ---
 
-# Contributing to Castopod
+# Contribuir a Castopod
 
-Love Castopod and want to help? Thanks so much, there's something to do for
-everybody!
+¿Te encanta Castopod y quieres ayudar? ¡Muchas gracias, hay algo para hacer para todos!
 
-Please take a moment to review this document in order to make the contribution
-process easy and effective for everyone involved.
+Por favor, dedica un momento a revisar este documento para que el proceso de contribución sea fácil y efectivo para todos los involucrados.
 
-Following these guidelines helps to communicate that you respect the time of the
-developers managing and developing this open source project. In return, they
-should reciprocate that respect in addressing your issue or assessing patches
-and features.
+Seguir estas pautas ayuda a comunicar que respetas el tiempo de los desarrolladores que gestionan y desarrollan este proyecto de código abierto. A cambio, ellos deberían demostrar ese mismo respeto al abordar tu problema o evaluar parches y mejoras.
 
-::: info Note
+::: info Nota
 
-**Any** contribution made on a repository other than
-[the original repository](https://code.castopod.org/adaures/castopod) will not
-be accepted.
+Cualquier contribución realizada en un repositorio que no sea [el repositorio original](https://code.castopod.org/adaures/castopod) no será aceptada.
 
 :::
 
-## Using the issue tracker
+## Uso del rastreador de problemas
 
-The [issue tracker](https://code.castopod.org/adaures/castopod/-/issues) is the
-preferred channel for [bug reports](#bug-reports),
-[features requests](#feature-requests) and
-[submitting pull requests](#pull-requests).
+El [rastreador de problemas](https://code.castopod.org/adaures/castopod/-/issues) es el canal preferido para [informes de errores](#informes-de-errores), [solicitudes de funciones](#solicitudes-de-funciones) y [envío de solicitudes de extracción](#solicitudes-de-extracción).
 
-## ⚠️ Security issues and vulnerabilities
+## ⚠️ Problemas de seguridad y vulnerabilidades
 
-If you encounter any security issue or vulnerability in the Castopod source,
-please contact us directly by email at
-[security@castopod.org](mailto:security@castopod.org)
+Si encuentras algún problema de seguridad o vulnerabilidad en el código fuente de Castopod, contáctanos directamente por correo electrónico a [security@castopod.org](mailto:security@castopod.org).
 
-## Bug reports
+## Informes de errores
 
-A bug is a _demonstrable problem_ that is caused by the code in the repository.
-Good bug reports are extremely helpful - thank you!
+Un error es un _problema demostrable_ que es causado por el código en el repositorio. Los buenos informes de errores son extremadamente útiles, ¡gracias!
 
-Guidelines for bug reports:
+Pautas para los informes de errores:
 
-1. **Use the issue search** &mdash; check if the issue has already been
-   reported.
+1. **Utiliza la búsqueda de problemas** &mdash; comprueba si el problema ya ha sido notificado.
 
-2. **Check if the issue has been fixed** &mdash; try to reproduce it using the
-   latest `main` branch in the repository.
+2. **Verifica si el problema ha sido solucionado** &mdash; intenta reproducirlo utilizando la última versión de la rama `main` en el repositorio.
 
-3. **Isolate the problem** &mdash; ideally create a
-   [reduced test case](https://css-tricks.com/reduced-test-cases/) and a live
-   example.
+3. **Aisla el problema** &mdash; idealmente, crea un [caso de prueba reducido](https://css-tricks.com/reduced-test-cases/) y un ejemplo en vivo.
 
-A good bug report shouldn't leave others needing to chase you up for more
-information. Please try to be as detailed as possible in your report. What is
-your environment? What steps will reproduce the issue? What browser(s) and OS
-experience the problem? What would you expect to be the outcome? All these
-details will help people to fix any potential bugs.
+Un buen informe de error no debería dejar a los demás buscándote para obtener más información. Por favor, intenta ser lo más detallado posible en tu informe. ¿Cuál es tu entorno? ¿Qué pasos reproducirían el problema? ¿Qué navegador(es) y sistema(s) operativo(s) experimentan el problema? ¿Cuál sería el resultado esperado? Todos estos detalles ayudarán a las personas a solucionar posibles errores.
 
-> [Issue templates](https://docs.gitlab.com/ee/user/project/description_templates.html#using-the-templates)
-> have been created for this project. You may use them to help you follow those
-> guidelines.
+> Se han creado [plantillas de problemas](https://docs.gitlab.com/ee/user/project/description_templates.html#using-the-templates) para este proyecto. Puedes utilizarlas para ayudarte a seguir estas pautas.
 
-## Feature requests
+## Solicitudes de funciones
 
-Feature requests are welcome. But take a moment to find out whether your idea
-fits with the scope and aims of the project. It's up to _you_ to make a strong
-case to convince the project's developers of the merits of this feature. Please
-provide as much detail and context as possible.
+Las solicitudes de funciones son bienvenidas. Pero tómate un momento para averiguar si tu idea encaja con el alcance y los objetivos del proyecto. Depende de _ti_ presentar un sólido argumento para convencer a los desarrolladores del proyecto de los méritos de esta función. Por favor, proporciona la mayor cantidad de detalles y contexto posible.
 
-## Pull requests
+## Solicitudes de extracción
 
-Good pull requests - patches, improvements, new features - are a fantastic help.
-They should remain focused in scope and avoid containing unrelated commits.
+Las solicitudes de extracción buenas - correcciones de errores, mejoras, nuevas funciones - son de gran ayuda. Deben mantenerse enfocadas en su alcance y evitar contener confirmaciones no relacionadas.
 
-**Please ask first** before embarking on any significant pull request (e.g.
-implementing features, refactoring code, porting to a different language),
-otherwise you risk spending a lot of time working on something that the
-project's developers might not want to merge into the project.
+**Por favor, pregunta primero** antes de embarcarte en cualquier solicitud de extracción importante (por ejemplo, implementar funciones, refactorizar código, portar a un lenguaje diferente), de lo contrario corres el riesgo de pasar mucho tiempo trabajando en algo que los desarrolladores del proyecto pueden no querer fusionar en el proyecto.
 
-Please adhere to the coding conventions used throughout a project (indentation,
-accurate comments, etc.) and any other requirements (such as test coverage).
+Por favor, sigue las convenciones de codificación utilizadas en todo el proyecto (sangría, comentarios precisos, etc.) y cualquier otro requisito (como la cobertura de pruebas).
 
-Adhering to the following process is the best way to get your work included in
-the project:
+Seguir el siguiente proceso es la mejor manera de que tu trabajo se incluya en el proyecto:
 
-1. [Fork](https://docs.gitlab.com/ee/gitlab-basics/fork-project.html) the
-   project, clone your fork, and configure the remotes:
+1. [Haz una bifurcación](https://docs.gitlab.com/ee/gitlab-basics/fork-project.html) del proyecto, clona tu bifurcación y configura los remotos:
 
 ```bash
-# Clone your fork of the repo into the current directory
-git clone https://code.castopod.org/<your-username>/castopod.git
+# Clona tu bifurcación del repositorio en el directorio actual
+git clone https://code.castopod.org/<tu-nombre-de-usuario>/castopod.git
 
-# Navigate to the newly cloned directory
+# Navega al directorio recién clonado
 cd castopod
 
-# Assign the original repo to a remote called "upstream"
+# Asigna el repositorio original a un remoto llamado "upstream"
 git remote add upstream https://code.castopod.org/adaures/castopod.git
 ```
 
-2. If you cloned a while ago, get the latest changes from upstream:
+2. Si clonaste hace un tiempo, obtén los últimos cambios de `upstream`:
 
 ```bash
 git checkout main
 git pull upstream main
 ```
 
-3. Create a new topic branch (off the `main` branch) to contain your feature,
-   change, or fix:
+3. Crea una nueva rama temática (desde la rama `main`) para contener tu función, cambio o corrección:
 
 ```bash
-git checkout -b <topic-branch-name>
+git checkout -b <nombre-de-la-rama-temática>
 ```
 
-4. Commit your changes in logical chunks. Please adhere to these
-   [git commit message guidelines](https://conventionalcommits.org/) or your
-   code is unlikely be merged into the main project. Use Git's
-   [interactive rebase](https://help.github.com/articles/about-git-rebase/)
-   feature to tidy up your commits before making them public.
+4. Realiza tus cambios en fragmentos lógicos. Por favor, sigue estas [pautas de mensajes de confirmación de Git](https://conventionalcommits.org/) o es posible que tu código no se fusione en el proyecto principal. Utiliza la función de [rebase interactivo de Git](https://help.github.com/articles/about-git-rebase/) para organizar tus confirmaciones antes de hacerlas públicas.
 
-5. Locally merge (or rebase) the upstream dev branch into your topic branch:
+5. Fusiona (o rebasea) localmente la rama de desarrollo de `upstream` en tu rama temática:
 
 ```bash
 git pull [--rebase] upstream main
 ```
 
-6. Push your topic branch up to your fork:
+6. Sube tu rama temática a tu bifurcación:
 
 ```bash
-git push origin <topic-branch-name>
+git push origin <nombre-de-la-rama-temática>
 ```
 
-7. [Open a Pull Request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html#new-merge-request-from-a-fork)
-   with a clear title and description.
+7. [Abre una solicitud de extracción](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html#new-merge-request-from-a-fork) con un título y una descripción claros.
 
-**IMPORTANT**: By submitting a patch, you agree to allow the project owners to
-license your work under the terms of the
-[GNU AGPLv3](https://code.castopod.org/adaures/castopod/-/blob/main/LICENSE).
+**IMPORTANTE**: Al enviar un parche, aceptas permitir a los propietarios del proyecto otorgar una licencia a tu trabajo bajo los términos de la [GNU AGPLv3](https://code.castopod.org/adaures/castopod/-/blob/main/LICENSE).
 
-## Collaborating guidelines
+## Pautas de colaboración
 
-There are few basic rules to ensure high quality of the project:
+Existen algunas reglas básicas para garantizar la alta calidad del proyecto:
 
-- Before merging, a PR requires at least two approvals from the collaborators
-  unless it's an architectural change, a large feature, etc. If it is, then at
-  least 50% of the core team have to agree to merge it, with every team member
-  having a full veto right. (i.e. every single one can block any PR)
-- A PR should remain open for at least two days before merging (does not apply
-  for trivial contributions like fixing a typo). This way everyone has enough
-  time to look into it.
+- Antes de fusionar, una solicitud de extracción requiere al menos dos aprobaciones de los colaboradores, a menos que sea un cambio arquitectónico, una función grande, etc. Si es así, al menos el 50% del equipo principal debe estar de acuerdo en fusionarlo, y cada miembro del equipo tiene pleno derecho de veto. (es decir, cada uno puede bloquear cualquier solicitud de extracción)
+- Una solicitud de extracción debe permanecer abierta al menos dos días antes de fusionarse (no se aplica a contribuciones triviales como corregir un error tipográfico). De esta manera, todos tienen suficiente tiempo para revisarla.
 
-You are always welcome to discuss and propose improvements to this guideline.
+Siempre eres bienvenido a discutir y proponer mejoras a estas pautas.

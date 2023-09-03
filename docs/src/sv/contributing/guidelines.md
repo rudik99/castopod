@@ -1,154 +1,68 @@
 ---
-title: Guidelines
+title: Riktlinjer
 ---
 
-# Contributing to Castopod
+# Bidra till Castopod
 
-Love Castopod and want to help? Thanks so much, there's something to do for
-everybody!
+Älskar du Castopod och vill hjälpa till? Tack så mycket, det finns något att göra för alla!
 
-Please take a moment to review this document in order to make the contribution
-process easy and effective for everyone involved.
+Ta en stund och gå igenom detta dokument för att göra bidragsprocessen enkel och effektiv för alla inblandade.
 
-Following these guidelines helps to communicate that you respect the time of the
-developers managing and developing this open source project. In return, they
-should reciprocate that respect in addressing your issue or assessing patches
-and features.
+Att följa dessa riktlinjer hjälper till att kommunicera att du respekterar utvecklarnas tid som hanterar och utvecklar detta öppna källkodsprojekt. Som ett gensvar bör de också visa dig respekt genom att hantera ditt problem eller bedöma dina patchar och funktioner.
 
-::: info Note
+::: info Anteckning
 
-**Any** contribution made on a repository other than
-[the original repository](https://code.castopod.org/adaures/castopod) will not
-be accepted.
+**Alla** bidrag som görs till en annan källkodswebbplats än
+[den ursprungliga webbplatsen](https://code.castopod.org/adaures/castopod) kommer inte att accepteras.
 
 :::
 
-## Using the issue tracker
+## Använda felhanteraren
 
-The [issue tracker](https://code.castopod.org/adaures/castopod/-/issues) is the
-preferred channel for [bug reports](#bug-reports),
-[features requests](#feature-requests) and
-[submitting pull requests](#pull-requests).
+[Felhanteraren](https://code.castopod.org/adaures/castopod/-/issues) är det föredragna sättet att rapportera [fel](#felrapporter), [begäran om funktioner](#funktionsbegäran) och [föreslå ändringar](#pull-begäran).
 
-## ⚠️ Security issues and vulnerabilities
+## ⚠️ Säkerhetsproblem och sårbarheter
 
-If you encounter any security issue or vulnerability in the Castopod source,
-please contact us directly by email at
-[security@castopod.org](mailto:security@castopod.org)
+Om du stöter på något säkerhetsproblem eller sårbarhet i Castopod-koden, kontakta oss direkt via e-post på [security@castopod.org](mailto:security@castopod.org).
 
-## Bug reports
+## Felrapporter
 
-A bug is a _demonstrable problem_ that is caused by the code in the repository.
-Good bug reports are extremely helpful - thank you!
+Ett fel är ett _påvisbart problem_ som orsakas av koden i källkoden. Bra felrapporter är oerhört hjälpsamma - tack!
 
-Guidelines for bug reports:
+Riktlinjer för felrapporter:
 
-1. **Use the issue search** &mdash; check if the issue has already been
-   reported.
+1. **Använd felkontrollen** &mdash; kontrollera om felen redan har rapporterats.
 
-2. **Check if the issue has been fixed** &mdash; try to reproduce it using the
-   latest `main` branch in the repository.
+2. **Kontrollera om felet har åtgärdats** &mdash; försök att återskapa felet med den senaste versionen av `main`-grenen i källkoden.
 
-3. **Isolate the problem** &mdash; ideally create a
-   [reduced test case](https://css-tricks.com/reduced-test-cases/) and a live
-   example.
+3. **Isoler problemet** &mdash; skapa idealiskt sett en [minskad testfall](https://css-tricks.com/reduced-test-cases/) och ett levande exempel.
 
-A good bug report shouldn't leave others needing to chase you up for more
-information. Please try to be as detailed as possible in your report. What is
-your environment? What steps will reproduce the issue? What browser(s) and OS
-experience the problem? What would you expect to be the outcome? All these
-details will help people to fix any potential bugs.
+En bra felrapport borde inte få andra att jaga dig för mer information. Försök att vara så detaljerad som möjligt i din rapport. Vilken är din miljö? Vilka steg kommer att återskapa felet? Vilka webbläsare och operativsystem upplever problemet? Vad förväntar du dig att få för resultat? Alla dessa detaljer hjälper människor att fixa eventuella buggar.
 
-> [Issue templates](https://docs.gitlab.com/ee/user/project/description_templates.html#using-the-templates)
-> have been created for this project. You may use them to help you follow those
-> guidelines.
+> [Mallar för felrapporter](https://docs.gitlab.com/ee/user/project/description_templates.html#using-the-templates) har skapats för detta projekt. Du kan använda dem för att hjälpa dig att följa dessa riktlinjer.
 
-## Feature requests
+## Funktionsbegäran
 
-Feature requests are welcome. But take a moment to find out whether your idea
-fits with the scope and aims of the project. It's up to _you_ to make a strong
-case to convince the project's developers of the merits of this feature. Please
-provide as much detail and context as possible.
+Funktionsbegäran välkomnas. Men ta en stund och ta reda på om din idé passar in i projektets omfattning och mål. Det är upp till _dig_ att argumentera starkt för att övertyga projektets utvecklare om fördelarna med denna funktion. Var vänlig och ange så mycket detaljer och sammanhang som möjligt.
 
-## Pull requests
+## Pull-begäran
 
-Good pull requests - patches, improvements, new features - are a fantastic help.
-They should remain focused in scope and avoid containing unrelated commits.
+Bra pull-begäran - patchar, förbättringar, nya funktioner - är en fantastisk hjälp. De bör förbli fokuserade och undvika att innehålla orelaterade ändringar.
 
-**Please ask first** before embarking on any significant pull request (e.g.
-implementing features, refactoring code, porting to a different language),
-otherwise you risk spending a lot of time working on something that the
-project's developers might not want to merge into the project.
+**Be gärna först** innan du börjar arbeta på en betydande pull-begäran (t.ex. implementera funktioner, refaktorera kod, portera till ett annat språk), annars riskerar du att spendera mycket tid på något som projektets utvecklare kanske inte vill slå samman i projektet.
 
-Please adhere to the coding conventions used throughout a project (indentation,
-accurate comments, etc.) and any other requirements (such as test coverage).
+Var snäll och följ kodningskonventionerna som används i hela projektet (indentering, noggranna kommentarer, etc.) och eventuella andra krav (som testtäckning).
 
-Adhering to the following process is the best way to get your work included in
-the project:
+Att följa följande process är det bästa sättet att få ditt arbete inkluderat i projektet:
 
-1. [Fork](https://docs.gitlab.com/ee/gitlab-basics/fork-project.html) the
-   project, clone your fork, and configure the remotes:
+1. [Gaffla](https://docs.gitlab.com/ee/gitlab-basics/fork-project.html) projektet, klona din gaffel och konfigurera fjärranslutningarna:
 
 ```bash
-# Clone your fork of the repo into the current directory
-git clone https://code.castopod.org/<your-username>/castopod.git
+# Klon din gaffel av källkoden till aktuell katalog
+git clone https://code.castopod.org/<ditt-användarnamn>/castopod.git
 
-# Navigate to the newly cloned directory
+# Navigera till den nyligen klonade mappen
 cd castopod
 
-# Assign the original repo to a remote called "upstream"
-git remote add upstream https://code.castopod.org/adaures/castopod.git
-```
-
-2. If you cloned a while ago, get the latest changes from upstream:
-
-```bash
-git checkout main
-git pull upstream main
-```
-
-3. Create a new topic branch (off the `main` branch) to contain your feature,
-   change, or fix:
-
-```bash
-git checkout -b <topic-branch-name>
-```
-
-4. Commit your changes in logical chunks. Please adhere to these
-   [git commit message guidelines](https://conventionalcommits.org/) or your
-   code is unlikely be merged into the main project. Use Git's
-   [interactive rebase](https://help.github.com/articles/about-git-rebase/)
-   feature to tidy up your commits before making them public.
-
-5. Locally merge (or rebase) the upstream dev branch into your topic branch:
-
-```bash
-git pull [--rebase] upstream main
-```
-
-6. Push your topic branch up to your fork:
-
-```bash
-git push origin <topic-branch-name>
-```
-
-7. [Open a Pull Request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html#new-merge-request-from-a-fork)
-   with a clear title and description.
-
-**IMPORTANT**: By submitting a patch, you agree to allow the project owners to
-license your work under the terms of the
-[GNU AGPLv3](https://code.castopod.org/adaures/castopod/-/blob/main/LICENSE).
-
-## Collaborating guidelines
-
-There are few basic rules to ensure high quality of the project:
-
-- Before merging, a PR requires at least two approvals from the collaborators
-  unless it's an architectural change, a large feature, etc. If it is, then at
-  least 50% of the core team have to agree to merge it, with every team member
-  having a full veto right. (i.e. every single one can block any PR)
-- A PR should remain open for at least two days before merging (does not apply
-  for trivial contributions like fixing a typo). This way everyone has enough
-  time to look into it.
-
-You are always welcome to discuss and propose improvements to this guideline.
+# Ange den ursprungliga källkoden som en fjärranslutning med namnet "upstream"
+git remote add upstre

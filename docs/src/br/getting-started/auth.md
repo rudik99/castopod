@@ -1,87 +1,79 @@
----
-title: Authentication & Authorization
-sidebarDepth: 3
----
+# Dilennadur ha Aotreoù
 
-# Authentication & Authorization
+Gestionet eo dilennadur ha aotreoù e Castopod en ur ober gant `codeigniter/shield` kevreet gant ar gerioù doujet. Kinniget e vez al rolloù ha dilennadurioù war duo stumm div niver :
 
-Castopod handles authentication and authorization using `codeigniter/shield`
-coupled with custom rules. Roles and permissions are defined at two levels:
+1. [war lec'h an enklask](#1-rolloù-ha-dilennadurioù-war-lec'h-an-enklask)
+2. [diwar-benn ur podcast](#2-rolloù-ha-dilennadurioù-diwar-benn-ur-podcast)
 
-1. [instance wide](#1-instance-wide-roles-and-permissions)
-2. [per podcast](#2-per-podcast-roles-and-permissions)
+## 1. Rolloù ha dilennadurioù war lec'h an enklask
 
-## 1. Instance wide roles and permissions
+### Rolloù war lec'h an enklask
 
-### Instance roles
+<!-- AUTH-INSTANCE-ROLES-LIST:START - Na sistañ na kemmoñ an devezh-mañ -->
 
-<!-- AUTH-INSTANCE-ROLES-LIST:START - Do not remove or modify this section -->
-
-| role        | description                         | permissions                                                                                |
-| ----------- | ----------------------------------- | ------------------------------------------------------------------------------------------ |
-| Super admin | Has complete control over Castopod. | admin.\*, podcasts.\*, users.manage, persons.manage, pages.manage, fediverse.manage-blocks |
-| Manager     | Manages Castopod's content.         | podcasts.create, podcasts.import, persons.manage, pages.manage                             |
-| Podcaster   | General users of Castopod.          | admin.access                                                                               |
+| rol          | deskrivadur                                              | dilennadurioù                                                                                                                                                       |
+| ------------ | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Super admin  | Diell du uriñ war Castopod.                              | admin.\*, podcasts.\*, users.manage, persons.manage, pages.manage, fediverse.manage-blocks                                                                       |
+| Tolter       | Manaj an danvez en Castopod.                             | podcasts.create, podcasts.import, persons.manage, pages.manage                                                                                                    |
+| Podcaster    | An implijerien a veva gant Castopod.                      | admin.access                                                                                                                                                       |
 
 <!-- AUTH-INSTANCE-ROLES-LIST:END -->
 
-### Instance permissions
+### Dilennadurioù war lec'h an enklask
 
-<!-- AUTH-INSTANCE-PERMISSIONS-LIST:START - Do not remove or modify this section -->
+<!-- AUTH-INSTANCE-PERMISSIONS-LIST:START - Na sistañ na kemmoñ an devezh-mañ -->
 
-| permission              | description                                                        |
-| ----------------------- | ------------------------------------------------------------------ |
-| admin.access            | Can access the Castopod admin area.                                |
-| admin.settings          | Can access the Castopod settings.                                  |
-| users.manage            | Can manage Castopod users.                                         |
-| persons.manage          | Can manage persons.                                                |
-| pages.manage            | Can manage pages.                                                  |
-| podcasts.view           | Can view all podcasts.                                             |
-| podcasts.create         | Can create new podcasts.                                           |
-| podcasts.import         | Can import podcasts.                                               |
-| fediverse.manage-blocks | Can block fediverse actors/domains from interacting with Castopod. |
+| dilennadur              | deskrivadur                                                                                     |
+| ----------------------- | ----------------------------------------------------------------------------------------------- |
+| admin.access            | Kerzhel da zenvel eno adalek kêr maez d'ar mareoù Castopod e vez diskouezhet.                    |
+| admin.settings          | Kerzhel da aked da preferadennoù Castopod.                                                      |
+| users.manage            | Kerzhel da monedañ an implijerien e Castopod.                                                    |
+| persons.manage          | Kerzhel da monedañ ar brudennoù.                                                                 |
+| pages.manage            | Kerzhel da monedañ ar bajennoù.                                                                 |
+| podcasts.view           | Kerzhel da welout an holl podcastoù.                                                            |
+| podcasts.create         | Kerzhel da grouiñ podcastoù nevez.                                                              |
+| podcasts.import         | Kerzhel da imporzhiañ podcastoù.                                                                |
+| fediverse.manage-blocks | Kerzhel da ostilhoù blokea castorien/tirioù fediverse da gomz diouzh Castopod.                  |
 
 <!-- AUTH-INSTANCE-PERMISSIONS-LIST:END -->
 
-## 2. Per podcast roles and permissions
+## 2. Rolloù ha dilennadurioù diwar-benn ur podcast
 
-### Per podcast roles
+### Rolloù war buhez an enklask
 
-<!-- AUTH-PODCAST-ROLES-LIST:START - Do not remove or modify this section -->
+<!-- AUTH-PODCAST-ROLES-LIST:START - Na sistañ na kemmoñ an devezh-mañ -->
 
-| role   | description                                               | permissions                                                                                                                                                                                                                                                                                 |
-| ------ | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Admin  | Has complete control of podcast #{id}.                    | \*                                                                                                                                                                                                                                                                                          |
-| Editor | Manages content and publications of podcast #{id}.        | view, edit, manage-import, manage-persons, manage-platforms, manage-publications, manage-notifications, interact-as, episodes.view, episodes.create, episodes.edit, episodes.delete, episodes.manage-persons, episodes.manage-clips, episodes.manage-publications, episodes.manage-comments |
-| Author | Manages content of podcast #{id} but cannot publish them. | view, manage-persons, episodes.view, episodes.create, episodes.edit, episodes.manage-persons, episodes.manage-clips                                                                                                                                                                         |
-| Guest  | General contributor of the podcast #{id}.                 | view, episodes.view                                                                                                                                                                                                                                                                         |
+| rol       | deskrivadur                                                                     | dilennadurioù                                                                                                                                                                                                                |
+| --------- | ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Admin     | Kontroll gwirouesel ouzh ar podcast #{id}.                                      | \*                                                                                                                                                                                                                         |
+| Reder     | Manaj ar c'hoant hag an embannadur war ar podcast #{id}.                        | gwelet, kemm, embregiñ treuzkas, embregiñ urzhiataerien, embregiñ platfomoù, embregiñ embannadurioù, embregiñ niverennadennoù, kemm embregiñ, dilemel embregiñ, manaj embregiñ urzhiataerien, manaj embregiñ trolioù,
+manaj embregiñ embannadurioù, manaj embregiñ commentoù |
+| Aotrou    | Manaj kontant ar podcast #{id}, met ne c'helle ket embannout anezho.           | gwelet, manaj urzhiataerien, niverennadennoù, kemm niverennadennoù embregiñ, dilemel niverennadennoù                                                                                                                                                             |
+| Devezhmat | Ousitan allenn eus ar podcast #{id}.                                            | gwelet, kemm niverennadennoù                                                                                                                                                                                                |
 
 <!-- AUTH-PODCAST-ROLES-LIST:END -->
 
-### Per podcast permissions
+### Dilennadurioù war buhez an enklask
 
-<!-- AUTH-PODCAST-PERMISSIONS-LIST:START - Do not remove or modify this section -->
+<!-- AUTH-PODCAST-PERMISSIONS-LIST:START - Na sistañ na kemmoñ an devezh-mañ -->
 
-| permission                   | description                                                              |
-| ---------------------------- | ------------------------------------------------------------------------ |
-| view                         | Can view dashboard and analytics of podcast #{id}.                       |
-| edit                         | Can edit podcast #{id}.                                                  |
-| delete                       | Can delete podcast #{id}.                                                |
-| manage-import                | Can synchronize imported podcast #{id}.                                  |
-| manage-persons               | Can manage subscriptions of podcast #{id}.                               |
-| manage-subscriptions         | Can manage subscriptions of podcast #{id}.                               |
-| manage-contributors          | Can manage contributors of podcast #{id}.                                |
-| manage-platforms             | Can set/remove platform links of podcast #{id}.                          |
-| manage-publications          | Can publish podcast #{id}.                                               |
-| manage-notifications         | Can view and mark notifications as read for podcast #{id}.               |
-| interact-as                  | Can interact as the podcast #{id} to favourite, share or reply to posts. |
-| episodes.view                | Can view dashboard and analytics of podcast #{id}.                       |
-| episodes.create              | Can create episodes for podcast #{id}.                                   |
-| episodes.edit                | Can edit podcast #{id}.                                                  |
-| episodes.delete              | Can delete podcast #{id}.                                                |
-| episodes.manage-persons      | Can manage subscriptions of podcast #{id}.                               |
-| episodes.manage-clips        | Can manage video clips or soundbites of podcast #{id}.                   |
-| episodes.manage-publications | Can publish podcast #{id}.                                               |
-| episodes.manage-comments     | Can create/remove episode comments of podcast #{id}.                     |
+| dilennadur                      | deskrivadur                                                                                          |
+| ------------------------------ | ---------------------------------------------------------------------------------------------------- |
+| gwelet                         | Gwelet daspyegelezh ha maez ar podcast #{id}.                                                        |
+| kemm                           | Kemmañ ar podcast #{id}.                                                                             |
+| dilemel                        | Dilemel ar podcast #{id}.                                                                            |
+| embregiñ treuzkas              | Kemmañ ar podcast treuzkaset #{id}.                                                                  |
+| embregiñ urzhiataerien         | Gwiriañ/neuzeiañ embregiñ urzhiataerienient eus ar podcast #{id}.                                    |
+| embregiñ plaennerion           | Gellet kempuniañ/skartañ ereuredoù al lunennañ embregel ar podcast #{id}.                           |
+| embregiñ embannadurioù         | Kemmañ ar podcast #{id}.                                                                             |
+| embregiñ niverennadennoù       | Gwelet ha selaou treuzkas ar podcast #{id}.                                                          |
+| embregiñ abonadennoù           | Gwiriañ/neuzeiañ embregiñ an abonadennou eus ar podcast #{id}.                                       |
+| embregiñ embregelourion        | Gwiriañ/neuzeiañ embregiñ embregelourion ar podcast #{id}.                                           |
+| embregiñ platfomoù             | Gellet stlennu/dilemel liammoù etre ar podcast ha platfomoù #{id}.                                   |
+| embregiñ embregeriñ            | Gell an embregiñ ar podcast #{id} embregeriñ.                                                        |
+| embregiñ niverennadennoù       | Gwiriañ/neuzeiañ embregiñ niverennadennoù eus ar podcast #{id}.                                      |
+| embregiñ treuzkredoù           | Gwiriañ/neuzeiañ embregiñ treuzkredoù video pe sonenn eus ar podcast #{id}.                         |
+| embregiñ embregelouriezhioù    | Gwiriañ/neuzeiañ embregiñ embregelouriezhioù eus ar podcast #{id}.                                    |
+| embregiñ commentoù             | Kemmañ/Seleiñ an aozerentoù war ur video eus ar podcast #{id}.                                       |
 
 <!-- AUTH-PODCAST-PERMISSIONS-LIST:END -->

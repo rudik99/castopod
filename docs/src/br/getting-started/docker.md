@@ -1,35 +1,28 @@
 ---
-title: Official Docker images
+title: Skoazelloù dreistlennadel Docker
 sidebarDepth: 3
 ---
 
-# Official Docker images
+# Skoazelloù dreistlennadel Docker
 
-Castopod pushes 3 Docker images to the Docker Hub during its automated build
-process:
+En oberiant embann Castopod 3 skoazell dreistlennadel dre ar Restro_dressed Dockeñs :
 
-- [**`castopod/castopod`**](https://hub.docker.com/r/castopod/castopod): an all
-  in one castopod image using nginx unit
-- [**`castopod/app`**](https://hub.docker.com/r/castopod/app): the app bundle
-  with all of Castopod dependencies
-- [**`castopod/web-server`**](https://hub.docker.com/r/castopod/web-server): an
-  Nginx configuration for Castopod
+- [**`castopod/castopod`**](https://hub.docker.com/r/castopod/castopod): un holl-enn unan-stumm embannadenn Castopod a gousk gant ynji nginx
+- [**`castopod/app`**](https://hub.docker.com/r/castopod/app): ar verzhiad mikro
+  gant pep tra zo anezho eus Castopod
+- [**`castopod/web-server`**](https://hub.docker.com/r/castopod/web-server): ur skin eus Nginx evit Castopod
 
-Additionally, Castopod requires a MySQL-compatible database. A Redis database
-can be added as a cache handler.
+Deuit da essayal ez anvioù
 
-## Supported tags
+- `développer` [dibresel], ar verzhin-stub penn-blokhoù divyezhek
+- `beta` [stabil], ar verzhin vanityou dibresel
+- `1.x.x` [stabil], verzhin spaekadennel (abaoe `1.0.0`)
 
-- `develop` [unstable], latest development branch build
-- `beta` [stable], latest beta version build
-- `latest` [stable], latest version build
-- `1.x.x` [stable], specific version build (since `1.0.0`)
+## Ur skouer da achampion
 
-## Example usage
-
-1.  Install [docker](https://docs.docker.com/get-docker/) and
+1.  Montit [docker](https://docs.docker.com/get-docker/) ha
     [docker-compose](https://docs.docker.com/compose/install/)
-2.  Create a `docker-compose.yml` file with the following:
+2.  Krouit ur restr `docker-compose.yml` gant an traoù-mañ :
 
     ```yml
     version: "3.7"
@@ -87,13 +80,12 @@ can be added as a cache handler.
       castopod-db:
     ```
 
-    You have to adapt some variables to your needs (e.g. `CP_BASEURL`,
-    `MYSQL_ROOT_PASSWORD`, `MYSQL_PASSWORD` and `CP_ANALYTICS_SALT`).
+    Ret eo deoc'h troidigezañ boutailhoù nemetiñ ouzh ho aotrenioù (ennennoù p. ex.
+    `CP_BASEURL`, `MYSQL_ROOT_PASSWORD`, `MYSQL_PASSWORD` ha `CP_ANALYTICS_SALT`).
 
-3.  Setup a reverse proxy for TLS (SSL/HTTPS)
+3.  Montit ur renverssez bregustell evit TLS (SSL/HTTPS)
 
-    TLS is mandatory for ActivityPub to work. This job can easily be handled by
-    a reverse proxy, for example with [Caddy](https://caddyserver.com/):
+    Ret eo mont ul renverssez bregustell evit glotaat gant TLS. Gallout a reomp mont gant an betek [Caddy](https://caddyserver.com/):
 
     ```
     #castopod
@@ -102,57 +94,57 @@ can be added as a cache handler.
     }
     ```
 
-4.  Run `docker-compose up -d`, wait for it to initialize and head on to
-    `https://castopod.example.com/cp-install` to finish setting up Castopod!
+4.  Leit-stur `docker-compose up -d`, kuitit evit ma vehe eno war
+    `https://castopod.example.com/cp-install` gant mañskrid ho dihuniañ.
 
-5.  You're all set, start podcasting! 🎙️🚀
+5.  Prest oc'h, deuit da embann! 🎙️🚀
 
-## Environment Variables
+## Aotrenioù Adalek
 
-- **castopod/castopod** and **castopod/app**
+- **castopod/castopod** ha **castopod/app**
 
-  | Variable name                         | Type (`default`)        | Default          |
-  | ------------------------------------- | ----------------------- | ---------------- |
-  | **`CP_BASEURL`**                      | string                  | `undefined`      |
-  | **`CP_MEDIA_BASEURL`**                | ?string                 | `CP_BASEURL`     |
-  | **`CP_ADMIN_GATEWAY`**                | ?string                 | `"cp-admin"`     |
-  | **`CP_AUTH_GATEWAY`**                 | ?string                 | `"cp-auth"`      |
-  | **`CP_ANALYTICS_SALT`**               | string                  | `undefined`      |
-  | **`CP_DATABASE_HOSTNAME`**            | ?string                 | `"mariadb"`      |
-  | **`CP_DATABASE_NAME`**                | ?string                 | `MYSQL_DATABASE` |
-  | **`CP_DATABASE_USERNAME`**            | ?string                 | `MYSQL_USER`     |
-  | **`CP_DATABASE_PASSWORD`**            | ?string                 | `MYSQL_PASSWORD` |
-  | **`CP_DATABASE_PREFIX`**              | ?string                 | `"cp_"`          |
-  | **`CP_CACHE_HANDLER`**                | [`"file"` or `"redis"`] | `"file"`         |
-  | **`CP_REDIS_HOST`**                   | ?string                 | `"localhost"`    |
-  | **`CP_REDIS_PASSWORD`**               | ?string                 | `null`           |
-  | **`CP_REDIS_PORT`**                   | ?number                 | `6379`           |
-  | **`CP_REDIS_DATABASE`**               | ?number                 | `0`              |
-  | **`CP_EMAIL_SMTP_HOST`**              | ?string                 | `undefined`      |
-  | **`CP_EMAIL_FROM`**                   | ?string                 | `undefined`      |
-  | **`CP_EMAIL_SMTP_USERNAME`**          | ?string                 | `"localhost"`    |
-  | **`CP_EMAIL_SMTP_PASSWORD`**          | ?string                 | `null`           |
-  | **`CP_EMAIL_SMTP_PORT`**              | ?number                 | `25`             |
-  | **`CP_EMAIL_SMTP_CRYPTO`**            | [`"tls"` or `"ssl"`]    | `"tls"`          |
-  | **`CP_ENABLE_2FA`**                   | ?boolean                | `undefined`      |
-  | **`CP_MEDIA_FILE_MANAGER`**           | ?string                 | `undefined`      |
-  | **`CP_MEDIA_S3_ENDPOINT`**            | ?string                 | `undefined`      |
-  | **`CP_MEDIA_S3_KEY`**                 | ?string                 | `undefined`      |
-  | **`CP_MEDIA_S3_SECRET`**              | ?string                 | `undefined`      |
-  | **`CP_MEDIA_S3_REGION`**              | ?string                 | `undefined`      |
-  | **`CP_MEDIA_S3_BUCKET`**              | ?string                 | `undefined`      |
-  | **`CP_MEDIA_S3_PROTOCOL`**            | ?number                 | `undefined`      |
-  | **`CP_MEDIA_S3_PATH_STYLE_ENDPOINT`** | ?boolean                | `undefined`      |
-  | **`CP_MEDIA_S3_KEY_PREFIX`**          | ?string                 | `undefined`      |
-  | **`CP_DISABLE_HTTPS`**                | ?[`0` or `1`]           | `undefined`      |
-  | **`CP_MAX_BODY_SIZE`**                | ?number (with suffix)   | `512M`           |
-  | **`CP_PHP_MEMORY_LIMIT`**             | ?number (with suffix)   | `512M`           |
-  | **`CP_TIMEOUT`**                      | ?number                 | `900`            |
+  | Anv ar bajenn                                     | Typ (`default`)        | Parad pregemper |
+  | ------------------------------------------------- | ----------------------- | ---------------- |
+  | **`CP_BASEURL`**                                  | chadennell                | `undefined`      |
+  | **`CP_MEDIA_BASEURL`**                            | ?chadennell               | `CP_BASEURL`     |
+  | **`CP_ADMIN_GATEWAY`**                            | ?chadennell               | `"cp-admin"`     |
+  | **`CP_AUTH_GATEWAY`**                             | ?chadennell               | `"cp-auth"`      |
+  | **`CP_ANALYTICS_SALT`**                           | chadennell                | `undefined`      |
+  | **`CP_DATABASE_HOSTNAME`**                        | ?chadennell               | `"mariadb"`      |
+  | **`CP_DATABASE_NAME`**                            | ?chadennell               | `MYSQL_DATABASE` |
+  | **`CP_DATABASE_USERNAME`**                        | ?chadennell               | `MYSQL_USER`     |
+  | **`CP_DATABASE_PASSWORD`**                        | ?chadennell               | `MYSQL_PASSWORD` |
+  | **`CP_DATABASE_PREFIX`**                          | ?chadennell               | `"cp_"`          |
+  | **`CP_CACHE_HANDLER`**                            | [`"file"` pe `"redis"`] | `"file"`         |
+  | **`CP_REDIS_HOST`**                               | ?chadennell               | `"localhost"`    |
+  | **`CP_REDIS_PASSWORD`**                           | ?chadennell               | `null`           |
+  | **`CP_REDIS_PORT`**                               | ?niverenn                 | `6379`           |
+  | **`CP_REDIS_DATABASE`**                           | ?niverenn                 | `0`              |
+  | **`CP_EMAIL_SMTP_HOST`**                          | ?chadennell               | `undefined`      |
+  | **`CP_EMAIL_FROM`**                               | ?chadennell               | `undefined`      |
+  | **`CP_EMAIL_SMTP_USERNAME`**                      | ?chadennell               | `"localhost"`    |
+  | **`CP_EMAIL_SMTP_PASSWORD`**                      | ?chadennell               | `null`           |
+  | **`CP_EMAIL_SMTP_PORT`**                          | ?niverenn                 | `25`             |
+  | **`CP_EMAIL_SMTP_CRYPTO`**                        | [`"tls"` pe `"ssl"`]    | `"tls"`          |
+  | **`CP_ENABLE_2FA`**                               | ?boolezenn               | `undefined`      |
+  | **`CP_MEDIA_FILE_MANAGER`**                       | ?chadennell               | `undefined`      |
+  | **`CP_MEDIA_S3_ENDPOINT`**                        | ?chadennell               | `undefined`      |
+  | **`CP_MEDIA_S3_KEY`**                             | ?chadennell               | `undefined`      |
+  | **`CP_MEDIA_S3_SECRET`**                          | ?chadennell               | `undefined`      |
+  | **`CP_MEDIA_S3_REGION`**                          | ?chadennell               | `undefined`      |
+  | **`CP_MEDIA_S3_BUCKET`**                          | ?chadennell               | `undefined`      |
+  | **`CP_MEDIA_S3_PROTOCOL`**                        | ?niverenn                 | `undefined`      |
+  | **`CP_MEDIA_S3_PATH_STYLE_ENDPOINT`**             | ?boolezenn               | `undefined`      |
+  | **`CP_MEDIA_S3_KEY_PREFIX`**                      | ?chadennell               | `undefined`      |
+  | **`CP_DISABLE_HTTPS`**                            | ?[`0` pe `1`]           | `undefined`      |
+  | **`CP_MAX_BODY_SIZE`**                            | ?niverenn (gant saozh)  | `512M`           |
+  | **`CP_PHP_MEMORY_LIMIT`**                         | ?niverenn (gant saozh)  | `512M`           |
+  | **`CP_TIMEOUT`**                                  | ?niverenn                 | `900`            |
 
 - **castopod/web-server**
 
-  | Variable name          | Type                  | Default |
-  | ---------------------- | --------------------- | ------- |
-  | **`CP_APP_HOSTNAME`**  | ?string               | `"app"` |
-  | **`CP_MAX_BODY_SIZE`** | ?number (with suffix) | `512M`  |
-  | **`CP_TIMEOUT`**       | ?number               | `900`   |
+  | Anv ar bajenn                  | Typ                  | Parad pregemper |
+  | ------------------------------ | --------------------- | ---------------- |
+  | **`CP_APP_HOSTNAME`**          | ?chadennell          | `"app"`          |
+  | **`CP_MAX_BODY_SIZE`**         | ?niverenn (gant saozh) | `512M`           |
+  | **`CP_TIMEOUT`**               | ?niverenn            | `900`            |

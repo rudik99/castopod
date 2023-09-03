@@ -2,25 +2,25 @@
 title: Seguretat
 ---
 
-# Detalls de seguretat
+# Qüestions de seguretat
 
-Castopod està fet amb [CodeIgniter4](https://codeigniter.com/), un framework PHP
-que fomenta les
+Castopod està desenvolupat amb [CodeIgniter4](https://codeigniter.com/), un
+framework PHP que fomenta les
 [bones pràctiques de seguretat](https://codeigniter.com/user_guide/concepts/security.html).
 
-Per maximitzar la seguretat de la vostra instància i evitar qualsevol atac
-maliciós, us recomanem que actualitzeu tots els permisos dels fitxers de
-Castopod després de la instal·lació o actualitzacions (per evitar qualsevol
-error de permís previ):
+Per garantir la màxima seguretat de la teva instància i evitar atacs maliciosos,
+et recomanem actualitzar els permisos dels fitxers de Castopod després de la
+instal·lació i després de cada actualització (i evitar errors d'accés als fitxers):
 
-- el directori `writable/` ha de ser **llegible** i **escrivible**.
-- el directori `public/media/` ha de ser **llegible** i **escrivible**.
-- qualsevol altre fitxer ha de ser definit com a **només-lectura**.
+- La carpeta `writable/` ha de ser accessible en **lectura** i en **escriptura**.
+- La carpeta `public/media/` ha de ser accessible en **lectura** i en **escriptura**.
+- qualsevol altre fitxer ha de ser accessible només en **lectura**.
 
-Per exemple, si utilitzeu Apache o NGINX amb Ubuntu, podeu fer el següent:
+Per exemple, si utilitzes Apache o NGINX amb Ubuntu, pots executar les següents
+comandes:
 
 ```bash
-sudo chown -R root:root /ruta/cap/a/castopod
-sudo chown -R www-data:www-data /ruta/cap/a/castopod/writable
-sudo chown -R www-data:www-data /ruta/cap/a/castopod/public/media
+sudo chown -R root:root /ruta/fins/a/castopod
+sudo chown -R www-data:www-data /ruta/fins/a/castopod/writable
+sudo chown -R www-data:www-data /ruta/fins/a/castopod/public/media
 ```

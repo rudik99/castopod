@@ -1,173 +1,121 @@
----
-sidebarDepth: 2
----
-
 # Välkommen 👋
 
 [![release-badge]][release]&nbsp;[![license-badge]][license]&nbsp;[![contributions-badge]][contributions]&nbsp;[![semantic-release-badge]][semantic-release]&nbsp;[![crowdin-badge]][crowdin]&nbsp;[![discord-badge]][discord]&nbsp;[![stars-badge]][stars]
 
-Castopod är en gratis hostingplattform med öppen källkod gjord för podcastare
-som vill engagera och interagera med sin publik.
+Castopod är en gratis och öppen plattform för podcastvärd som är avsedd för podcastvärdarna som vill utbyta och interagera med sin publik.
 
-Castopod är lätt att installera och byggdes ovanpå
-[CodeIgniter4](https://codeigniter.com/), ett kraftfullt PHP-ramverk med ett
-mycket litet fotavtryck.
+Castopod är lätt att installera och har utformats med hjälp av  [CodeIgniter4](https://codeigniter.com/), en kraftfull PHP-ram i mycket liten skala.
 
 <div class="flex items-center">
-  <a href="/getting-started/install" class="inline-flex items-center px-4 py-2 mx-auto font-semibold text-center text-white rounded-full shadow gap-x-1 bg-pine-500 hover:no-underline hover:bg-pine-600">Installera<svg viewBox="0 0 24 24" width="1em" height="1em" class="text-xl text-pine-200"><path fill="currentColor" d="m16.172 11-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg></a>
+  <a href="/fr/getting-started/install" class="inline-flex items-center px-4 py-2 mx-auto font-semibold text-center text-white rounded-full shadow gap-x-1 bg-pine-500 hover:no-underline hover:bg-pine-600">Installera  <svg viewBox="0 0 24 24" width="1em" height="1em" class="text-xl text-pine-200"><path fill="currentColor" d="m16.172 11-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg></a>
 </div>
 
 ## Funktioner
 
-- 🌱 &nbsp;Gratis & öppen källkod (AGPL v3-licens)
-- 🔐 &nbsp;Fokuserad på datasuveränitet: ditt innehåll, målgrupp och analys
-  tillhör dig, och&nbsp;du&nbsp;bara
-- 🪄 &nbsp;Podcasting 2.0 funktioner: GUID, låst, avskrifter, finansiering,
-  kapitel, plats, personer, ljud, …
+- 🌱 &nbsp;Fri, gratis och öppen källkod (licens AGPL v3)
+- 🔐 &nbsp;Fokuserar på data suveränitet: ditt innehåll, din publik och dina statistik är din och din ensam
+- 🪄&nbsp;Podcasting 2.0-funktioner: GUID, låsning, transkriptioner, finansiering, kapitel, geolokalisering, deltagare, ljudklipp...
 - 💬 &nbsp;Inbyggt socialt nätverk:
-  - 🚀 &nbsp;Castopod är en del av Fediverse, ett decentraliserat socialt
-    nätverk
-  - ❤️ &nbsp;Skapa inlägg, dela, favorit och kommentera avsnitt
-- 📈 &nbsp;Inbyggd analys:
-  - ⚖️ &nbsp;GDPR / CCPA / LGPD kompatibel
-  - 🪙 &nbsp;Standard IABv2 målgruppsmätning
-  - 🏡 &nbsp;Lokalanalys, ingen tredje part involverad
+  - 🚀 &nbsp;Castopod ingår i Fédivers, ett decentraliserat socialt nätverk
+  - ❤️ &nbsp;Skapa och dela inlägg, favoritmarkera avsnitt och lägg kommentarer till dem
+- 📈 &nbsp;Inbyggda statistik:
+  - ⚖️ &nbsp;Conform GDPR / CCPA / LGPD
+  - 🪙&nbsp;Mätning av IABv2 publik
+  - 🏡 &nbsp;Inbyggda upprättelser, inga medlingstjänster
 - 📢 &nbsp;Inbyggda marknadsföringsverktyg:
-  - ✅ &nbsp;SEO ready (open-graph meta-tags, JSON-LD, …)
-  - 📱 &nbsp;PWA: installera som en fristående app
+  - ✅ &nbsp;Klart för SEO (open-graph-metataggar, JSON-LD...)
+  - 📱 &nbsp;PWA: Install som fristående app
   - 🎨 &nbsp;Anpassningsbara temafärger
-  - 🎬 &nbsp;Generera att dela videoklipp från avsnitt
-  - 🔉 &nbsp;Generera ljudbitar
-  - ▶️ &nbsp;Inbäddbar spelare, bädda in dina avsnitt på valfri webbplats
-- 💸 &nbsp;Monetization:
-  - 🔗 &nbsp;Finansierar länkar
-  - 📲 &nbsp;lista-att-klicka annonser
+  - 🎬 &nbsp;Skapa videoklipp som är klara för att delas från avsnitten
+  - 🔉 &nbsp;Skapa ljudklipp
+  - ▶️ &nbsp;Bädda in dina avsnitt på alla webbplatser
+- 💸 &nbsp;Monetisering:
+  - 🔗 &nbsp;Finansieringslänkar
+  - 📲 &nbsp;Annons “lyssna-till-klick”
   - 🤝 &nbsp;value4value / WebMonetization
-  - 💎 &nbsp;Premium podcasts
-- 📡 &nbsp;Publicera dina avsnitt överallt med RSS:
-  - 📱 &nbsp;På alla index och appar: Podcast Index, Apple Podcasts, Spotify,
-    Google Podcasts, Deezer, Podcast Addict, Podfriend, …
-  - ⚡ &nbsp;Sänd dina avsnitt direkt med WebSub
-- 📥 &nbsp;Podcast import: flytta din befintliga podcast till Castopod
-- 📤 &nbsp;Flytta ut din podcast från Castopod
-- 🔀 &nbsp;Flera hyresgäst: värd så många podcasts du vill
-- 👥 &nbsp;Flera användare: lägg till bidragslämnare och ange roller
-- 🌎 &nbsp;i18n support: översatt till engelska, franska, polska, tyska,
-  brasilianska portugisiska & spanska… med
-  [mer att komma](https://translate.castopod.org)!
+  - 💎 &nbsp;Premium-poddar
+- 📡&nbsp;Publicera dina avsnitt överallt med RSS:
+  - 📱 &nbsp;På alla indexer och appar: Podcast Index, Podcasts Apple, Spotify, Google Podcasts, Deezer, Podcast Addict, Podfriend...
+  - ⚡ så publicerade dina avsnitt med WebSub
+- 📥 &nbsp;Importera podd: flytta din befintliga podcast till Castopod
+- 📤 &nbsp;Flytta din podcast till en annan värd
+- 🔀 &nbsp;Multi-Mandant: Värd så många poddar du vill
+- 👥 &nbsp;Multi-Användare: Lägg till redaktörer och definiera deras befogenheter
+- 🌎 &nbsp;i18n-stöd: Översatt till engelska, franska, polska, tyska, portugisiska, brasilianska, spanska... och
+  [mer i framtiden](https://translate.castopod.org)!
 
-## Motivation
+## Varför Castopod?
 
-The podcasting ecosystem is decentralized by nature: you can create your podcast
-as an RSS file, publish it on the web and have it shared everywhere online.
+Podcasting ekosystemet är av naturen decentraliserat: du kan skapa din podcast som en RSS-fil, publicera den på webben och få den delad överallt online.
 
-It is in fact one of the only media to have stayed this way for a long time.
+Det är faktiskt en av de få medier som har stannat på detta sätt under lång tid.
 
-As usages are evolving, more and more people are getting into podcasts: whether
-it is creators finding new ways to share their ideas, or listeners in the search
-for better content.
+I takt med att användningen utvecklas blir det fler och fler människor som engagerar sig i poddar: antingen är det skapare som hittar nya sätt att dela sina idéer, eller lyssnare som letar efter bättre innehåll.
 
-With podcasting becoming more widely used, some companies are trying to shift it
-towards a more controlled and centralized medium.
+Med podcasting som används alltmer försöker vissa företag att flytta den mot ett mer kontrollerat och centraliserat medium.
 
-Castopod was created in an effort to provide an open and sustainable alternative
-to hosting your podcasts, promoting decentralization to ensure that podcasters
-creativity can express itself.
+Castopod skapades för att erbjuda ett öppet och hållbart alternativ för att vara värd för dina poddar, och främjar decentralisering för att säkerställa att podcasters kreativitet kan uttryckas.
 
-This project is pushed by the open-source community, and specifically by the
-[Fediverse](https://fediverse.party/en/fediverse/) and
-[Podcasting 2.0](https://podcastindex.org/) movements.
+Detta projekt drivs av open source-gruppen, och specifikt av volontärerna inom [Fediverse](https://fediverse.party/en/fediverse/) och [Podcasting 2.0](https://podcastindex.org/).
 
 ## Jämförelse med andra lösningar
 
-We believe that a solution is not necessarily right for everyone, it highly
-depends on your needs. So, here are comparisons with other tools to help you to
-gauge whether Castopod is the right fit for&nbsp;you.
+Vi tror att ingen lösning är rätt för alla, det beror mycket på dina behov. Så här är jämförelser med andra verktyg för att hjälpa dig att avgöra om Castopod är rätt för dig.
 
 ### Castopod vs Wordpress
 
-Castopod is often referred to as "the Wordpress for podcasts" because of the
-similarities between the two. In some ways this is true. And actually, Castopod
-was greatly inspired by the Wordpress ecosystem, seeing the ease of adoption
-from the community and the number of websites running&nbsp;it.
+Castopod kallas ofta "Wordpress för podcasts" på grund av likheterna mellan de två. På vissa sätt är detta sant. Faktum är att Castopod har fått mycket inspiration av WordPress-ekosystemet, sett enkelheten att anamma det från samhället och antal webbplatser som kör&nbsp;det.
 
-Just like Wordpress, Castopod is free & open source, built using PHP with a
-MySQL database and is packaged in a way that you can easily install on most web
-servers.
+Precis som Wordpress är Castopod gratis och open source, byggt med PHP med en MySQL-databas och paketerat på ett sätt som gör att du enkelt kan installera det på de flesta webbservrar.
 
-Wordpress is a great way to create your website and extend it with plugins to
-get what you want. It is a full fledged CMS that helps you get any type of
-website online.
+Wordpress är ett bra sätt att skapa din webbplats och utöka den med plugins för att få det du vill ha. Det är ett fullfjädrat CMS som hjälper dig att få vilken typ av webbplats som helst online.
 
-On the other hand, Castopod is meant to address the podcasters needs
-specifically, focusing on podcasting, and nothing else. You don't need any
-plugin to get you started on your podcasting&nbsp;journey.
+Å andra sidan är Castopod avsett att hantera specifikt podcastvärdbehovet, genom att fokusera på podcasting och inget annat. Du behöver inga plugins för att komma igång med din podcast&nbsp;journey.
 
-This allows optimizing the processes specific to podcasting: ranging from the
-creation of your podcasts and the publication of new episodes all the way to
-broadcasting, marketing and analytics.
+Detta gör det möjligt att optimera processerna som är specifika för podcasting: från skapandet av dina poddar och publiceringen av nya avsnitt ända till sändning, marknadsföring och analys.
 
-Finally, depending on your needs, Wordpress and Castopod can even live side by
-side as they share the same requirements!
+Beroende på dina behov kan Wordpress och Castopod till och med leva sida vid sida, eftersom de delar samma krav!
 
 ### Castopod vs Funkwhale
 
-Funkwhale is a self-hosted, modern free and open-source music server. Just as
-Castopod, Funkwhale is on the fediverse, a decentralized social network allowing
-interoperability between the two.
+Funkwhale är en självhostad, modern fri och öppen musikserver. Precis som Castopod, är Funkwhale på fediverse, ett decentraliserat socialt nätverk som tillåter interoperabilitet mellan de två.
 
-Funkwhale was initially built around music. And later on, as the project
-evolved, the ability to host podcasts was introduced.
+Funkwhale byggdes ursprungligen runt musik. Och senare, när projektet utvecklades, introducerades möjligheten att vara värd för poddar.
 
-Unlike Funkwhale, Castopod has been designed and built around podcasting
-exclusively. This allows easier implementation for features related to the
-podcasting ecosystem, such as the podcasting 2.0 features (transcripts,
-chapters, locations, persons, …).
+Till skillnad från Funkwhale har Castopod utformats och byggts runt podcasting uteslutande. Detta gör att det är enklare att implementera funktioner som är relaterade till podcasting-ekosystemet, såsom podcasting 2.0-funktioner (transkriptioner, kapitel, platser, personer,...).
 
-So, you should probably use Funkwhale if you want to host your music, and use
-Castopod if you want to host your podcasts.
+Så du bör förmodligen använda Funkwhale om du vill hålla din musik, och använda Castopod om du vill hålla dina poddar.
 
-### Castopod vs andra podcast värdar
+### Castopod vs Andra podcastvärdar
 
-There are many solutions for you to host your podcasts, some of which are really
-great and [a lot of them](https://podcastindex.org/apps) are jumping into the
-Podcasting 2.0 wagon just like Castopod!
+Det finns många lösningar för dig att vara värd för dina poddar, varav några är riktigt bra och [många](https://podcastindex.org/apps) hoppar på podcasting 2.0 spårvagnen precis som Castopod!
 
-Each of these solutions differ from one another, you may compare with the
-[list of features](#features).
+Var och en av dessa lösningar skiljer sig från varandra, och du kan jämföra med [listan över funktioner](#features).
 
-That being said, there are two main differences with other podcasting solutions:
+Det sagt så finns det två huvudsakliga skillnader jämfört med andra podcastlösningar:
 
-- Castopod kan vara själv värd och är den enda lösningen som gör att du kan
-  hålla full kontroll över vad du producerar. Dessutom, eftersom det är öppen
-  källkod, kan du även anpassa det som du vill.
+- Castopod kan vara självhostat och är den enda lösningen som låter dig behålla full kontroll över vad du producerar. Å andra sidan, eftersom det är öppen källkod, har du möjligheten att modifiera det fritt.
 
-- Castopod är den enda lösningen som för närvarande integrerar både ett
-  decentraliserat socialt nätverk med ActivityPub samt många av podcasting 2.
-  funktioner, i hopp om att överbrygga gapet mellan de två.
+- Castopod är den enda lösningen som idag integrerar både ett decentraliserat socialt nätverk med ActivityPub och "Podcasting 2.0"-funktioner, vilket minskar klyftan mellan de två.
 
-## Hjälp till
+## Bidra
 
-Love Castopod and would like to help? Take a look at the following documentation
-to get you&nbsp;started.
+Älskar du Castopod och vill hjälpa till? Ta en titt på följande dokumentation för att komma igång. .
 
 ### Uppförandekod
 
-Castopod has adopted a Code of Conduct that we expect project participants to
-adhere to. Please read the
-[CODE_OF_CONDUCT manual](https://code.castopod.org/adaures/castopod/-/blob/beta/CODE_OF_CONDUCT.md)
-so that you can understand what actions will and will not be&nbsp;tolerated.
+Castopod har antagit en uppförandekod som vi förväntar oss att projektets deltagare följer. Läs 
+[Uppförandekoden](https://code.castopod.org/adaures/castopod/-/blob/beta/CODE_OF_CONDUCT.md)
+så att du kan förstå vilka handlingar som kommer att tolereras och inte.
 
-### Bidragande guide
+### Bidragsguide
 
-Read our [contributing guide](./contributing/guidelines.md) to learn about our
-development process, how to propose bugfixes and improvements, and how to build
-and test your changes to Castopod.
+Läs vår [bidragsguide](./contributing/guidelines.md) för att lära dig om vår utvecklingsprocess, hur du föreslår buggfixar och förbättringar, och hur du bygger och testar dina ändringar till Castopod.
 
-## Alla bidragsgivare ✨
+## Bidragsgivare ✨
 
-Thanks goes to these wonderful people
-([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+En stor tack går till dessa underbara personer
+([emoji-teckenförklaring](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -178,67 +126,10 @@ Thanks goes to these wonderful people
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/yassinedoghri"><img src="https://code.castopod.org/uploads/-/system/user/avatar/3/avatar.png?s=100" width="100px;" alt="Yassine Doghri"/><br /><sub><b>Yassine Doghri</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/commits/master" title="Code">💻</a> <a href="https://code.castopod.org/adaures/castopod/issues?author_username=yassinedoghri" title="Bug reports">🐛</a> <a href="https://code.castopod.org/adaures/castopod/commits/master" title="Documentation">📖</a> <a href="https://code.castopod.org/adaures/castopod/merge_requests?scope=all&state=all&approver_usernames[]=yassinedoghri" title="Reviewed Pull Requests">👀</a> <a href="#maintenance-yassinedoghri" title="Maintenance">🚧</a> <a href="#content-yassinedoghri" title="Content">🖋</a> <a href="#design-yassinedoghri" title="Design">🎨</a> <a href="#a11y-yassinedoghri" title="Accessibility">️️️️♿️</a> <a href="https://translate.castopod.org" title="Translation">🌍</a> <a href="#question-yassinedoghri" title="Answering Questions">💬</a> <a href="#mentoring-yassinedoghri" title="Mentoring">🧑‍🏫</a> <a href="#infra-yassinedoghri" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#ideas-yassinedoghri" title="Ideas, Planning, & Feedback">🤔</a> <a href="#projectManagement-yassinedoghri" title="Project Management">📆</a> <a href="https://blog.castopod.org/author/yassinedoghri/" title="Blogposts">📝</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://code.castopod.org/benjamin"><img src="https://code.castopod.org/uploads/-/system/user/avatar/2/avatar.png?s=100" width="100px;" alt="Benjamin Bellamy"/><br /><sub><b>Benjamin Bellamy</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/commits/master" title="Code">💻</a> <a href="https://code.castopod.org/adaures/castopod/issues?author_username=benjamin" title="Bug reports">🐛</a> <a href="https://code.castopod.org/adaures/castopod/merge_requests?scope=all&state=all&approver_usernames[]=benjamin" title="Reviewed Pull Requests">👀</a> <a href="#content-benjamin" title="Content">🖋</a> <a href="https://translate.castopod.org" title="Translation">🌍</a> <a href="#question-benjamin" title="Answering Questions">💬</a> <a href="#infra-benjamin" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#ideas-benjamin" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://blog.castopod.org/author/benjamin-bellamy/" title="Blogposts">📝</a> <a href="#projectManagement-benjamin" title="Project Management">📆</a> <a href="#talk-benjamin" title="Talks">📢</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/ola-hn"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="Ola Hneini"/><br /><sub><b>Ola Hneini</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/commits/master" title="Code">💻</a> <a href="https://code.castopod.org/adaures/castopod/merge_requests?scope=all&state=all&approver_usernames[]=ola" title="Reviewed Pull Requests">👀</a> <a href="https://code.castopod.org/adaures/castopod/commits/master" title="Documentation">📖</a> <a href="#maintenance-ola" title="Maintenance">🚧</a> <a href="#question-ola" title="Answering Questions">💬</a> <a href="#ideas-ola" title="Ideas, Planning, & Feedback">🤔</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://mamot.fr/@rdelaage"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="Romain de Laage"/><br /><sub><b>Romain de Laage</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/commits/master" title="Code">💻</a> <a href="#infra-rdelaage" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://code.castopod.org/adaures/castopod/commits/master" title="Documentation">📖</a> <a href="https://translate.castopod.org" title="Translation">🌍</a> <a href="#ideas-rdelaage" title="Ideas, Planning, & Feedback">🤔</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://twitter.com/lyonelbernard"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="Lyonel Bernard"/><br /><sub><b>Lyonel Bernard</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/issues?author_username=Lyonel" title="Bug reports">🐛</a> <a href="#question-Lyonel" title="Answering Questions">💬</a> <a href="#audio-Lyonel" title="Audio">🔊</a> <a href="#ideas-Lyonel" title="Ideas, Planning, & Feedback">🤔</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://www.crypticchameleon.com/"><img src="https://secure.gravatar.com/avatar/7c2a721b52d0763673a600e8f01bd745?s=80&d=identicon?s=100" width="100px;" alt="Christopher Lagonick-Weitzel"/><br /><sub><b>Christopher Lagonick-Weitzel</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/issues?author_username=ctlw83" title="Bug reports">🐛</a> <a href="#question-ctlw83" title="Answering Questions">💬</a> <a href="#audio-ctlw83" title="Audio">🔊</a> <a href="#ideas-ctlw83" title="Ideas, Planning, & Feedback">🤔</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://ernestoacosta.me/"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="Ernesto Acosta"/><br /><sub><b>Ernesto Acosta</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/issues?author_username=ernestoacostame" title="Bug reports">🐛</a> <a href="#audio-ernestoacostame" title="Audio">🔊</a> <a href="https://translate.castopod.org" title="Translation">🌍</a> <a href="#question-ernestoacostame" title="Answering Questions">💬</a> <a href="#ideas-ernestoacostame" title="Ideas, Planning, & Feedback">🤔</a></td>
-    </tr>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://code.castopod.org/Behel"><img src="https://secure.gravatar.com/avatar/ad63ee8ef8e3db8253d21e5012d2724f?s=80&d=identicon?s=100" width="100px;" alt="Bastien Luneteau"/><br /><sub><b>Bastien Luneteau</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/commits/master" title="Code">💻</a> <a href="https://code.castopod.org/adaures/castopod/issues?author_username=Behel" title="Bug reports">🐛</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://www.cecillie.fr/"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="Cécile Ricordeau"/><br /><sub><b>Cécile Ricordeau</b></sub></a><br /><a href="#design-cecillie" title="Design">🎨</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://code.castopod.org/PatrykMis"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="Patryk Miś"/><br /><sub><b>Patryk Miś</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://code.castopod.org/mspanc"><img src="https://secure.gravatar.com/avatar/eed8337939641eac5ad0b570bd6acf96?s=80&d=identicon?s=100" width="100px;" alt="Marcin Lewandowski"/><br /><sub><b>Marcin Lewandowski</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/issues?author_username=mspanc" title="Bug reports">🐛</a> <a href="#ideas-mspanc" title="Ideas, Planning, & Feedback">🤔</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://code.castopod.org/SJanik"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="Sebastian Janik"/><br /><sub><b>Sebastian Janik</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/commits/master" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://code.castopod.org/patryk"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="Patryk Karczmarczyk"/><br /><sub><b>Patryk Karczmarczyk</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/commits/master" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://code.castopod.org/ddenis"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="denis d"/><br /><sub><b>denis d</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/issues?author_username=ddenis" title="Bug reports">🐛</a> <a href="#ideas-ddenis" title="Ideas, Planning, & Feedback">🤔</a></td>
-    </tr>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://code.castopod.org/douglaskastle"><img src="https://secure.gravatar.com/avatar/b7e652ba4b6bcd440afa069e7f7bc9e6?s=80&d=identicon?s=100" width="100px;" alt="Douglas Kastle"/><br /><sub><b>Douglas Kastle</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/issues?author_username=douglaskastle" title="Bug reports">🐛</a> <a href="#ideas-douglaskastle" title="Ideas, Planning, & Feedback">🤔</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://code.castopod.org/cExplorer"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="cExplorer"/><br /><sub><b>cExplorer</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/issues?author_username=cExplorer" title="Bug reports">🐛</a> <a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://code.castopod.org/imacrea"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="ImaCrea"/><br /><sub><b>ImaCrea</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/issues?author_username=imacrea" title="Bug reports">🐛</a> <a href="#ideas-imacrea" title="Ideas, Planning, & Feedback">🤔</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://code.castopod.org/jonas"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="Jonas S"/><br /><sub><b>Jonas S</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/commits/master" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://code.castopod.org/yannL"><img src="https://secure.gravatar.com/avatar/9c46600ce566ec6d526370d8e104b1c8?s=80&d=identicon?s=100" width="100px;" alt="LEFEBVRE Yann"/><br /><sub><b>LEFEBVRE Yann</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/issues?author_username=yannL" title="Bug reports">🐛</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://code.castopod.org/spaetz"><img src="https://secure.gravatar.com/avatar/278e1af65e82993efd0ba7bbbacf6435?s=80&d=identicon?s=100" width="100px;" alt="Sebastian Späth"/><br /><sub><b>Sebastian Späth</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/issues?author_username=spaetz" title="Bug reports">🐛</a> <a href="#ideas-spaetz" title="Ideas, Planning, & Feedback">🤔</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://code.castopod.org/rocky"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="rocky III"/><br /><sub><b>rocky III</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/issues?author_username=rocky" title="Bug reports">🐛</a></td>
-    </tr>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://code.castopod.org/Regenpfeifer"><img src="https://code.castopod.org/uploads/-/system/user/avatar/103/avatar.png?s=100" width="100px;" alt="Hermann Josef Eckl"/><br /><sub><b>Hermann Josef Eckl</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/issues?author_username=Regenpfeifer" title="Bug reports">🐛</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://code.castopod.org/cyrilledel"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="Delhaye Cyrille"/><br /><sub><b>Delhaye Cyrille</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/issues?author_username=cyrilledel" title="Bug reports">🐛</a> <a href="#ideas-cyrilledel" title="Ideas, Planning, & Feedback">🤔</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://twitter.com/otetranome"><img src="https://code.castopod.org/uploads/-/system/user/avatar/113/avatar.png?s=100" width="100px;" alt="João Leandro"/><br /><sub><b>João Leandro</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a> <a href="#ideas-otetranome" title="Ideas, Planning, & Feedback">🤔</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://achouvardas.eu/"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="Angelos Chouvardas"/><br /><sub><b>Angelos Chouvardas</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://mastodon.fjerland.no/@eivind"><img src="https://mastodon.fjerland.no/system/accounts/avatars/107/769/768/295/192/222/original/e5c985fea6487dcb.jpg?s=100" width="100px;" alt="Eivind"/><br /><sub><b>Eivind</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://mastodon.fedi.bzh/@ewen"><img src="https://mastodon.fedi.bzh/system/accounts/avatars/000/000/002/original/6f387690a504ae46.jpg?s=100" width="100px;" alt="Ewen"/><br /><sub><b>Ewen</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a> <a href="#ideas-3wen" title="Ideas, Planning, & Feedback">🤔</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://crowdin.com/profile/forght"><img src="https://crowdin-static.downloads.crowdin.com/avatar/15073833/large/82d1e2e443a6df7edc43a7405dfeeb75_default.png?s=100" width="100px;" alt="forght"/><br /><sub><b>forght</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-    </tr>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://crowdin.com/profile/glottis0q"><img src="https://crowdin-static.downloads.crowdin.com/avatar/15209934/large/8b17ef6a7399f0b82a8198f87c224195.png?s=100" width="100px;" alt="glottis0q"/><br /><sub><b>glottis0q</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://mstdn.fr/@ButterflyOfFire"><img src="https://static.mstdn.fr/static/accounts/avatars/000/065/901/original/5908e93ad5447f15.png?s=100" width="100px;" alt="ButterflyOfFire"/><br /><sub><b>ButterflyOfFire</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/lil5"><img src="https://avatars.githubusercontent.com/u/17646836?v=4?s=100" width="100px;" alt="Lucian I. Last"/><br /><sub><b>Lucian I. Last</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://crowdin.com/profile/luuzviir"><img src="https://crowdin-static.downloads.crowdin.com/avatar/13166188/large/d03ab0abc7ce354b210d836955cd3805_default.png?s=100" width="100px;" alt="LuuzViir"/><br /><sub><b>LuuzViir</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://crowdin.com/profile/cthtc"><img src="https://crowdin-static.downloads.crowdin.com/avatar/15211502/large/ed0651060cb8474a9519b5168bd377c1_default.png?s=100" width="100px;" alt="CTHTC"/><br /><sub><b>CTHTC</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://crowdin.com/profile/retrograde"><img src="https://crowdin-static.downloads.crowdin.com/avatar/15021651/large/b10c4057f85bf4de49c7fdf01354ecde.jpeg?s=100" width="100px;" alt="Russian Retro"/><br /><sub><b>Russian Retro</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://crowdin.com/profile/mareklach"><img src="https://crowdin-static.downloads.crowdin.com/avatar/13572324/large/3eeba8d569c247ace33862bf4ef4748f.jpeg?s=100" width="100px;" alt="Marek L'ach"/><br /><sub><b>Marek L'ach</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-    </tr>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://crowdin.com/profile/gunchleoc"><img src="https://crowdin-static.downloads.crowdin.com/avatar/13043878/large/3223f7b606296a8b1c92c5de39c459a2_default.png?s=100" width="100px;" alt="GunChleoc"/><br /><sub><b>GunChleoc</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://crowdin.com/profile/gabisnow"><img src="https://crowdin-static.downloads.crowdin.com/avatar/15214858/large/5b083bdf9c9e9de67cc6ee72a6c8db18_default.png?s=100" width="100px;" alt="GabiSnow"/><br /><sub><b>GabiSnow</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://crowdin.com/profile/bendaha"><img src="https://crowdin-static.downloads.crowdin.com/avatar/15331656/large/cd92450d2c20202299fb3a0075903e20_default.png?s=100" width="100px;" alt="bendaha"/><br /><sub><b>bendaha</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://crowdin.com/profile/samuelroland"><img src="https://crowdin-static.downloads.crowdin.com/avatar/14980053/large/3e154a37d03d6e98ae402ed3f930f4f5.png?s=100" width="100px;" alt="Samuel Roland"/><br /><sub><b>Samuel Roland</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://dimitriregnier.net/"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="Dimitri Regnier"/><br /><sub><b>Dimitri Regnier</b></sub></a><br /><a href="#ideas-dimregnier" title="Ideas, Planning, & Feedback">🤔</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://im.irithys.com/@thy"><img src="https://crowdin-static.downloads.crowdin.com/avatar/15405614/large/3086461c47cce0a0c031925e5f943412.png?s=100" width="100px;" alt="irithys"/><br /><sub><b>irithys</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://twitter.com/caos30"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="Sergi"/><br /><sub><b>Sergi</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-    </tr>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://crowdin.com/profile/xosem"><img src="https://crowdin-static.downloads.crowdin.com/avatar/12617257/large/a201650da44fed28890b0e0d8477a663.jpg?s=100" width="100px;" alt="ghose (XoseM)"/><br /><sub><b>ghose (XoseM)</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://crowdin.com/profile/basen1982"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="Andreas Olsson"/><br /><sub><b>Andreas Olsson</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://crowdin.com/profile/leonfrom"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="leonfrom"/><br /><sub><b>leonfrom</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://crowdin.com/profile/agentcobra57"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="agentcobra"/><br /><sub><b>agentcobra</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://crowdin.com/profile/alephoto85"><img src="https://crowdin-static.downloads.crowdin.com/avatar/15094649/large/530391f54157af52ae33058ec15b0f99.jpg?s=100" width="100px;" alt="Alessandro"/><br /><sub><b>Alessandro</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://crowdin.com/profile/liimee"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="liimee"/><br /><sub><b>liimee</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ahmedsabouni"><img src="https://avatars.githubusercontent.com/u/74497842?v=4?s=100" width="100px;" alt="Ahmed Sabouni"/><br /><sub><b>Ahmed Sabouni</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
-    </tr>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/KrzysztofDomanczyk"><img src="https://avatars.githubusercontent.com/u/75178474?v=4?s=100" width="100px;" alt="KrzysztofDomanczyk"/><br /><sub><b>KrzysztofDomanczyk</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/commits/master" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ubermuda"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="Jérôme Jutteau"/><br /><sub><b>Jérôme Jutteau</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/commits/master" title="Code">💻</a> <a href="#infra-ubermuda" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://code.castopod.org/adaures/castopod/commits/master" title="Documentation">📖</a> <a href="https://translate.castopod.org" title="Translation">🌍</a> <a href="#ideas-ubermuda" title="Ideas, Planning, & Feedback">🤔</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/luca-wlodarz"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="Luca Wlodarz"/><br /><sub><b>Luca Wlodarz</b></sub></a><br /><a href="https://translate.castopod.org" title="Translation">🌍</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://code.castopod.org/jmjurado"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="Javier M. Jurado"/><br /><sub><b>Javier M. Jurado</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/issues?author_username=jmjurado" title="Bug reports">🐛</a> <a href="#ideas-jmjurado" title="Ideas, Planning, & Feedback">🤔</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://code.castopod.org/ajh992"><img src="https://castopod.org/assets/images/castopod-avatar.jpg?s=100" width="100px;" alt="AJ Hereford"/><br /><sub><b>AJ Hereford</b></sub></a><br /><a href="https://code.castopod.org/adaures/castopod/issues?author_username=ajh992" title="Bug reports">🐛</a></td>
     </tr>
   </tbody>
 </table>
@@ -248,32 +139,25 @@ Thanks goes to these wonderful people
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the
-[all-contributors](https://github.com/all-contributors/all-contributors)
-specification. Contributions of any kind welcome!
+Detta projekt följer [all-contributors](https://github.com/all-contributors/all-contributors) specifikationen. Bidrag av alla slag välkomnas!
 
-## Kontakt
+## Kontakta oss
 
-You may reach us for help or ask any question you have on:
+Du kan nå oss för hjälp eller om du har några frågor på:
 
-- [Discord](https://castopod.org/discord) (för direkt interaktion med
-  -utvecklare och gemenskapen)
-- [Ärendespårare](https://code.castopod.org/adaures/castopod/-/issues) (för
-  funktionsförfrågningar & felrapporter)
+- [Discord](https://castopod.org/discord) (för att prata direkt med utvecklarna och gemenskapen)
+- [Ärendehantering](https://code.castopod.org/adaures/castopod/-/issues) (för begäran om ny funktion eller felrapporter)
 
-Alternatively, you can follow us on social media platforms to get news about
-Castopod:
+Alternativt kan du följa oss på sociala medieplattformar för att få nyheter om Castopod:
 
-- [podlibre.social](https://podlibre.social/@Castopod) (Mastodon instance)
+- [podlibre.social](https://podlibre.social/@Castopod) (Mastodon-instans)
 - [Twitter](https://twitter.com/castopod)
 - [LinkedIn](https://linkedin.com/company/castopod)
 - [Facebook](https://www.facebook.com/castopod)
 
 ## Sponsorer
 
-The ongoing development of Castopod is made possible with the support of its
-backers. If you'd like to help, please consider
-[sponsoring Castopod's development](https://opencollective.com/castopod/contribute).
+Den pågående utvecklingen av Castopod görs möjlig tack vare våra sponsorer. Om du vill hjälpa till, överväg att [stödja Castopods utveckling](https://opencollective.com/castopod/contribute).
 
 <div class="flex flex-wrap gap-x-16 gap-y-8">
   <a href="https://adaures.com/" target="_blank" rel="noopener noreferrer"><img src="/images/sponsors/adaures.svg" alt="Ad Aures Logo" class="h-16" /></a>

@@ -5,221 +5,121 @@ sidebarDepth: 3
 
 # ¿Cómo instalar Castopod?
 
-Castopod está pensado para ser fácil de instalar. Ya sea usando un alojamiento
-dedicado o compartido, puedes instalarlo en la mayoría de servidores web
-compatibles con PHP-MySQL.
+Castopod ha sido diseñado para ser fácil de instalar. Ya sea que estés utilizando un alojamiento dedicado o compartido, puedes instalarlo en la mayoría de los servidores web compatibles con PHP-MySQL.
 
 ::: tip Nota
 
 ¡Hemos publicado imágenes oficiales de Docker para Castopod!
 
-Si prefieres usar Docker, puedes saltarte esto e ir directamente a la
-[documentación sobre docker](./docker.md) para Castopod.
+Si prefieres utilizar Docker, puedes omitir esta parte e ir directamente a la [documentación de Docker](./docker.md) para Castopod.
 
 :::
 
-## Requisitos
+## Requisitos previos
 
-- PHP v8.1 only
-- MySQL versión 5.7 o superior o MariaDB versión 10.2 o superior
-- Soporte HTTPS
-- An [ntp-synced clock](https://wiki.debian.org/NTP) to validate federation's
-  incoming requests
+- PHP v8.1 solamente
+- Versión de MySQL 5.7 o superior o versión de MariaDB 10.2 o superior
+- Soporte de HTTPS
+- Un [reloj sincronizado con NTP](https://wiki.debian.org/NTP) para validar las solicitudes entrantes de federación
 
-### PHP v8.1 only
+### PHP v8.1 solamente
 
-PHP version 8.1 is required, with the following extensions installed:
+Se requiere la versión 8.1 de PHP, con las siguientes extensiones instaladas:
 
-- [intl](https://php.net/manual/en/intl.requirements.php)
-- [libcurl](https://php.net/manual/en/curl.requirements.php)
-- [mbstring](https://php.net/manual/en/mbstring.installation.php)
-- [gd](https://www.php.net/manual/en/image.installation.php) con librerias
-  **JPEG**, **PNG** y **WEBP**.
-- [exif](https://www.php.net/manual/en/exif.installation.php)
+- [intl](https://www.php.net/manual/fr/intl.requirements.php)
+- [libcurl](https://www.php.net/manual/fr/curl.requirements.php)
+- [mbstring](https://www.php.net/manual/fr/mbstring.installation.php)
+- [gd](https://www.php.net/manual/en/image.installation.php) con bibliotecas **JPEG**, **PNG** y **WEBP**.
+- [exif](https://www.php.net/manual/fr/exif.installation.php)
 
-Además, asegúrate de que las siguientes extensiones están habilitadas en tu PHP:
+Además, asegúrate de que las siguientes extensiones estén activadas en tu PHP:
 
-- json (habilitada por defecto - no la desactives)
-- xml (habilitada por defecto - no la desactives)
-- [mysqlnd](https://php.net/manual/en/mysqlnd.install.php)
+- json (activado por defecto - no lo desactives)
+- xml (activado por defecto - no lo desactives)
+- [mysqlnd](https://www.php.net/manual/fr/mysqlnd.install.php)
 
 ### Base de datos compatible con MySQL
 
-> Se recomienda usar [MariaDB](https://mariadb.org).
+> Recomendamos utilizar [MariaDB](https://mariadb.org).
 
-::: warning Alerta
+::: warning Advertencia
 
-Castopod solo funciona con base de datos compatibles con MySQL 5.7 o superior.
-No funcionará por ejemplo con la version previa MySQL v5.6, ya que su vida útil
-terminó el 5 de febrero de 2021.
+Castopod solo funciona con bases de datos MySQL 5.7 o versiones más recientes. Las versiones 5.6 (cuyo soporte finalizó el 5 de febrero de 2021) o anteriores de MySQL no funcionarán.
 
 :::
 
-Necesitarás la dirección/nombre del servidor (hostname), el nombre de la base de
-datos, el usuario y la contraseña para completar el proceso de instalación. Si
-no cuentas con esta información, contacta con el administrador de tu servidor.
+Necesitarás el nombre de host del servidor, el nombre de la base de datos, el nombre de usuario y la contraseña para completar el proceso de instalación. Si no tienes esta información, contacta a tu administrador.
 
-#### Privilegios
+#### Permisos de acceso
 
-El usuario debe tener al menos estos privilegios en la base de datos para que
-Castopod funcione: `CREATE`, `ALTER`, `DELETE`, `EXECUTE`, `INDEX`, `INSERT`,
-`SELECT`, `UPDATE`, `REFERENCES`, `CREATE VIEW`.
+El usuario debe tener al menos los siguientes permisos de acceso a la base de datos para que Castopod funcione: `CREATE`, `ALTER`, `DELETE`, `EXECUTE`, `INDEX`,`INSERT`, `SELECT`, `UPDATE`,`REFERENCES`, `CREATE VIEW`.
 
-### (Opcional) FFmpeg v4.1.8 o superior para poder generar clips de vídeo (recortes de vídeo)
+### (Opcional) FFmpeg v4.1.8 o superior para clips de vídeo
 
-Es necesario tener instalado [FFmpeg](https://www.ffmpeg.org/) versión 4.1.8 o
-superior si desea generar recorte de vídeos. Se debe instalar las siguientes
-extensiones:
+Se requiere [FFmpeg](https://www.ffmpeg.org/) versión 4.1.8 o superior si deseas generar Clips de Vídeo. Deben estar instaladas las siguientes extensiones:
 
-- Librería **FreeType 2** para
-  [gd](https://www.php.net/manual/en/image.installation.php).
+- Biblioteca **FreeType 2** para [gd](https://www.php.net/manual/en/image.installation.php).
 
 ### (Opcional) Otras recomendaciones
 
-- Redis para mejores rendimientos de caché.
-- CDN para almacenamiento en caché de archivos estáticos y mejores rendimientos.
-- Pasarela de correo para recuperación de contraseñas olvidadas.
+- Redis para un mejor rendimiento del caché.
+- CDN para la caché de archivos estáticos y un mejor rendimiento.
+- Pasarela de correo electrónico para contraseñas olvidadas.
 
 ## Instrucciones de instalación
 
-### Pre-requisitos
+### Requisitos previos
 
-0. Consigue un servidor web que cuente con todos los [requisitos](#requirements)
-   recomendados.
-1. Crea una base de datos MySQL para Castopod con un usuario que tenga acceso y
-   privilegios de modificación (para más información, ver
-   [base de datos compatible con MySQL](#mysql-compatible-database)).
-2. Activa HTTPS en tu dominio web mediante un _certificado SSL_.
-3. Descarga y descomprime en tu servidor la última versión de
-   [Castopod](https://castopod.org/), si aún no lo has hecho.
-   - ⚠️ Edita la configuración de tu servidor para que el "document root" sea la
-     subcarpeta `castopod/public/`.
-4. Add **cron tasks** on your web server for various background processes
-   (replace the paths accordingly):
+0. Obtén un servidor web con [los requisitos previos](#requisitos) instalados.
+1. Crea una base de datos MySQL para Castopod con un usuario que tenga los permisos de acceso y modificación (para obtener más información, consulta [Base de datos compatible con MySQL](#base-de-datos-compatible-con-mysql)).
+2. Activa HTTPS en tu dominio con un _certificado SSL_.
+3. Descarga y descomprime el último [paquete de Castopod](https://castopod.org/) en el servidor web si aún no lo has hecho.
+   - ⚠️ Haz que la raíz del documento del servidor web apunte a la subcarpeta `public/` de la carpeta `castopod`.
+4. Agrega **tareas programadas** a tu servidor web para varios procesos en segundo plano (reemplaza las rutas según corresponda):
 
    ```bash
-      * * * * * /path/to/php /path/to/castopod/spark tasks:run >> /dev/null 2>&1
+      * * * * * /ruta/hacia/php /ruta/hacia/castopod/spark tasks:run >> /dev/null 2>&1
    ```
 
-   **Note** - If you do not add this cron task, the following Castopod features
-   will not work:
+   **Nota** - Si no añades esta tarea programada, las siguientes características de Castopod no funcionarán:
 
-   - Importing a podcast from an existing RSS feed
-   - Broadcasting social activities to your followers in the fediverse
-   - Broadcasting episodes to open hubs using
-     [WebSub](https://en.wikipedia.org/wiki/WebSub)
-   - Generating video clips -
-     [requires FFmpeg](#optional-ffmpeg-v418-or-higher-for-video-clips)
+   - Importar un podcast desde un feed RSS existente
+   - Transmitir actividades sociales a tus seguidores en el federado
+   - Transmitir episodios a hubs abiertos utilizando [WebSub](https://en.wikipedia.org/wiki/WebSub)
+   - Generación de clips de vídeo - [requiere FFmpeg](#opcional-ffmpeg-v418-o-superior-para-clips-de-v%C3%ADdeo)
 
-### (recomendado) Asistente web de instalación
+### (Método recomendado) Asistente de instalación
 
-1. Ejecuta el script de instalación de Castopod visitando en tu navegador web
-   esta dirección: `https://tu_nombre_de_dominio.com/cp-install`
-2. Sigue las instrucciones en pantalla.
-3. ¡Empieza a hacer podcasting!
+1. Ejecuta el script de instalación de Castopod visitando la página de Asistente de Instalación (`https://tu_nombre_de_dominio.com/cp-install`) en tu navegador web favorito.
+2. Sigue las instrucciones que se muestran.
+3. ¡Comienza a hacer podcast!
 
-::: info Nota
+:::info Nota
 
-El script de instalación crea un archivo `.env` en la raíz de castopod. If you
-cannot go through the install wizard, you can create and edit the `.env` file
-manually based on the `.env.example` file.
+El script de instalación crea un archivo `.env` en la raíz del paquete. Si no puedes usar el asistente de instalación, puedes crear y editar manualmente el archivo `.env` basándote en el archivo `.env.example`.
 
 :::
 
-### Configuración de Correo Electrónico/SMTP
+### Configuración de correo electrónico/SMTP
 
-La configuración del correo electrónico es necesaria para que algunas
-características funcionen correctamente (por ejemplo, recuperar su contraseña
-olvidada, enviando instrucciones a los suscriptores premium, …)
+La configuración de correo electrónico es necesaria para que algunas características funcionen correctamente (por ejemplo, recuperar tu contraseña olvidada, enviar instrucciones a suscriptores premium, ...)
 
-Puedes añadir tu configuración de correo electrónico en el archivo `.env` de tu
-instancia así:
+Puedes agregar la configuración de correo electrónico en el archivo `.env` de tu instancia de la siguiente manera:
 
 ```ini
 # […]
 
-email.fromEmail="your_email_address"
-email.SMTPHost="your_smtp_host"
-email.SMTPUser="your_smtp_user"
-email.SMTPPass="your_smtp_password"
+email.fromEmail="tu_dirección_de_correo_electrónico"
+email.SMTPHost="tu_host_smtp"
+email.SMTPUser="tu_usuario_smtp"
+email.SMTPPass="tu_contraseña_smtp"
 ```
 
-#### Opciones de configuración de email
 
-| Nombre de la variable | Tipo                 | Predeterminado |
-| --------------------- | -------------------- | -------------- |
-| **`fromEmail`**       | string               | `undefined`    |
-| **`fromName`**        | string               | `"Castopod"`   |
-| **`SMTPHost`**        | string               | `undefined`    |
-| **`SMTPUser`**        | string               | `undefined`    |
-| **`SMTPPass`**        | string               | `undefined`    |
-| **`SMTPPort`**        | number               | `25`           |
-| **`SMTPCrypto`**      | [`"tls"` or `"ssl"`] | `"tls"`        |
+#### Opciones de configuración de correo electrónico
 
-### Media storage
-
-By default, files are saved to the `public/media` folder using the file system.
-If you need to relocate the `media` folder to a different location, you can
-specify it in your `.env` file as shown below:
-
-```ini
-# […]
-
-media.root="media"
-media.storage="/mnt/storage"
-```
-
-In this example, the files will be saved to the /mnt/storage/media folder. Make
-sure to also update your web server configuration to reflect this change.
-
-### S3
-
-If you prefer storing your media files on an S3 compatible storage, you may
-specify it in your `.env`:
-
-```ini
-# […]
-
-media.fileManager="s3"
-media.s3.endpoint="your_s3_host"
-media.s3.key="your_s3_key"
-media.s3.secret="your_s3_secret"
-media.s3.region="your_s3_region"
-```
-
-#### S3 config options
-
-| Nombre de variable      | Type    | Default     |
-| ----------------------- | ------- | ----------- |
-| **`endpoint`**          | string  | `undefined` |
-| **`key`**               | string  | `undefined` |
-| **`secret`**            | string  | `undefined` |
-| **`region`**            | string  | `undefined` |
-| **`bucket`**            | string  | `castopod`  |
-| **`protocol`**          | number  | `undefined` |
-| **`pathStyleEndpoint`** | boolean | `false`     |
-| **`keyPrefix`**         | string  | `undefined` |
-
-## Paquetes de la comunidad
-
-If you don't want to bother with installing Castopod manually, you may use one
-of the packages created and maintained by the open-source community.
-
-### Install with YunoHost
-
-[YunoHost](https://yunohost.org/) is a distribution based on Debian GNU/Linux
-made up of free and open-source software packages. It manages the hardships of
-self-hosting for you.
-
-<div class="flex flex-wrap items-center gap-4">
-
-<a href="https://install-app.yunohost.org/?app=castopod" target="_blank" rel="noopener noreferrer">
-   <img src="https://install-app.yunohost.org/install-with-yunohost.svg" alt="Instalar Castopod con YunoHost." class="align-middle" />
-</a>
-
-<a href="https://github.com/YunoHost-Apps/castopod_ynh" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-[.3rem] mx-auto font-semibold text-center text-black rounded-md gap-x-1 border-2 border-solid border-[#333] hover:no-underline hover:bg-gray-100"><svg
-   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em"
-   class="text-xl"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 6.84 9.49c.5.09.69-.21.69-.48l-.02-1.86c-2.51.46-3.16-.61-3.36-1.18-.11-.28-.6-1.17-1.02-1.4-.35-.2-.85-.66-.02-.67.79-.01 1.35.72 1.54 1.02.9 1.52 2.34 1.1 2.91.83a2.1 2.1 0 0 1 .64-1.34c-2.22-.25-4.55-1.11-4.55-4.94A3.9 3.9 0 0 1 6.68 8.8a3.6 3.6 0 0 1 .1-2.65s.83-.27 2.75 1.02a9.28 9.28 0 0 1 2.5-.34c.85 0 1.7.12 2.5.34 1.9-1.3 2.75-1.02 2.75-1.02.54 1.37.2 2.4.1 2.65.63.7 1.02 1.58 1.02 2.68 0 3.84-2.34 4.7-4.56 4.94.36.31.67.91.67 1.85l-.01 2.75c0 .26.19.58.69.48A10.02 10.02 0 0 0 22 12 10 10 0 0 0 12 2z"/></svg>Github
-Repo</a>
-
-</div>
+| Nombre de variable | Tipo                 | Valor por defecto |
+| ----------------- | -------------------- | ----------------- |
+| **`fromEmail`**   | string               | `undefined`       |
+| **`fromName`**    | string               | `"Castopod"`      |
+| **`SMTPHost

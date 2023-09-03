@@ -1,154 +1,147 @@
 ---
-title: Guidelines
+title: Richtlijnen
 ---
 
-# Contributing to Castopod
+# Bijdragen aan Castopod
 
-Love Castopod and want to help? Thanks so much, there's something to do for
-everybody!
+Hou je van Castopod en wil je helpen? Bedankt, er is voor iedereen iets te doen!
 
-Please take a moment to review this document in order to make the contribution
-process easy and effective for everyone involved.
+Neem even de tijd om dit document door te nemen om het bijdrageproces makkelijk en effectief te maken voor alle betrokkenen.
 
-Following these guidelines helps to communicate that you respect the time of the
-developers managing and developing this open source project. In return, they
-should reciprocate that respect in addressing your issue or assessing patches
-and features.
+Het volgen van deze richtlijnen laat zien dat je respect hebt voor de tijd van de ontwikkelaars die dit open source project beheren en ontwikkelen. Zij zouden dat respect moeten beantwoorden door zich bezig te houden met jouw probleem of het beoordelen van patches en functies.
 
-::: info Note
+::: info Opmerking
 
-**Any** contribution made on a repository other than
-[the original repository](https://code.castopod.org/adaures/castopod) will not
-be accepted.
+**Elke** bijdrage op een repository anders dan
+[de oorspronkelijke repository](https://code.castopod.org/adaures/castopod) zal niet
+geaccepteerd worden.
 
 :::
 
-## Using the issue tracker
+## Gebruik van de issue tracker
 
-The [issue tracker](https://code.castopod.org/adaures/castopod/-/issues) is the
-preferred channel for [bug reports](#bug-reports),
-[features requests](#feature-requests) and
-[submitting pull requests](#pull-requests).
+Het [issue tracker](https://code.castopod.org/adaures/castopod/-/issues) is het
+voorkeurskanaal voor [bugmeldingen](#bugmeldingen),
+[verzoek om functies](#functieverzoeken) en
+[het indienen van pull-aanvragen](#pull-aanvragen).
 
-## ⚠️ Security issues and vulnerabilities
+## ⚠️ Veiligheidsproblemen en kwetsbaarheden
 
-If you encounter any security issue or vulnerability in the Castopod source,
-please contact us directly by email at
+Als je een veiligheidsprobleem of kwetsbaarheid tegenkomt in de Castopod broncode,
+neem dan direct contact met ons op via e-mail op
 [security@castopod.org](mailto:security@castopod.org)
 
-## Bug reports
+## Bugmeldingen
 
-A bug is a _demonstrable problem_ that is caused by the code in the repository.
-Good bug reports are extremely helpful - thank you!
+Een bug is een _aantoonbaar probleem_ dat wordt veroorzaakt door de code in de repository.
+Goede bugmeldingen zijn erg nuttig - bedankt!
 
-Guidelines for bug reports:
+Richtlijnen voor bugmeldingen:
 
-1. **Use the issue search** &mdash; check if the issue has already been
-   reported.
+1. **Gebruik de probleemzoeker** &mdash; controleer of het probleem al
+   gemeld is.
 
-2. **Check if the issue has been fixed** &mdash; try to reproduce it using the
-   latest `main` branch in the repository.
+2. **Controleer of het probleem is opgelost** &mdash; probeer het te reproduceren met behulp van de
+   laatste versie van de `main` branch in de repository.
 
-3. **Isolate the problem** &mdash; ideally create a
-   [reduced test case](https://css-tricks.com/reduced-test-cases/) and a live
-   example.
+3. **Isoleer het probleem** &mdash; creëer idealiter een
+   [gereduceerd testgeval](https://css-tricks.com/reduced-test-cases/) en een live
+   voorbeeld.
 
-A good bug report shouldn't leave others needing to chase you up for more
-information. Please try to be as detailed as possible in your report. What is
-your environment? What steps will reproduce the issue? What browser(s) and OS
-experience the problem? What would you expect to be the outcome? All these
-details will help people to fix any potential bugs.
+Een goede bugmelding zou anderen niet moeten dwingen om je achterna te gaan voor meer
+informatie. Probeer alsjeblieft zo gedetailleerd mogelijk te zijn in jouw rapport. Wat is
+jouw omgeving? Welke stappen zullen het probleem reproduceren? Welke browser(s) en besturingssytemen
+ondervinden het probleem? Wat zou je verwachten als resultaat? Al deze
+details zullen mensen helpen om eventuele fouten op te lossen.
 
-> [Issue templates](https://docs.gitlab.com/ee/user/project/description_templates.html#using-the-templates)
-> have been created for this project. You may use them to help you follow those
-> guidelines.
+> [Issue sjablonen](https://docs.gitlab.com/ee/user/project/description_templates.html#using-the-templates)
+> zijn gemaakt voor dit project. Je kunt ze gebruiken om je te helpen deze richtlijnen te volgen.
 
-## Feature requests
+## Functieverzoeken
 
-Feature requests are welcome. But take a moment to find out whether your idea
-fits with the scope and aims of the project. It's up to _you_ to make a strong
-case to convince the project's developers of the merits of this feature. Please
-provide as much detail and context as possible.
+Functieverzoeken zijn welkom. Maar neem even de tijd om te controleren of jouw idee
+past binnen de reikwijdte en doelstellingen van het project. Het is aan _jou_ om een sterke
+zaak te maken om de ontwikkelaars van het project te overtuigen van de waarde van deze functie. Geef alsjeblieft
+zoveel mogelijk details en context.
 
-## Pull requests
+## Pull-aanvragen
 
-Good pull requests - patches, improvements, new features - are a fantastic help.
-They should remain focused in scope and avoid containing unrelated commits.
+Goede pull-aanvragen - patches, verbeteringen, nieuwe functies - zijn fantastisch. Ze moeten gericht blijven en geen ongerelateerde commits bevatten.
 
-**Please ask first** before embarking on any significant pull request (e.g.
-implementing features, refactoring code, porting to a different language),
-otherwise you risk spending a lot of time working on something that the
-project's developers might not want to merge into the project.
+**Vraag alsjeblieft eerst om toestemming** voordat je aan een significante pull-aanvraag begint (bijvoorbeeld
+het implementeren van functies, code refactoring, porteren naar een andere taal),
+anders loop je het risico veel tijd te besteden aan iets dat de
+ontwikkelaars van het project mogelijk niet willen samenvoegen.
 
-Please adhere to the coding conventions used throughout a project (indentation,
-accurate comments, etc.) and any other requirements (such as test coverage).
+Houd je alsjeblieft aan de coderingsconventies die door het project worden gebruikt (inspringing,
+nauwkeurige opmerkingen, etc.) en aan andere vereisten (zoals testdekking).
 
-Adhering to the following process is the best way to get your work included in
-the project:
+Het volgen van het volgende proces is de beste manier om ervoor te zorgen dat jouw werk wordt opgenomen.
+in het project:
 
-1. [Fork](https://docs.gitlab.com/ee/gitlab-basics/fork-project.html) the
-   project, clone your fork, and configure the remotes:
+1. [Fork](https://docs.gitlab.com/ee/gitlab-basics/fork-project.html) het
+   project, kloon je fork en configureer de remotes:
 
 ```bash
-# Clone your fork of the repo into the current directory
-git clone https://code.castopod.org/<your-username>/castopod.git
+# Kloon je repositoryfork naar de huidige map
+git clone https://code.castopod.org/<jouw-gebruikersnaam>/castopod.git
 
-# Navigate to the newly cloned directory
+# Navigeer naar de nieuw gekloonde map
 cd castopod
 
-# Assign the original repo to a remote called "upstream"
+# Koppel de originele repository aan een remote genaamd "upstream"
 git remote add upstream https://code.castopod.org/adaures/castopod.git
 ```
 
-2. If you cloned a while ago, get the latest changes from upstream:
+2. Als je al een tijdje geleden hebt gekloond, haal je de nieuwste wijzigingen op van upstream:
 
 ```bash
 git checkout main
 git pull upstream main
 ```
 
-3. Create a new topic branch (off the `main` branch) to contain your feature,
-   change, or fix:
+3. Maak een nieuwe onderwerp-branch (van de `main` branch) om jouw functie,
+   wijziging of oplossing in op te nemen:
 
 ```bash
-git checkout -b <topic-branch-name>
+git checkout -b <onderwerp-branch-naam>
 ```
 
-4. Commit your changes in logical chunks. Please adhere to these
-   [git commit message guidelines](https://conventionalcommits.org/) or your
-   code is unlikely be merged into the main project. Use Git's
-   [interactive rebase](https://help.github.com/articles/about-git-rebase/)
-   feature to tidy up your commits before making them public.
+4. Commit jouw wijzigingen in logische delen. Houd je alsjeblieft aan deze
+   [richtlijnen voor git commits](https://conventionalcommits.org/) anders zal jouw
+   code waarschijnlijk niet worden samengevoegd met het hoofdproject. Gebruik Git's
+   [interactieve rebase](https://help.github.com/articles/about-git-rebase/)
+   functie om jouw commits op te schonen voordat je ze openbaar maakt.
 
-5. Locally merge (or rebase) the upstream dev branch into your topic branch:
+5. Combineer lokaal (met behulp van merge of rebase) de upstream-ontwikkelingsbranch met jouw onderwerp-branch:
 
 ```bash
 git pull [--rebase] upstream main
 ```
 
-6. Push your topic branch up to your fork:
+6. Push jouw onderwerp-branch naar jouw fork:
 
 ```bash
-git push origin <topic-branch-name>
+git push origin <onderwerp-branch-naam>
 ```
 
-7. [Open a Pull Request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html#new-merge-request-from-a-fork)
-   with a clear title and description.
+7. [Open een pull-aanvraag](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html#new-merge-request-from-a-fork)
+   met een duidelijke titel en beschrijving.
 
-**IMPORTANT**: By submitting a patch, you agree to allow the project owners to
-license your work under the terms of the
-[GNU AGPLv3](https://code.castopod.org/adaures/castopod/-/blob/main/LICENSE).
+**BELANGRIJK**: Door een patch in te dienen, stem je ermee in dat de eigenaren van het project
+jouw werk onder de voorwaarden van de
+[GNU AGPLv3](https://code.castopod.org/adaures/castopod/-/blob/main/LICENSE) kunnen licenseren.
 
-## Collaborating guidelines
+## Richtlijnen voor samenwerking
 
-There are few basic rules to ensure high quality of the project:
+Er zijn een paar basisregels om de kwaliteit van het project te waarborgen:
 
-- Before merging, a PR requires at least two approvals from the collaborators
-  unless it's an architectural change, a large feature, etc. If it is, then at
-  least 50% of the core team have to agree to merge it, with every team member
-  having a full veto right. (i.e. every single one can block any PR)
-- A PR should remain open for at least two days before merging (does not apply
-  for trivial contributions like fixing a typo). This way everyone has enough
-  time to look into it.
+- Voor het samenvoegen van een PR zijn ten minste twee goedkeuringen van de samenwerkers
+  vereist, tenzij het om een architecturale wijziging, een grote functie, etc. gaat. In dat geval moet
+  minstens 50% van het kernteam akkoord gaan met het samenvoegen, waarbij elk teamlid
+  een volledig vetorecht heeft. (d.w.z. dat iedereen elke PR kan blokkeren)
+- Een PR moet minstens twee dagen open blijven voordat het wordt samengevoegd (geldt niet
+  voor triviale bijdragen zoals het corrigeren van een typefout). Op deze manier heeft iedereen voldoende
+  tijd om ernaar te kijken.
 
-You are always welcome to discuss and propose improvements to this guideline.
+Je bent altijd welkom om deze richtlijn te bespreken en verbeteringen voor te stellen.

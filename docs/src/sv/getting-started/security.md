@@ -4,20 +4,16 @@ title: Säkerhet
 
 # Säkerhetsfrågor
 
-Castopod är byggt ovanpå [CodeIgniter4](https://codeigniter.com/), ett PHP
-ramverk som uppmuntrar
-[goda säkerhetsmetoder](https://codeigniter.com/user_guide/concepts/security.html).
+Castopod utvecklas med [CodeIgniter4](https://codeigniter.com/), ett PHP-ramverk som främjar
+[goda säkerhetspraxis](https://codeigniter.com/user_guide/concepts/security.html).
 
-För att maximera din instans säkerhet och förhindra alla skadliga attacker, vi
-rekommenderar att du uppdaterar alla dina Castopod-filer behörigheter efter
-installation eller uppdateringar (för att undvika eventuella föregående
-tillståndsfel):
+För att säkerställa bästa möjliga säkerhet för din instans och för att undvika skadliga attacker, rekommenderar vi att du uppdaterar filbehörigheterna för Castopod efter installationen och varje uppdatering (och undviker felaktiga åtkomsträttigheter till filer):
 
-- `writable/` mapp måste vara **läsbar** och **skrivbar**.
-- `public/media/` mapp måste vara **läsbar** och **skrivbar**.
-- någon annan fil måste vara inställd på **readonly**.
+- Mappen `writable/` bör vara åtkomlig för **läsning** och **skrivning**.
+- Mappen `public/media/` bör vara åtkomlig för **läsning** och **skrivning**.
+- Alla andra filer bör vara åtkomliga endast för **läsning**.
 
-Till exempel, om du använder Apache eller NGINX med Ubuntu kan du göra följande:
+Till exempel, om du använder Apache eller NGINX med Ubuntu, kan du köra följande kommandon:
 
 ```bash
 sudo chown -R root:root /path/to/castopod

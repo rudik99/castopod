@@ -1,26 +1,21 @@
 ---
-title: Security
+title: Sicurezza
 ---
 
-# Security concerns
+# Domande di sicurezza
 
-Castopod is built on top of [CodeIgniter4](https://codeigniter.com/), a PHP
-framework that encourages
-[good security practices](https://codeigniter.com/user_guide/concepts/security.html).
+Castopod è sviluppato su [CodeIgniter4](https://codeigniter.com/), un framework PHP che promuove [buone pratiche di sicurezza](https://codeigniter.com/user_guide/concepts/security.html).
 
-To maximize your instance's safety and prevent any malicious attack, we
-recommend you update all your Castopod files permissions after installation or
-updates (to avoid any prior permission error):
+Per garantire la massima sicurezza della tua applicazione e prevenire attacchi malevoli, ti consigliamo di aggiornare le autorizzazioni dei file di Castopod dopo l'installazione e ogni aggiornamento (evitando errori di accesso ai file):
 
-- `writable/` folder must be **readable** and **writable**.
-- `public/media/` folder must be **readable** and **writable**.
-- any other file must be set to **readonly**.
+- La cartella `writable/` deve essere accessibile in **lettura** e **scrittura**.
+- La cartella `public/media/` deve essere accessibile in **lettura** e **scrittura**.
+- Qualsiasi altro file deve essere accessibile in **sola lettura**.
 
-For instance, if you are using Apache or NGINX with Ubuntu you may do the
-following:
+Ad esempio, se stai utilizzando Apache o NGINX con Ubuntu, puoi eseguire i seguenti comandi:
 
 ```bash
-sudo chown -R root:root /path/to/castopod
-sudo chown -R www-data:www-data /path/to/castopod/writable
-sudo chown -R www-data:www-data /path/to/castopod/public/media
+sudo chown -R root:root /percorso/di/castopod
+sudo chown -R www-data:www-data /percorso/di/castopod/writable
+sudo chown -R www-data:www-data /percorso/di/castopod/public/media
 ```

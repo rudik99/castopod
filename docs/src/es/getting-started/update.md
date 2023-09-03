@@ -3,111 +3,96 @@ title: Actualización
 sidebarDepth: 3
 ---
 
-# ¿Cómo actualizar Castopod?
+# ¿Cómo instalar Castopod?
 
-Después de instalar Castopod, es posible que quieras actualizar tu instancia a
-la última versión para disfrutar de las últimas características ✨, correcciones
-de errores 🐛 y mejoras de rendimiento ⚡.
+Después de instalar Castopod, puedes actualizar tu instancia a la última versión para disfrutar de las últimas funcionalidades ✨, correcciones de errores 🐛 y mejoras de rendimiento ⚡.
 
-## Instrucciones de Actualización
+## Instrucciones de actualización
 
-0. ⚠️ Antes de cualquier actualización, te recomendamos que respaldes tus
-   archivos de Castopod y base de datos.
+0. ⚠️ Antes de actualizar, te recomendamos encarecidamente que hagas una copia de seguridad de tus archivos de Castopod y de la base de datos.
 
-   - cf.
-     [¿Debería hacer una copia de seguridad antes de actualizar?](#should-i-make-a-backup-before-updating)
+   - ver
+     [¿Debo hacer una copia de seguridad antes de actualizar?](#¿debo-hacer-una-copia-de-seguridad-antes-de-actualizar)
 
-1. Vaya a la página de
-   [lanzamientos](https://code.castopod.org/adaures/castopod/-/releases) y vea
-   si su instancia está actualizada con la última versión de Castopod
+1. Ve a la
+   [página de lanzamientos](https://code.castopod.org/adaures/castopod/-/releases) y
+   verifica si tu instancia está actualizada con la última versión de Castopod.
 
-   - cf.
-     [¿Dónde puedo encontrar mi versión de Castopod?](#where-can-i-find-my-castopod-version)
+   - ver
+     [¿Dónde puedo encontrar la versión de Castopod?](#¿dónde-puedo-encontrar-la-versión-de-castopod)
 
-2. Descargue el último paquete de lanzamiento llamado `Paquete Castopod`, puede
-   elegir entre los archivos `zip` o `tar.gz`
+2. Descarga el paquete de la última versión llamado `Paquete de Castopod`, puedes elegir entre los archivos `zip` o `tar.gz`
 
-   - ⚠️ Asegúrate de descargar el paquete de Castopod y **NO** el código fuente
-   - Ten en cuenta que también puedes descargar el último paquete de
+   - ⚠️ Asegúrate de descargar el Paquete de Castopod y **NO** el Código Fuente
+   - Ten en cuenta que también puedes descargar el último paquete desde
      [castopod.org](https://castopod.org/)
 
 3. En tu servidor:
 
-   - Eliminar todos los archivos excepto `.env` y la carpeta `public/media`
-   - Copie los nuevos archivos del paquete descargado en su servidor
+   - Elimina todos los archivos excepto `.env` y `public/media`
+   - Copia los nuevos archivos del paquete descargado en tu servidor
 
-     ::: Nota informativa
+     ::: info Nota
 
-     Es posible que necesite restablecer los permisos de los archivos después el
-     proceso de instalación. Compruebe
-     [preocupaciones de seguridad](./security.md).
+     Es posible que debas restablecer los permisos de archivo, como se hizo durante el proceso de instalación. Consulta
+     [Consideraciones de seguridad](./security.md).
 
      :::
 
-4. Actualice su esquema de base de datos desde su `Administrador de Castopod` >
-   `Acerca de` página o ejecutando:
+4. Actualiza el esquema de tu base de datos desde la página `Castopod Admin` > `About` o ejecutando:
 
    ```bash
    php spark castopod:database-update
    ```
 
-5. Limpia tu caché en `Administrador de Castopod` > `Ajustes` > `general` >
+5. Borra la caché desde la página `Castopod Admin` > `Settings` > `general` >
    `Housekeeping`
-6. ✨ ¡Disfruta de tu instancia recién instalada, todo listo!
+6. ✨¡Disfruta de tu nueva instancia, ¡has terminado!
 
-::: Nota informativa
+::: info Nota
 
-Las versiones pueden venir con instrucciones de actualización adicionales (véase
-la página de
-[lanzamientos](https://code.castopod.org/adaures/castopod/-/releases)).
+Es posible que las versiones vengan con instrucciones de actualización adicionales (ver
+  [página de notas de versión](https://code.castopod.org/adaures/castopod/-/releases)).
 
-- cf.
-  [No he actualizado mi instancia en mucho tiempo… ¿Qué debo hacer?](#no-he-actualizado-mi-instancia-en-mucho-tiempo-¿qué-debo-hacer)
+- ver
+  [No he actualizado mi instancia en mucho tiempo... ¿Qué debo hacer?](#no-he-actualizado-mi-instancia-en-mucho-tiempo-qué-debo-hacer)
 
 :::
 
-## Actualizaciones totalmente automatizadas
+## Actualizaciones completamente automatizadas
 
-> Próximamente...
+> Próximamente... 👀
 
-## Preguntas Frecuentes (FAQ)
+## Preguntas frecuentes (FAQ)
 
-### ¿Dónde puedo encontrar mi versión de Castopod?
+### ¿Dónde puedo encontrar la versión de Castopod?
 
-Ve al panel de administración de Castopod, la versión se muestra en la esquina
-inferior izquierda.
+Ve a tu panel de administración de Castopod, la versión se muestra en la parte inferior izquierda.
 
-Alternativamente, puedes encontrar la versión en el archivo
-`app > Config > Constants.php`.
+También puedes encontrar la versión en la aplicación
+`> Configuración > Constantes.php` carpeta.
 
-### No he actualizado mi instancia en mucho tiempo… ¿Qué debo hacer?
+### No he actualizado mi instancia en mucho tiempo... ¿Qué debo hacer?
 
-¡No hay problema! No problem! Just get the latest release as described above.
-Simplemente cuando vaya a través de las instrucciones de lanzamiento (4),
-realice la actualización secuencialmente, desde el más antiguo hasta el más
-reciente.
+¡No hay problema! Simplemente obtén la última versión según se describe
+arriba. Cuando ejecutes las instrucciones de actualización (paso 4), ejecútalas
+secuencialmente, desde la más antigua hasta la más reciente.
 
-> Puede que quieras hacer una copia de seguridad de tu instancia dependiendo del
-> tiempo que no hayas actualizado Castopod.
+> Deberías hacer una copia de seguridad de tu instancia según la fecha de tu última actualización de Castopod.
 
-Por ejemplo, si estás en `v1.0.0-alpha.42` y te gustaría actualizar a
-`v1.0.0-beta.1`:
+Por ejemplo, si estás en `v1.0.0-alpha.42` y deseas actualizar a
+ `v1.0.0-beta.1`:
 
-0. (altamente recomendado) Haga una copia de seguridad de sus archivos y base de
-   datos.
+0. (altamente recomendado) Haz una copia de seguridad de tus archivos y base de datos.
 
-1. Descarga la última versión, sobrescribe tus archivos manteniendo `.env` y
-   `public/media`.
+1. Descarga la última versión, sobrescribe tus archivos y conserva `.env` y `public/media`.
 
-2. Repase las instrucciones de actualización de cada versión secuencialmente (de
-   más antiguo a más reciente) comenzando con `v1.0.0-alpha. 3`,
-   `v1.0.0-alpha.44`, `v1.0.0-alpha.45`, …, `v1.0.0-beta.1`.
+2. Realiza las instrucciones de actualización una por una (desde la más antigua hasta la más reciente).
 
-3. ✨ ¡Disfruta de tu instancia recién instalada, todo listo!
+3. ✨¡Tu nueva instancia está lista!
 
 ### ¿Debo hacer una copia de seguridad antes de actualizar?
 
-Te aconsejamos que lo hagas, así que no lo pierdas todo si algo sale mal!
+Te recomendamos hacerlo, ¡para no perder nada en caso de que algo salga mal!
 
-De manera más general, te aconsejamos hacer copias de seguridad regulares de tus
-archivos de Castopod y base de datos para evitar que pierdas todo…
+En general, te recomendamos hacer copias de seguridad regularmente de tus archivos de Castopod y de tu base de datos para evitar perderlo todo...

@@ -1,35 +1,29 @@
 ---
-title: Official Docker images
+title: Oficjalne obrazy Dockera
 sidebarDepth: 3
 ---
 
-# Official Docker images
+# Oficjalne obrazy Dockera
 
-Castopod pushes 3 Docker images to the Docker Hub during its automated build
-process:
+Podczas procesu automatycznego budowania, Castopod wysyła 3 obrazy Dockera na Docker Hub:
 
-- [**`castopod/castopod`**](https://hub.docker.com/r/castopod/castopod): an all
-  in one castopod image using nginx unit
-- [**`castopod/app`**](https://hub.docker.com/r/castopod/app): the app bundle
-  with all of Castopod dependencies
-- [**`castopod/web-server`**](https://hub.docker.com/r/castopod/web-server): an
-  Nginx configuration for Castopod
+- [**`castopod/castopod`**](https://hub.docker.com/r/castopod/castopod): obraz Castopod zintegrowany z nginx unit
+- [**`castopod/app`**](https://hub.docker.com/r/castopod/app): zestaw aplikacji zawierający wszystkie zależności Castopod
+- [**`castopod/web-server`**](https://hub.docker.com/r/castopod/web-server): konfiguracja Nginx do Castopod
 
-Additionally, Castopod requires a MySQL-compatible database. A Redis database
-can be added as a cache handler.
+Dodatkowo, Castopod wymaga bazy danych zgodnej z MySQL. Baza danych Redis może zostać dodana jako mechanizm cache'owania.
 
-## Supported tags
+## Wspierane tagi
 
-- `develop` [unstable], latest development branch build
-- `beta` [stable], latest beta version build
-- `latest` [stable], latest version build
-- `1.x.x` [stable], specific version build (since `1.0.0`)
+- `devel` [unstable], najnowszy rozwijany branch
+- `beta` [stable], najnowsza wersja beta
+- `1.x.x` [stable], konkretne wydanie (od `1.0.0`)
 
-## Example usage
+## Przykładowe użycie
 
-1.  Install [docker](https://docs.docker.com/get-docker/) and
+1.  Zainstaluj [dockera](https://docs.docker.com/get-docker/) i
     [docker-compose](https://docs.docker.com/compose/install/)
-2.  Create a `docker-compose.yml` file with the following:
+2.  Utwórz plik `docker-compose.yml` z następującą zawartością:
 
     ```yml
     version: "3.7"
@@ -87,13 +81,12 @@ can be added as a cache handler.
       castopod-db:
     ```
 
-    You have to adapt some variables to your needs (e.g. `CP_BASEURL`,
-    `MYSQL_ROOT_PASSWORD`, `MYSQL_PASSWORD` and `CP_ANALYTICS_SALT`).
+    Musisz dostosować niektóre zmienne do swoich potrzeb (np. `CP_BASEURL`,
+    `MYSQL_ROOT_PASSWORD`, `MYSQL_PASSWORD`, `CP_ANALYTICS_SALT`).
 
-3.  Setup a reverse proxy for TLS (SSL/HTTPS)
+3.  Skonfiguruj reverse proxy dla TLS (SSL/HTTPS)
 
-    TLS is mandatory for ActivityPub to work. This job can easily be handled by
-    a reverse proxy, for example with [Caddy](https://caddyserver.com/):
+    TLS jest wymagany do działania protokołu ActivityPub. Zadanie to można łatwo zrealizować za pomocą reverse proxy, na przykład za pomocą [Caddy](https://caddyserver.com/):
 
     ```
     #castopod
@@ -102,57 +95,57 @@ can be added as a cache handler.
     }
     ```
 
-4.  Run `docker-compose up -d`, wait for it to initialize and head on to
-    `https://castopod.example.com/cp-install` to finish setting up Castopod!
+4.  Uruchom `docker-compose up -d`, poczekaj, aż się zainicjalizuje na
+    `https://castopod.example.com/cp-install`, aby zakończyć konfigurację Castopod!
 
-5.  You're all set, start podcasting! 🎙️🚀
+5.  Jesteś gotowy, zacznij publikować podcasty! 🎙️🚀
 
-## Environment Variables
+## Zmienne środowiskowe
 
-- **castopod/castopod** and **castopod/app**
+- **castopod/castopod** i **castopod/app**
 
-  | Variable name                         | Type (`default`)        | Default          |
-  | ------------------------------------- | ----------------------- | ---------------- |
-  | **`CP_BASEURL`**                      | string                  | `undefined`      |
-  | **`CP_MEDIA_BASEURL`**                | ?string                 | `CP_BASEURL`     |
-  | **`CP_ADMIN_GATEWAY`**                | ?string                 | `"cp-admin"`     |
-  | **`CP_AUTH_GATEWAY`**                 | ?string                 | `"cp-auth"`      |
-  | **`CP_ANALYTICS_SALT`**               | string                  | `undefined`      |
-  | **`CP_DATABASE_HOSTNAME`**            | ?string                 | `"mariadb"`      |
-  | **`CP_DATABASE_NAME`**                | ?string                 | `MYSQL_DATABASE` |
-  | **`CP_DATABASE_USERNAME`**            | ?string                 | `MYSQL_USER`     |
-  | **`CP_DATABASE_PASSWORD`**            | ?string                 | `MYSQL_PASSWORD` |
-  | **`CP_DATABASE_PREFIX`**              | ?string                 | `"cp_"`          |
-  | **`CP_CACHE_HANDLER`**                | [`"file"` or `"redis"`] | `"file"`         |
-  | **`CP_REDIS_HOST`**                   | ?string                 | `"localhost"`    |
-  | **`CP_REDIS_PASSWORD`**               | ?string                 | `null`           |
-  | **`CP_REDIS_PORT`**                   | ?number                 | `6379`           |
-  | **`CP_REDIS_DATABASE`**               | ?number                 | `0`              |
-  | **`CP_EMAIL_SMTP_HOST`**              | ?string                 | `undefined`      |
-  | **`CP_EMAIL_FROM`**                   | ?string                 | `undefined`      |
-  | **`CP_EMAIL_SMTP_USERNAME`**          | ?string                 | `"localhost"`    |
-  | **`CP_EMAIL_SMTP_PASSWORD`**          | ?string                 | `null`           |
-  | **`CP_EMAIL_SMTP_PORT`**              | ?number                 | `25`             |
-  | **`CP_EMAIL_SMTP_CRYPTO`**            | [`"tls"` or `"ssl"`]    | `"tls"`          |
-  | **`CP_ENABLE_2FA`**                   | ?boolean                | `undefined`      |
-  | **`CP_MEDIA_FILE_MANAGER`**           | ?string                 | `undefined`      |
-  | **`CP_MEDIA_S3_ENDPOINT`**            | ?string                 | `undefined`      |
-  | **`CP_MEDIA_S3_KEY`**                 | ?string                 | `undefined`      |
-  | **`CP_MEDIA_S3_SECRET`**              | ?string                 | `undefined`      |
-  | **`CP_MEDIA_S3_REGION`**              | ?string                 | `undefined`      |
-  | **`CP_MEDIA_S3_BUCKET`**              | ?string                 | `undefined`      |
-  | **`CP_MEDIA_S3_PROTOCOL`**            | ?number                 | `undefined`      |
-  | **`CP_MEDIA_S3_PATH_STYLE_ENDPOINT`** | ?boolean                | `undefined`      |
-  | **`CP_MEDIA_S3_KEY_PREFIX`**          | ?string                 | `undefined`      |
-  | **`CP_DISABLE_HTTPS`**                | ?[`0` or `1`]           | `undefined`      |
-  | **`CP_MAX_BODY_SIZE`**                | ?number (with suffix)   | `512M`           |
-  | **`CP_PHP_MEMORY_LIMIT`**             | ?number (with suffix)   | `512M`           |
-  | **`CP_TIMEOUT`**                      | ?number                 | `900`            |
+  | Nazwa zmiennej                     | Typ (`default`)        | Domyślnie  |
+  | --------------------------------- | ----------------------- | ---------- |
+  | **`CP_BASEURL`**                   | string                  | `undefined`|
+  | **`CP_MEDIA_BASEURL`**             | ?string                 | `CP_BASEURL`|
+  | **`CP_ADMIN_GATEWAY`**             | ?string                 | `"cp-admin"`|
+  | **`CP_AUTH_GATEWAY`**              | ?string                 | `"cp-auth"` |
+  | **`CP_ANALYTICS_SALT`**            | string                  | `undefined`|
+  | **`CP_DATABASE_HOSTNAME`**         | ?string                 | `"mariadb"`|
+  | **`CP_DATABASE_NAME`**             | ?string                 | `MYSQL_DATABASE`|
+  | **`CP_DATABASE_USERNAME`**         | ?string                 | `MYSQL_USER`|
+  | **`CP_DATABASE_PASSWORD`**         | ?string                 | `MYSQL_PASSWORD`|
+  | **`CP_DATABASE_PREFIX`**           | ?string                 | `"cp_"`     |
+  | **`CP_CACHE_HANDLER`**             | [`"file"` or `"redis"`] | `"file"`    |
+  | **`CP_REDIS_HOST`**                | ?string                 | `"localhost"`|
+  | **`CP_REDIS_PASSWORD`**            | ?string                 | `null`      |
+  | **`CP_REDIS_PORT`**                | ?number                 | `6379`      |
+  | **`CP_REDIS_DATABASE`**            | ?number                 | `0`         |
+  | **`CP_EMAIL_SMTP_HOST`**           | ?string                 | `undefined` |
+  | **`CP_EMAIL_FROM`**                | ?string                 | `undefined` |
+  | **`CP_EMAIL_SMTP_USERNAME`**       | ?string                 | `"localhost"`|
+  | **`CP_EMAIL_SMTP_PASSWORD`**       | ?string                 | `null`      |
+  | **`CP_EMAIL_SMTP_PORT`**           | ?number                 | `25`        |
+  | **`CP_EMAIL_SMTP_CRYPTO`**         | [`"tls"` or `"ssl"`]    | `"tls"`     |
+  | **`CP_ENABLE_2FA`**                | ?boolean                | `undefined` |
+  | **`CP_MEDIA_FILE_MANAGER`**        | ?string                 | `undefined` |
+  | **`CP_MEDIA_S3_ENDPOINT`**         | ?string                 | `undefined` |
+  | **`CP_MEDIA_S3_KEY`**              | ?string                 | `undefined` |
+  | **`CP_MEDIA_S3_SECRET`**           | ?string                 | `undefined` |
+  | **`CP_MEDIA_S3_REGION`**           | ?string                 | `undefined` |
+  | **`CP_MEDIA_S3_BUCKET`**           | ?string                 | `undefined` |
+  | **`CP_MEDIA_S3_PROTOCOL`**         | ?number                 | `undefined` |
+  | **`CP_MEDIA_S3_PATH_STYLE_ENDPOINT`** | ?boolean            | `undefined` |
+  | **`CP_MEDIA_S3_KEY_PREFIX`**       | ?string                 | `undefined` |
+  | **`CP_DISABLE_HTTPS`**             | ?[`0` or `1`]           | `undefined` |
+  | **`CP_MAX_BODY_SIZE`**             | ?number (with suffix)   | `512M`      |
+  | **`CP_PHP_MEMORY_LIMIT`**          | ?number (with suffix)   | `512M`      |
+  | **`CP_TIMEOUT`**                   | ?number                 | `900`       |
 
 - **castopod/web-server**
 
-  | Variable name          | Type                  | Default |
-  | ---------------------- | --------------------- | ------- |
-  | **`CP_APP_HOSTNAME`**  | ?string               | `"app"` |
-  | **`CP_MAX_BODY_SIZE`** | ?number (with suffix) | `512M`  |
-  | **`CP_TIMEOUT`**       | ?number               | `900`   |
+  | Nazwa zmiennej              | Typ                  | Domyślnie |
+  | -------------------------- | -------------------- | --------- |
+  | **`CP_APP_HOSTNAME`**      | ?string              | `"app"`   |
+  | **`CP_MAX_BODY_SIZE`**     | ?number (with suffix)| `512M`    |
+  | **`CP_TIMEOUT`**           | ?number              | `900`     |

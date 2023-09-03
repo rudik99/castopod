@@ -1,45 +1,40 @@
 ---
-title: Development setup
+title: Einrichtung der Entwicklungsumgebung
 sidebarDepth: 3
 ---
 
-# Setup your development environment
+# Richte deine Entwicklungsumgebung ein
 
-## Introduction
+## Einführung
 
-Castopod is a web app based on the `php` framework
-[CodeIgniter 4](https://codeigniter.com).
+Castopod ist eine Webanwendung, die auf dem `php`-Framework [CodeIgniter 4](https://codeigniter.com) basiert.
 
-We use [Docker](https://www.docker.com/) quickly setup a dev environment. A
-`docker-compose.yml` and `Dockerfile` are included in the project's root folder
-to help you kickstart your contribution.
+Wir verwenden [Docker](https://www.docker.com/), um schnell eine Entwicklungs-Umgebung einzurichten. In dem Projektordner sind eine `docker-compose.yml`-Datei und eine `Dockerfile` enthalten, die dir helfen sollen, deinen Beitrag zu starten.
 
-> You don't need any prior knowledge of Docker to follow the next steps.
-> However, if you wish to use your own environment, feel free to do so!
+> Du benötigst keine vorherigen Kenntnisse in Docker, um den nächsten Schritten zu folgen. Wenn du jedoch deine eigene Umgebung verwenden möchtest, kannst du das gerne tun!
 
-## Setup instructions
+## Installationsanleitung
 
-### 1. Pre-requisites
+### 1. Voraussetzungen
 
-0. Install [docker](https://docs.docker.com/get-docker).
+0. Installiere [docker](https://docs.docker.com/get-docker).
 
-1. Clone Castopod project by running:
+1. Klonen das Castopod-Projekt, indem du folgenden Befehl ausführst:
 
    ```bash
    git clone https://code.castopod.org/adaures/castopod.git
    ```
 
-2. Create a `.env` file with the minimum required config to connect the app to
-   the database and use redis as a cache handler:
+2. Erstelle eine `.env` Datei mit der minimalen Konfiguration, um die App mit der Datenbank zu verbinden und Redis als Cache-Handler zu verwenden:
 
    ```ini
    CI_ENVIRONMENT="development"
-   # If set to development, you must run `npm run dev` to start the static assets server
+   # Wenn die Einstellung auf "development" gesetzt ist, musst du `npm run dev` ausführen, um den Server für die statischen Assets zu starten
    vite.environment="development"
 
-   # By default, this is set to true in the app config.
-   # For development, this must be set to false as it is
-   # on a local environment
+   # Standardmäßig ist dies in der App-Konfiguration auf "true" eingestellt.
+   # Für die Entwicklung muss dies auf "false" gesetzt werden, da es
+   # sich um eine lokale Umgebung handelt
    app.forceGlobalSecureRequests=false
 
    app.baseURL="http://localhost:8080/"
@@ -56,368 +51,88 @@ to help you kickstart your contribution.
    cache.handler="redis"
    cache.redis.host = "redis"
 
-   # You may not want to use redis as your cache handler
-   # Comment/remove the two lines above and uncomment
-   # the next line for file caching.
+   # Du möchtest möglicherweise Redis nicht als Cache-Handler verwenden
+   # Kommentiere/entferne die beiden Zeilen darüber und kommentiere die
+   # nächste Zeile für den Datei-Cache.
    #cache.handler="file"
    ```
 
-   > _NB._ You can tweak your environment by setting more environment variables
-   > in your custom `.env` file. See the `env` for examples or the
-   > [CodeIgniter4 User Guide](https://codeigniter.com/user_guide/index.html)
-   > for more info.
+   > _Hinweis:_ Du kannst deine Umgebung anpassen, indem du weitere Umgebungsvariablen in deiner eigenen `.env`-Datei festlegst. Siehe die `env`-Datei für Beispiele oder das [CodeIgniter4 Benutzerhandbuch](https://codeigniter.com/user_guide/index.html) für weitere Informationen.
 
-3. (for docker desktop) Add the repository you've cloned to docker desktop's
-   `Settings` > `Resources` > `File Sharing`
+3. (für Docker Desktop) Füge das von dir geklonte Repository unter "Settings" > "Resources" > "File Sharing" in Docker Desktop hinzu.
 
-### 2. (recommended) Develop inside the app Container with VSCode
+### 2. (empfohlen) Entwicklung innerhalb des App-Containers mit VSCode
 
-If you're working in VSCode, you can take advantage of the `.devcontainer/`
-folder. It defines a development environment (dev container) with preinstalled
-requirements and VSCode extensions so you don't have to worry about them. All
-required services will be loaded automagically! 🪄
+Wenn du mit VSCode arbeitest, kannst du den `.devcontainer/`-Ordner nutzen. Dieser definiert eine Entwicklungsumgebung (Dev Container) mit vorinstallierten Anforderungen und VSCode-Erweiterungen, sodass du dir keine Sorgen darum machen musst. Alle erforderlichen Dienste werden automatisch geladen! 🪄
 
-1. Install the VSCode extension
-   [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
-2. `Ctrl/Cmd + Shift + P` > `Open in container`
+1. Installiere die VSCode-Erweiterung [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers).
+2. `Strg/Cmd + Umschalt + P` > `Im Container öffnen`.
 
-   > The VSCode window will reload inside the dev container. Expect several
-   > minutes during first load as it is building all necessary services.
+   > Das VSCode-Fenster wird innerhalb des Dev-Containers neu geladen. Erwarte einige Minuten beim ersten Laden, da alle erforderlichen Dienste erstellt werden.
 
-   **Note**: The dev container will start by running Castopod's php server.
-   During development, you will have to start [Vite](https://vitejs.dev)'s dev
-   server for compiling the typescript code and styles:
+   **Hinweis**: Der Dev-Container wird durch Starten des Castopod-php-Servers gestartet. Während der Entwicklung musst du den Dev-Server von [Vite](https://vitejs.dev) starten, um den TypeScript-Code und die Styles zu kompilieren:
 
    ```bash
-   # run Vite dev server
+   # Vite Dev-Server starten
    npm run dev
    ```
 
-   If there is any issue with the php server not running, you can restart them
-   using the following commands:
+   Wenn es Probleme mit dem php-Server gibt, der nicht läuft, kannst du sie mit den folgenden Befehlen neu starten:
 
    ```bash
-   # run Castopod server
+   # Castopod-Server starten
    php spark serve - 0.0.0.0
    ```
 
-3. You're all set! 🎉
+3. Du bist fertig! 🎉
 
-   You're now **inside the dev container**, you may use the VSCode console
-   (`Terminal` > `New Terminal`) to run any command:
+   Du befindest dich nun **im Dev-Container** und kannst die VSCode-Konsole (`Terminal` > `Neues Terminal`) verwenden, um beliebige Befehle auszuführen:
 
    ```bash
-   # PHP is installed
+   # PHP ist installiert
    php -v
 
-   # Composer is installed
+   # Composer ist installiert
    composer -V
 
-   # npm is installed
+   # npm ist installiert
    npm -v
 
-   # git is installed
+   # git ist installiert
    git version
    ```
 
-For more info, see
-[VSCode Remote Containers](https://code.visualstudio.com/docs/remote/containers)
+Weitere Informationen findest du unter [VSCode Remote Containers](https://code.visualstudio.com/docs/remote/containers)
 
-### 3. Start hacking
+### 3. Leg los!
 
-You're all set! Start working your magic by updating the project's files! Help
-yourself to the
-[CodeIgniter4 User Guide](https://codeigniter.com/user_guide/index.html) for
-more insights.
+Du bist bereit! Fange an, deine Magie zu wirken, indem du die Dateien des Projekts aktualisierst! Nutze die [CodeIgniter4 Benutzerhandbuch](https://codeigniter.com/user_guide/index.html), um weitere Einblicke zu erhalten.
 
-To see your changes, go to:
+Um deine Änderungen zu sehen, gehe zu:
 
-- `http://localhost:8080/` for the Castopod app
-- `http://localhost:8888/` for the phpmyadmin interface:
+- `http://localhost:8080/` für die Castopod-App
+- `http://localhost:8888/` für die phpMyAdmin-Benutzeroberfläche:
+  - Benutzername: **castopod**
+  - Passwort: **castopod**
 
-  - username: **castopod**
-  - password: **castopod**
+### 2-alt. Entwicklung außerhalb des App-Containers
 
-### 2-alt. Develop outside the app container
+Du möchtest den VSCode-Devcontainer nicht verwenden? Kein Problem!
 
-You do not wish to use the VSCode devcontainer? No problem!
+1. Starte Docker-Container manuell:
 
-1. Start docker containers manually:
-
-   Go to project's root folder and run:
+   Gehe zum Stammordner des Projekts und führe aus:
 
    ```bash
-   # starts all services declared in docker-compose.yml file
-   # -d option starts the containers in the background
+   # startet alle im docker-compose.yml-Datei deklarierten Dienste
+   # Die Option -d startet die Container im Hintergrund
    docker-compose up -d
 
-   # See all running processes (you should see 3 processes running)
+   # Zeige alle ausgeführten Prozesse an (du solltest 3 Prozesse sehen)
    docker-compose ps
 
-   # Alternatively, you can check all docker processes
+   # Du kannst auch alle Docker-Prozesse anzeigen
    docker ps -a
-
    ```
 
-   > The `docker-compose up -d` command will boot 4 containers in the
-   > background:
-   >
-   > - `castopod_app`: a php based container with Castopod requirements
-   >   installed
-   > - `castopod_redis`: a [redis](https://redis.io/) database to handle queries
-   >   and pages caching
-   > - `castopod_mariadb`: a [mariadb](https://mariadb.org/) server for
-   >   persistent data
-   > - `castopod_phpmyadmin`: a phpmyadmin server to visualize the mariadb
-   >   database.
-
-2. Run any command inside the containers by prefixing them with
-   `docker-compose run --rm app`:
-
-   ```bash
-   # use PHP
-   docker-compose run --rm app php -v
-
-   # use Composer
-   docker-compose run --rm app composer -V
-
-   # use npm
-   docker-compose run --rm app npm -v
-
-   # use git
-   docker-compose run --rm app git version
-   ```
-
----
-
-## Going Further
-
-### Install Castopod's dependencies
-
-1. Install php dependencies with [Composer](https://getcomposer.org/)
-
-   ```bash
-   composer install
-   ```
-
-   ::: info Note
-
-   The php dependencies aren't included in the repository. Composer will check
-   the `composer.json` and `composer.lock` files to download the packages with
-   the right versions. The dependencies will live under the `vendor/` folder.
-   For more info, check out the
-   [Composer documentation](https://getcomposer.org/doc/).
-
-   :::
-
-2. Install javascript dependencies with [npm](https://www.npmjs.com/)
-
-   ```bash
-   npm install
-   ```
-
-   ::: info Note
-
-   The javascript dependencies aren't included in the repository. Npm will check
-   the `package.json` and `package.lock` files to download the packages with the
-   right versions. The dependencies will live under the `node_module` folder.
-   For more info, check out the [NPM documentation](https://docs.npmjs.com/).
-
-   :::
-
-3. Generate static assets:
-
-   ```bash
-   # build all static assets at once
-   npm run build:static
-
-   # build specific assets
-   npm run build:icons
-   npm run build:svg
-   ```
-
-   ::: info Note
-
-   The static assets generated live under the `public/assets` folder, it
-   includes javascript, styles, images, fonts, icons and svg files.
-
-   :::
-
-### Initialize and populate database
-
-::: tip Tip
-
-You may skip this section if you go through the install wizard (go to
-`/cp-install`).
-
-:::
-
-1. Build the database with the migrate command:
-
-   ```bash
-   # loads the database schema during first migration
-   php spark migrate -all
-   ```
-
-   You may need to undo the migration (rollback):
-
-   ```bash
-   # rolls back database schema (deletes all tables and their content)
-   php spark migrate:rollback
-   ```
-
-2. Populate the database with the required data:
-
-   ```bash
-   # Populates all required data
-   php spark db:seed AppSeeder
-   ```
-
-   You may choose to add data separately:
-
-   ```bash
-   # Populates all categories
-   php spark db:seed CategorySeeder
-
-   # Populates all Languages
-   php spark db:seed LanguageSeeder
-
-   # Populates all podcasts platforms
-   php spark db:seed PlatformSeeder
-
-   # Populates all Authentication data (roles definition…)
-   php spark db:seed AuthSeeder
-   ```
-
-3. (optionnal) Populate the database with test data:
-
-   - Populate test data (login: admin / password: AGUehL3P)
-
-   ```bash
-   php spark db:seed TestSeeder
-   ```
-
-   - Populate with fake podcast analytics:
-
-   ```bash
-   php spark db:seed FakePodcastsAnalyticsSeeder
-   ```
-
-   - Populate with fake website analytics:
-
-   ```bash
-   php spark db:seed FakeWebsiteAnalyticsSeeder
-   ```
-
-   TestSeeder will add an active superadmin user with the following credentials:
-
-   - username: **admin**
-   - password: **AGUehL3P**
-
-### Useful docker / docker-compose commands
-
-- Monitor the app container:
-
-```bash
-docker-compose logs --tail 50 --follow --timestamps app
-```
-
-- Interact with redis server using included redis-cli command:
-
-```bash
-docker exec -it castopod_redis redis-cli
-```
-
-- Monitor the redis container:
-
-```bash
-docker-compose logs --tail 50 --follow --timestamps redis
-```
-
-- Monitor the mariadb container:
-
-```bash
-docker-compose logs --tail 50 --follow --timestamps mariadb
-```
-
-- Monitor the phpmyadmin container:
-
-```bash
-docker-compose logs --tail 50 --follow --timestamps phpmyadmin
-```
-
-- Restart docker containers:
-
-```bash
-docker-compose restart
-```
-
-- Destroy all containers, opposite of `up` command:
-
-```bash
-docker-compose down
-```
-
-- Rebuild app container:
-
-```bash
-docker-compose build app
-```
-
-Check [docker](https://docs.docker.com/engine/reference/commandline/docker/) and
-[docker-compose](https://docs.docker.com/compose/reference/) documentations for
-more insights.
-
-## Known issues
-
-### Allocation failed - JavaScript heap out of memory
-
-This happens when running `npm install`.
-
-👉 By default, docker might not have access to enough RAM. Allocate more memory
-and run `npm install` again.
-
-### (Linux) Files created inside container are attributed to root locally
-
-You may use Linux user namespaces to fix this on your machine:
-
-::: info Note
-
-Replace "username" with your local username
-
-:::
-
-1. Go to `/etc/docker/daemon.json` and add:
-
-   ```json
-   {
-     "userns-remap": "username"
-   }
-   ```
-
-2. Configure the subordinate uid/guid:
-
-   ```bash
-   # in /etc/subuid
-   username:1000:1
-   username:100000:65536
-   ```
-
-   ```bash
-   # in /etc/subgid
-   username:1000:1
-   username:100000:65536
-   ```
-
-3. Restart docker:
-
-   ```bash
-   sudo systemctl restart docker
-   ```
-
-4. That's it! Now, the root user in the container will be mapped to the user on
-   your local machine, no more permission issues! 🎉
-
-You can check
-[this great article](https://www.jujens.eu/posts/en/2017/Jul/02/docker-userns-remap/)
-to know more about how it works.
+   > Der Befehl `docker-compose

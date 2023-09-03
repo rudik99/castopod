@@ -1,109 +1,99 @@
 ---
-title: Update
+title: Hizivadennoù
 sidebarDepth: 3
 ---
 
-# How to update Castopod?
+# Petra eo da ober evit Mont e Castopod ?
 
-After installing Castopod, you may want to update your instance to the latest
-version in order to enjoy the latest features ✨, bug fixes 🐛 and performance
-improvements ⚡.
+Goude mont e barzh Castopod, e c'hellit kas ar vosion diwezhañ da zizoloiñ ho stagad dre astenn ar sterenn/theurellec'hioù nevez ✨, ar sutrennoù bugoù 🐛 ha skoazellet profadurezhioù ⚡.
 
-## Update instructions
+## Hizivadennoù miz eo bet graet
 
-0. ⚠️ Before any update, we highly recommend you backup your Castopod files and
-   database.
+0. ⚠️ Da c'houzout a raio deoc'h heuliañ war da fardas keuz d'ar c'huzul war ho ficherien Castopod ha war ar bazenn roadennoù.
 
    - cf.
-     [Should I make a backup before updating?](#should-i-make-a-backup-before-updating)
+     [Plesk a meur eus un war-lerc'h war lerc'hañ och e vo saveteiñ fenstr saveteiñ a-raok treiñ](#plesk-a-meur-eus-un-war-larsh-war-lerch-och-e-vo-savetei-fenstr-savetin-a-raok-trein)
 
-1. Go to the
-   [releases page](https://code.castopod.org/adaures/castopod/-/releases) and
-   see if your instance is up to date with the latest Castopod version
+1. Klikit war ar bajenn
+   [embannadegoù](https://code.castopod.org/adaures/castopod/-/releases) ha
+   gwelet setu ma vez savet ho stagad gant ar reizhiad nevezwezhañ Castopod
 
    - cf.
-     [Where can I find my Castopod version?](#where-can-i-find-my-castopod-version)
+     [Pelec'h e c'hellin kaout ho verzion Castopod ?](#pelech-e-chellin-kaout-ho-verzion-castopod)
 
-2. Download the latest release package named `Castopod Package`, you may choose
-   between the `zip` or `tar.gz` archives
+2. Prenniwit ar bitteg embannadur nevezwezhañ enoret `Castopod Package`, goude
+   e c'hallit dibunañ etre embannadurioù `zip` pe `tar.gz`
 
-   - ⚠️ Make sure you download the Castopod Package and **NOT** the Source Code
-   - Note that you can also download the latest package from
+   - ⚠️ Bezit sur oc'h prenañ ar Castopod Package ha **NANN** ar C'hod Anaoudegezh.
+   - Abarzh e c'hallit prenañ ar bitteg nevezwezhañ eus
      [castopod.org](https://castopod.org/)
 
-3. On your server:
+3. War ho servijer :
+   - Dilemel an holl restr nevez en oberiant d'ar restr .env hag d'ar pub-/media
 
-   - Remove all files except `.env` and `public/media`
-   - Copy the new files from the downloaded package into your server
+     ::: info Notenn
 
-     ::: info Note
-
-     You may need to reset files permissions as during the install process.
-     Check [Security Concerns](./security.md).
+     Gallet c'heller reiñ keveradur distrad-se war restr divyezhek warnañ ar
+     processus anthirdiñ. Gwelloc'h eo
+     [Strobellerezh](./security.md).
 
      :::
 
-4. Update your database schema from your `Castopod Admin` > `About` page or by
-   running:
+4. Hizivaet ho tac'henn bazenn eus ho pajenn `Ger-tremen ar c'hastopod` ha `Ober`
+   pe drezañ:
 
    ```bash
    php spark castopod:database-update
    ```
 
-5. Clear your cache from your `Castopod Admin` > `Settings` > `general` >
-   `Housekeeping`
-6. ✨ Enjoy your fresh instance, you're all done!
+5. Distrubañ gaelloù dor liveus ho c'hastopod eus ho pajenn `Ger-tremen ar
+   c'hastopod` > `Ardivink` > `Hentrol ar c'hoadoù`.
+6. ✨ Kavit ho stagad nevez, pezet eo bet finyeah !
 
-::: info Note
+::: info Notenn
 
-Releases may come with additional update instructions (see
-[releases page](https://code.castopod.org/adaures/castopod/-/releases)).
+Gallet c'haller ober gant plijadur da vare ar vosioneoù (cf.
+[Bladenn kasidañ embannadoù](https://code.castopod.org/adaures/castopod/-/releases)).
 
 - cf.
-  [I haven't updated my instance in a long time… What should I do?](#i-havent-updated-my-instance-in-a-long-time-what-should-i-do)
+  [N'ho mont ket da zougañ ho stadur abaoe un den na oa bet paketiget e ioa
+  finyeah ?](#nho-mont-ket-da-zouga-ho-stadur-abaoe-un-den-na-oa-bet-paketiget-e-ioa-finyeah)
 
 :::
 
-## Fully Automated updates
+## Mechouerioù en un doare lazhek
 
-> Coming soon... 👀
+> En ur bennach ... 👀
 
-## Frequently asked questions (FAQ)
+## Goulennioù Frejal (FAQ)
 
-### Where can I find my Castopod version?
+### Pelec'h am c'haller kaout ho verzion Castopod ?
 
-Go to your Castopod admin panel, the version is displayed on the bottom left
-corner.
+Klikit war ho c'huzul merdeiñ a vez skrivet e viz kentañ mennet war ho pannel merdeiñ
+Castopod, e vez displeget e barzh an douarbenn gwerc'hentañ.
 
-Alternatively, you can find the version in the `app > Config > Constants.php`
-file.
+Gellit kaout ur verzion arall e ruilhenn
+`Holedoù > Kefluniou > Constants.php`.
+ 
+### N'ho mont ket da zougañ ho stadur evit ur forzh patromioù-termenet-mañ... Petra e fell deoc'h ober ?
 
-### [I haven't updated my instance in a long time… What should I do?](#i-havent-updated-my-instance-in-a-long-time-what-should-i-do)
+N'eo eus gwall geen ! Bezit sur mont da lavarout, hollek re ihti.
+Prenit ar finyeah nevezizh eval mivioù skrivet warzu. Pa derit echuiñ urzelioù finyeah (4), oberit anezho urzhiañ, pedompenn diwar-benn an evorikoù ha goberiennioù finyeah.
 
-No problem! Just get the latest release as described above. Only, when going
-through the release instructions (4), perform them sequentially, from the oldest
-to the newest.
+> Bezit sur ho skalpiteiñ ho stadur adalek dater eo ho stadur nevezault Castopod.
 
-> You may want to backup your instance depending on how long you haven't updated
-> Castopod.
+Er skouer, ma'z oc'h e `v1.0.0-alpha.42` hag oc'h ezhomm da guzumminañ evit dastum eus dastum da vroadañ bet leuniet e `v1.0.0-beta.1` :
 
-For example, if you're on `v1.0.0-alpha.42` and would like to upgrade to
-`v1.0.0-beta.1`:
+0. (hollek anavezet) Savetit ho ficherien ha bañdit ho bazenn roadennoù.
 
-0. (highly recommended) Make a backup of your files and database.
+1. Prenit ar verzion diwezhañ, greit mac'het ho ficherien hag e chom-hed ho .env hag ho pub-/media.
 
-1. Download the latest release, overwrite your files whilst keeping `.env` and
-   `public/media`.
+2. Stalit ar mivioù da zougañ war ar renk (dispar da diwar kreskiñ).
 
-2. Go through each release update instructions sequentially (from oldest to
-   newest) starting with `v1.0.0-alpha.43`, `v1.0.0-alpha.44`,
-   `v1.0.0-alpha.45`, …, `v1.0.0-beta.1`.
+3. ✨ Fellout a ra d'an novigezh ho nechal zo gant.
 
-3. ✨ Enjoy your fresh instance, you're all done!
+### Ha n'eo ket ret da vont da zougañ a-raok ?
 
-### Should I make a backup before updating?
+Kas a reomp deoc'h ho kas gantañ evit bezañ sur na gremañ ket ar pezh a c'hallfe bezañ gwisket gantoc'h-se !
 
-We advise you do, so you don't lose everything if anything goes wrong!
-
-More generally, we advise you make regular backups of your Castopod files and
-database to prevent you from losing it all…
+A-benn pell eo gortozet deoc'h kaout az canañ ho finyeah diwezhañ eus ho ficherien Castopod ha ho bazenn roadennoù er-maez evit na gremañt ket...

@@ -1,109 +1,97 @@
 ---
-title: Update
+title: Atualização
 sidebarDepth: 3
 ---
 
-# How to update Castopod?
+# Como instalar o Castopod?
 
-After installing Castopod, you may want to update your instance to the latest
-version in order to enjoy the latest features ✨, bug fixes 🐛 and performance
-improvements ⚡.
+Depois de instalar o Castopod, você pode atualizar sua instância para a versão mais recente e aproveitar os recursos mais recentes ✨, correções de bugs 🐛 e melhorias de desempenho ⚡.
 
-## Update instructions
+## Instruções de atualização
 
-0. ⚠️ Before any update, we highly recommend you backup your Castopod files and
-   database.
+0. ⚠️ Antes de atualizar, recomendamos fortemente que você faça backup de seus arquivos Castopod e do banco de dados.
 
    - cf.
-     [Should I make a backup before updating?](#should-i-make-a-backup-before-updating)
+     [Devo fazer backup antes de atualizar?](#devo-fazer-backup-antes-de-atualizar)
 
-1. Go to the
-   [releases page](https://code.castopod.org/adaures/castopod/-/releases) and
-   see if your instance is up to date with the latest Castopod version
+1. Vá para a
+   [página de versões](https://code.castopod.org/adaures/castopod/-/releases) e
+   veja se sua instância está atualizada com a versão mais recente do Castopod
 
    - cf.
-     [Where can I find my Castopod version?](#where-can-i-find-my-castopod-version)
+     [Onde posso encontrar a versão do meu Castopod?](#onde-posso-encontrar-a-versão-do-meu-castopod)
 
-2. Download the latest release package named `Castopod Package`, you may choose
-   between the `zip` or `tar.gz` archives
+2. Baixe o pacote de atualização mais recente chamado `Pacote Castopod`, você pode escolher entre os arquivos `zip` ou `tar.gz`
 
-   - ⚠️ Make sure you download the Castopod Package and **NOT** the Source Code
-   - Note that you can also download the latest package from
+   - ⚠️ Certifique-se de baixar o Pacote Castopod e **NÃO** o Código Fonte
+   - Observe que você também pode baixar o pacote mais recente em
      [castopod.org](https://castopod.org/)
 
-3. On your server:
+3. Em seu servidor:
 
-   - Remove all files except `.env` and `public/media`
-   - Copy the new files from the downloaded package into your server
+   - Apague todos os arquivos, exceto `.env` e `public/media`
+   - Copie os novos arquivos do pacote baixado para o seu servidor
 
-     ::: info Note
+     ::: info Nota
 
-     You may need to reset files permissions as during the install process.
-     Check [Security Concerns](./security.md).
+     Você pode precisar redefinir as permissões de arquivo, como no processo de instalação. Consulte
+     [Preocupações de segurança](./security.md).
 
      :::
 
-4. Update your database schema from your `Castopod Admin` > `About` page or by
-   running:
+4. Atualize o esquema do banco de dados a partir da página `Castopod Admin` > `Sobre` ou executando:
 
    ```bash
    php spark castopod:database-update
    ```
 
-5. Clear your cache from your `Castopod Admin` > `Settings` > `general` >
-   `Housekeeping`
-6. ✨ Enjoy your fresh instance, you're all done!
+5. Limpe seu cache a partir da página `Castopod Admin` > `Configurações` > `geral` >
+   `Manutenção`
+6. ✨ Aproveite sua nova instância, você terminou!
 
-::: info Note
+::: info Nota
 
-Releases may come with additional update instructions (see
-[releases page](https://code.castopod.org/adaures/castopod/-/releases)).
+Versões podem ter instruções de atualização adicionais (consulte a
+[página de notas de versão](https://code.castopod.org/adaures/castopod/-/releases)).
 
 - cf.
-  [I haven't updated my instance in a long time… What should I do?](#i-havent-updated-my-instance-in-a-long-time-what-should-i-do)
+  [Eu não atualizei minha instância por um longo tempo... O que devo fazer?](#eu-não-atualizei-minha-instância-por-um-longo-tempo-o-que-devo-fazer)
 
 :::
 
-## Fully Automated updates
+## Atualizações totalmente automatizadas
 
-> Coming soon... 👀
+> Em breve... 👀
 
-## Frequently asked questions (FAQ)
+## Perguntas Frequentes (FAQ)
 
-### Where can I find my Castopod version?
+### Onde posso encontrar a versão do Castopod?
 
-Go to your Castopod admin panel, the version is displayed on the bottom left
-corner.
+Vá para o painel de administração do Castopod, a versão será exibida no canto inferior esquerdo.
 
-Alternatively, you can find the version in the `app > Config > Constants.php`
-file.
+Você também pode encontrar a versão no aplicativo
+`> Configuração > Constantes.php` pasta.
 
-### I haven't updated my instance in a long time… What should I do?
+### Eu não atualizei minha instância por um longo tempo... O que devo fazer?
 
-No problem! Just get the latest release as described above. Only, when going
-through the release instructions (4), perform them sequentially, from the oldest
-to the newest.
+Sem problemas! Basta obter a versão mais recente como descrito acima. Quando você executar as instruções de atualização (4), execute-as sequencialmente, da mais antiga para a mais recente.
 
-> You may want to backup your instance depending on how long you haven't updated
-> Castopod.
+> Você deve fazer backup de sua instância de acordo com a data da sua última atualização do Castopod.
 
-For example, if you're on `v1.0.0-alpha.42` and would like to upgrade to
-`v1.0.0-beta.1`:
+Por exemplo, se você está na versão `v1.0.0-alpha.42` e deseja atualizar para
+a versão `v1.0.0-beta.1` :
 
-0. (highly recommended) Make a backup of your files and database.
+0. (altamente recomendado) Faça backup de seus arquivos e banco de dados.
 
-1. Download the latest release, overwrite your files whilst keeping `.env` and
-   `public/media`.
+1. Baixe a versão mais recente, substitua seus arquivos mantendo
+   `.env` e `public/media`.
 
-2. Go through each release update instructions sequentially (from oldest to
-   newest) starting with `v1.0.0-alpha.43`, `v1.0.0-alpha.44`,
-   `v1.0.0-alpha.45`, …, `v1.0.0-beta.1`.
+2. Execute as instruções de atualização uma a uma (das mais antigas para as mais recentes).
 
-3. ✨ Enjoy your fresh instance, you're all done!
+3. ✨ Sua nova instância está pronta!
 
-### Should I make a backup before updating?
+### Devo fazer backup antes de atualizar?
 
-We advise you do, so you don't lose everything if anything goes wrong!
+Recomendamos que você faça isso para não perder nada se algo der errado!
 
-More generally, we advise you make regular backups of your Castopod files and
-database to prevent you from losing it all…
+Em geral, recomendamos fazer backups regulares de seus arquivos Castopod e banco de dados para evitar qualquer perda...

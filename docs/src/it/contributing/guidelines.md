@@ -1,154 +1,123 @@
 ---
-title: Guidelines
+title: Linee guida
 ---
 
-# Contributing to Castopod
+# Contribuire a Castopod
 
-Love Castopod and want to help? Thanks so much, there's something to do for
-everybody!
+Ami Castopod e vuoi aiutare? Grazie mille, c'è qualcosa da fare per tutti!
 
-Please take a moment to review this document in order to make the contribution
-process easy and effective for everyone involved.
+Si prega di prendere un momento per leggere questo documento al fine di rendere il processo di contribuzione facile ed efficace per tutti coloro coinvolti.
 
-Following these guidelines helps to communicate that you respect the time of the
-developers managing and developing this open source project. In return, they
-should reciprocate that respect in addressing your issue or assessing patches
-and features.
+Seguire queste linee guida aiuta a comunicare il rispetto del tempo dei sviluppatori che gestiscono e sviluppano questo progetto open source. In cambio, dovrebbero ricambiare questo rispetto affrontando i tuoi problemi o valutando le patch e le funzionalità.
 
-::: info Note
+::: info Nota
 
-**Any** contribution made on a repository other than
-[the original repository](https://code.castopod.org/adaures/castopod) will not
-be accepted.
+**Qualsiasi** contributo effettuato su un repository diverso dal
+[repository originale](https://code.castopod.org/adaures/castopod) non verrà
+accettato.
 
 :::
 
-## Using the issue tracker
+## Utilizzare lo strumento di tracciamento problemi
 
-The [issue tracker](https://code.castopod.org/adaures/castopod/-/issues) is the
-preferred channel for [bug reports](#bug-reports),
-[features requests](#feature-requests) and
-[submitting pull requests](#pull-requests).
+Lo [strumento di tracciamento problemi](https://code.castopod.org/adaures/castopod/-/issues) è il
+canale preferito per [segnalare bug](#segnalare-bug),
+[richieste di funzionalità](#richieste-di-funzionalit) e
+[inviare richieste pull](#richieste-pull).
 
-## ⚠️ Security issues and vulnerabilities
+## ⚠️ Problemi di sicurezza e vulnerabilità
 
-If you encounter any security issue or vulnerability in the Castopod source,
-please contact us directly by email at
+Se incontri qualsiasi problema di sicurezza o vulnerabilità nel codice sorgente di Castopod,
+per favore contattaci direttamente via email a
 [security@castopod.org](mailto:security@castopod.org)
 
-## Bug reports
+## Segnalazione di bug
 
-A bug is a _demonstrable problem_ that is caused by the code in the repository.
-Good bug reports are extremely helpful - thank you!
+Un bug è un _problema dimostrabile_ causato dal codice nel repository. Le segnalazioni di bug ben fatte sono estremamente utili: grazie!
 
-Guidelines for bug reports:
+Linee guida per le segnalazioni di bug:
 
-1. **Use the issue search** &mdash; check if the issue has already been
-   reported.
+1. **Utilizza la ricerca delle issue** – controlla se il problema è già stato segnalato.
 
-2. **Check if the issue has been fixed** &mdash; try to reproduce it using the
-   latest `main` branch in the repository.
+2. **Controlla se il problema è stato risolto** – prova a riprodurlo utilizzando il branch `main` più recente nel repository.
 
-3. **Isolate the problem** &mdash; ideally create a
-   [reduced test case](https://css-tricks.com/reduced-test-cases/) and a live
-   example.
+3. **Isola il problema** – idealmente crea un
+[ridotto caso di test](https://css-tricks.com/reduced-test-cases/) ed un esempio pratico.
 
-A good bug report shouldn't leave others needing to chase you up for more
-information. Please try to be as detailed as possible in your report. What is
-your environment? What steps will reproduce the issue? What browser(s) and OS
-experience the problem? What would you expect to be the outcome? All these
-details will help people to fix any potential bugs.
+Una buona segnalazione di bug non dovrebbe lasciare agli altri la necessità di cercarti ulteriori informazioni. Cerca di essere il più dettagliato possibile nella tua segnalazione. Quali sono le tue impostazioni? Quali passaggi riprodurranno il problema? Quali browser e sistemi operativi riscontrano il problema? Quale sarebbe l'esito atteso? Tutti questi dettagli aiuteranno le persone a risolvere eventuali bug potenziali.
 
-> [Issue templates](https://docs.gitlab.com/ee/user/project/description_templates.html#using-the-templates)
-> have been created for this project. You may use them to help you follow those
-> guidelines.
+> Sono stati creati dei [modelli di issue](https://docs.gitlab.com/ee/user/project/description_templates.html#using-the-templates) per questo progetto. Puoi utilizzarli per aiutarti a seguire queste linee guida.
 
-## Feature requests
+## Richieste di funzionalità
 
-Feature requests are welcome. But take a moment to find out whether your idea
-fits with the scope and aims of the project. It's up to _you_ to make a strong
-case to convince the project's developers of the merits of this feature. Please
-provide as much detail and context as possible.
+Le richieste di funzionalità sono benvenute. Tuttavia, prenditi un attimo per scoprire se la tua idea si adatta allo scopo e agli obiettivi del progetto. È tuo compito convincere gli sviluppatori del progetto dei meriti di questa funzionalità. Fornisci il maggior numero di dettagli e contesto possibile.
 
-## Pull requests
+## Richieste pull
 
-Good pull requests - patches, improvements, new features - are a fantastic help.
-They should remain focused in scope and avoid containing unrelated commits.
+Le richieste pull (pull request) ben fatte - patch, miglioramenti, nuove funzionalità - sono di grande aiuto. Devono rimanere focalizzate nell'ambito e evitare commit non correlati.
 
-**Please ask first** before embarking on any significant pull request (e.g.
-implementing features, refactoring code, porting to a different language),
-otherwise you risk spending a lot of time working on something that the
-project's developers might not want to merge into the project.
+**Per favore chiedi prima** di intraprendere una richiesta pull significativa (ad esempio implementare funzionalità, ristrutturare il codice, portare in un'altra lingua), altrimenti rischi di dedicare molto tempo a qualcosa che gli sviluppatori del progetto potrebbero non voler integrare nel progetto.
 
-Please adhere to the coding conventions used throughout a project (indentation,
-accurate comments, etc.) and any other requirements (such as test coverage).
+Si prega di attenersi alle convenzioni di codifica utilizzate in tutto un progetto (indentazione, commenti precisi, ecc.) e ad ogni altro requisito (come la copertura dei test).
 
-Adhering to the following process is the best way to get your work included in
-the project:
+Attenersi al seguente processo è il modo migliore per far includere il proprio lavoro nel progetto:
 
-1. [Fork](https://docs.gitlab.com/ee/gitlab-basics/fork-project.html) the
-   project, clone your fork, and configure the remotes:
+1. [Forka](https://docs.gitlab.com/ee/gitlab-basics/fork-project.html) il
+   progetto, clona il tuo fork e configura i remoti:
 
 ```bash
-# Clone your fork of the repo into the current directory
+# Clona il tuo fork del repository nella directory corrente
 git clone https://code.castopod.org/<your-username>/castopod.git
 
-# Navigate to the newly cloned directory
+# Sposta nella directory appena clonata
 cd castopod
 
-# Assign the original repo to a remote called "upstream"
+# Assegna al repository originale un remoto chiamato "upstream"
 git remote add upstream https://code.castopod.org/adaures/castopod.git
 ```
 
-2. If you cloned a while ago, get the latest changes from upstream:
+2. Se hai clonato tempo fa, ottieni gli ultimi cambiamenti dal repository upstream:
 
 ```bash
 git checkout main
 git pull upstream main
 ```
 
-3. Create a new topic branch (off the `main` branch) to contain your feature,
-   change, or fix:
+3. Crea un nuovo branch di argomento (dal ramo `main`) per contenere la tua funzionalità, modifica o correzione:
 
 ```bash
-git checkout -b <topic-branch-name>
+git checkout -b <nome-branch-argomento>
 ```
 
-4. Commit your changes in logical chunks. Please adhere to these
-   [git commit message guidelines](https://conventionalcommits.org/) or your
-   code is unlikely be merged into the main project. Use Git's
-   [interactive rebase](https://help.github.com/articles/about-git-rebase/)
-   feature to tidy up your commits before making them public.
+4. Fai il commit delle tue modifiche in blocchi logici. Segui queste
+   [linee guida per i messaggi di commit di Git](https://conventionalcommits.org/) o il tuo
+   codice difficilmente verrà integrato nel progetto principale. Utilizza la
+   funzionalità di [ribase interattivo di Git](https://help.github.com/articles/about-git-rebase/) per sistemare i tuoi commit prima di renderli pubblici.
 
-5. Locally merge (or rebase) the upstream dev branch into your topic branch:
+5. Esegui la fusione locale (o il rebase) del ramo dev upstream nel tuo ramo di argomento:
 
 ```bash
 git pull [--rebase] upstream main
 ```
 
-6. Push your topic branch up to your fork:
+6. Fai push del tuo ramo di argomento nel tuo fork:
 
 ```bash
-git push origin <topic-branch-name>
+git push origin <nome-branch-argomento>
 ```
 
-7. [Open a Pull Request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html#new-merge-request-from-a-fork)
-   with a clear title and description.
+7. [Apri una richiesta pull](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html#new-merge-request-from-a-fork)
+   con un titolo e una descrizione chiari.
 
-**IMPORTANT**: By submitting a patch, you agree to allow the project owners to
-license your work under the terms of the
+**IMPORTANTE**: Inviando una patch, accetti di concedere ai proprietari del progetto il
+diritto di licenziare il tuo lavoro secondo i termini della
 [GNU AGPLv3](https://code.castopod.org/adaures/castopod/-/blob/main/LICENSE).
 
-## Collaborating guidelines
+## Linee guida per la collaborazione
 
-There are few basic rules to ensure high quality of the project:
+Ci sono poche regole di base per garantire un'alta qualità del progetto:
 
-- Before merging, a PR requires at least two approvals from the collaborators
-  unless it's an architectural change, a large feature, etc. If it is, then at
-  least 50% of the core team have to agree to merge it, with every team member
-  having a full veto right. (i.e. every single one can block any PR)
-- A PR should remain open for at least two days before merging (does not apply
-  for trivial contributions like fixing a typo). This way everyone has enough
-  time to look into it.
+- Prima di effettuare la fusione, una pull request richiede almeno due approvazioni dai collaboratori a meno che non si tratti di un cambiamento architettonico, di una grande funzionalità, ecc. In tal caso, almeno il 50% del team principale deve essere d'accordo per unirlo, mentre ogni membro del team ha un pieno diritto di veto (cioè ognuno può bloccare qualsiasi pull request).
+- Una pull request dovrebbe rimanere aperta per almeno due giorni prima della fusione (non si applica a contributi banali come correggere un errore di battitura). In questo modo tutti avranno abbastanza tempo per esaminarla.
 
-You are always welcome to discuss and propose improvements to this guideline.
+Sei sempre il benvenuto per discutere e proporre miglioramenti a questa guida.
