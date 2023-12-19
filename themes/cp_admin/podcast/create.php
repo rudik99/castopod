@@ -37,6 +37,7 @@
 <Forms.Field
     as="MarkdownEditor"
     name="description"
+    helper="<?= lang('Podcast.form.description_hint') ?>"
     label="<?= lang('Podcast.form.description') ?>"
     required="true"
     disallowList="header,quote" />
@@ -133,7 +134,8 @@
 </Forms.Section>
 
 <Forms.Section
-    title="<?= lang('Podcast.form.fediverse_section_title') ?>" >
+    title="<?= lang('Podcast.form.fediverse_section_title') ?>"
+    subtitle="<?= lang('Podcast.form.fediverse_section_subtitle') ?>" >
     
     <div class="flex flex-col">
         <Forms.Label for="handle" hint="<?= lang('Podcast.form.handle_hint') ?>"><?= lang('Podcast.form.handle') ?></Forms.Label>

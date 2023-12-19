@@ -57,16 +57,17 @@ return [
     ],
     'form' => [
         'identity_section_title' => 'Podcast identity',
-        'identity_section_subtitle' => 'These fields allow you to get noticed.',
+        'identity_section_subtitle' => 'These fields are required to index your podcast.',
         'fediverse_section_title' => 'Fediverse identity',
+        'fediverse_section_subtitle' => 'Castopod will create a user in the fediverse associated to the podcast.',
 
         'cover' => 'Podcast cover',
         'cover_size_hint' => 'Cover must be squared and at least 1400px wide and tall.',
         'banner' => 'Podcast banner',
         'banner_size_hint' => 'Banner must have a 3:1 ratio and be at least 1500px wide.',
         'banner_delete' => 'Delete podcast banner',
-        'title' => 'Title',
-        'handle' => 'Handle',
+        'title' => 'Podcast name',
+        'handle' => 'Podcast handle',
         'handle_hint' =>
             'Used to identify the podcast. Uppercase, lowercase, numbers and underscores are accepted.',
         'type' => [
@@ -76,10 +77,11 @@ return [
             'serial' => 'Serial',
             'serial_hint' => 'If episodes are intended to be consumed in sequential order. The oldest episodes will be presented first.',
         ],
-        'description' => 'Description',
+        'description' => 'Podcast description',
+        'description_hint' => 'Remember to provide a detailed description of your podcast using keywords related to your subject. You may also include the podcast credits.',
         'classification_section_title' => 'Classification',
         'classification_section_subtitle' =>
-            'These fields will impact your audience and competition.',
+            'These fields are used to classify your podcast in the correct categories.',
         'language' => 'Language',
         'category' => 'Category',
         'category_placeholder' => 'Select a category…',
