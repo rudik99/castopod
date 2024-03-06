@@ -20,6 +20,7 @@
     "james-heinrich/getid3": "^2.0.0-beta5",
     "league/commonmark": "^2.4.2",
     "league/html-to-markdown": "5.1.1",
+    "mantas-done/subtitles": "^1.0.21",
     "melbahja/seo": "^v2.1.1",
     "michalsn/codeigniter4-uuid": "v1.0.2",
     "mpratt/embera": "^2.0.36",

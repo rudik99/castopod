@@ -13,6 +13,7 @@ namespace Modules\MediaClipper;
 use App\Entities\Episode;
 use Exception;
 use GdImage;
+use Modules\Media\CastopodSubtitles\CastopodSubtitles;
 use Modules\Media\Entities\Transcript;
 use Modules\Media\FileManagers\FileManagerInterface;
 use Modules\MediaClipper\Config\MediaClipper;
@@ -122,66 +123,17 @@ class VideoClipper
             throw new Exception('Episode does not have a transcript!');
         }
 
-        if ($this->episode->transcript->json_url) {
-            $this->generateSubtitlesClipFromJson($this->episode->transcript->json_key);
-        } else {
-            $subtitlesInput = $this->episode->transcript->file_url;
-            $subtitleClipCmd = "ffmpeg -y -i {$subtitlesInput} -ss {$this->start} -t {$this->duration} {$this->subtitlesClipOutput}";
-            exec($subtitleClipCmd);
-        }
-    }
+        $subtitleString = file_get_contents($this->episode->transcript->file_url);
 
-    public function generateSubtitlesClipFromJson(string $jsonFileKey): void
-    {
-        /** @var FileManagerInterface $fileManager */
-        $fileManager = service('file_manager');
-
-        $jsonTranscriptString = (string) $fileManager->getFileContents($jsonFileKey);
-        if ($jsonTranscriptString === '') {
-            throw new Exception('Cannot get transcript json contents.');
+        if (! $subtitleString) {
+            throw new Exception('Could not load transcript: ' . $this->episode->transcript->file_url);
         }
 
-        $jsonTranscript = json_decode($jsonTranscriptString, true);
-        if ($jsonTranscript === null) {
-            throw new Exception('Transcript json is invalid.');
-        }
+        $subtitles = CastopodSubtitles::loadFromString($subtitleString);
 
-        $srtClip = '';
-        $segmentIndex = 1;
-        foreach ($jsonTranscript as $segment) {
-            $startTime = null;
-            $endTime = null;
+        $subtitles->trim($this->start, $this->end);
 
-            if ($segment['startTime'] < $this->end && $segment['endTime'] > $this->start) {
-                $startTime = $segment['startTime'] - $this->start;
-                $endTime = $segment['endTime'] - $this->start;
-            }
-
-            if ($segment['startTime'] < $this->start && $this->start < $segment['endTime']) {
-                $startTime = 0;
-            }
-
-            if ($segment['startTime'] < $this->end && $segment['endTime'] >= $this->end) {
-                $endTime = $this->duration;
-            }
-
-            if ($startTime !== null && $endTime !== null) {
-                $formattedStartTime = $this->formatSeconds($startTime);
-                $formattedEndTime = $this->formatSeconds($endTime);
-                $srtClip .= <<<CODE_SAMPLE
-                {$segmentIndex}
-                {$formattedStartTime} --> {$formattedEndTime}
-                {$segment['text']}
-
-
-                CODE_SAMPLE;
-
-                ++$segmentIndex;
-            }
-        }
-
-        // create srt clip file
-        file_put_contents($this->subtitlesClipOutput, $srtClip);
+        $subtitles->save($this->subtitlesClipOutput);
     }
 
     public function formatSeconds(float $seconds): string
