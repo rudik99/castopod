@@ -32,7 +32,7 @@ please contact us directly by email at
 Contributions are always welcome!
 
 See the
-[contribution guidelines](https://docs.castopod.org/contributing/guidelines) for
+[contribution guidelines](https://docs.castopod.org/contributing/guidelines.html) for
 ways to get started.
 
 > **Note**
