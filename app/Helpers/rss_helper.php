@@ -66,7 +66,7 @@ if (! function_exists('get_rss_feed')) {
 
         // the last build date corresponds to the creation of the feed.xml cache
         $channel->addChild('lastBuildDate', (new Time('now'))->format(DATE_RFC1123));
-        $channel->addChild('generator', 'Castopod - https://castopod.org/');
+        $channel->addChild('generator', sprintf('Castopod/%s (+https://castopod.org/)', CP_VERSION));
         $channel->addChild('docs', 'https://cyber.harvard.edu/rss/rss.html');
 
         if ($podcast->guid === '') {
