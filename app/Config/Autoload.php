@@ -40,6 +40,7 @@ class Autoload extends AutoloadConfig
      */
     public $psr4 = [
         APP_NAMESPACE             => APPPATH,
+        'Themes'                  => ROOTPATH . 'themes',
         'Modules'                 => ROOTPATH . 'modules/',
         'Modules\Admin'           => ROOTPATH . 'modules/Admin/',
         'Modules\Analytics'       => ROOTPATH . 'modules/Analytics/',
@@ -55,7 +56,7 @@ class Autoload extends AutoloadConfig
         'Modules\PremiumPodcasts' => ROOTPATH . 'modules/PremiumPodcasts/',
         'Modules\Update'          => ROOTPATH . 'modules/Update/',
         'Modules\WebSub'          => ROOTPATH . 'modules/WebSub/',
-        'Themes'                  => ROOTPATH . 'themes',
+        'RSSFeed'                 => APPPATH . 'Libraries/RSSFeed',
         'ViewComponents'          => APPPATH . 'Libraries/ViewComponents/',
         'ViewThemes'              => APPPATH . 'Libraries/ViewThemes/',
         'Vite'                    => APPPATH . 'Libraries/Vite/',

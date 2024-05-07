@@ -37,16 +37,6 @@ if (! function_exists('get_rss_feed')) {
 
         $episodes = $podcast->episodes;
 
-        $itunesNamespace = 'http://www.itunes.com/dtds/podcast-1.0.dtd';
-
-        $podcastNamespace = 'https://podcastindex.org/namespace/1.0';
-
-        $atomNamespace = 'http://www.w3.org/2005/Atom';
-
-        $rss = new SimpleRSSElement(
-            "<?xml version='1.0' encoding='utf-8'?><rss version='2.0' xmlns:itunes='{$itunesNamespace}' xmlns:podcast='{$podcastNamespace}' xmlns:atom='{$atomNamespace}' xmlns:content='http://purl.org/rss/1.0/modules/content/'></rss>"
-        );
-
         $channel = $rss->addChild('channel');
 
         $atomLink = $channel->addChild('link', null, $atomNamespace);

@@ -8,7 +8,7 @@ declare(strict_types=1);
  * @link       https://castopod.org/
  */
 
-namespace App\Libraries;
+namespace App\Libraries\RSSFeed;
 
 use DOMDocument;
 use SimpleXMLElement;
