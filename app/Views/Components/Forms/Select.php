@@ -6,7 +6,7 @@ namespace App\Views\Components\Forms;
 
 class Select extends FormComponent
 {
-    protected array $props = ['options', 'selected'];
+    protected array $props = ['options', 'defaultValue'];
 
     protected array $casts = [
         'options' => 'array',
@@ -17,7 +17,7 @@ class Select extends FormComponent
      */
     protected array $options = [];
 
-    protected string $selected = '';
+    protected string $defaultValue = '';
 
     public function render(): string
     {
@@ -29,8 +29,18 @@ class Select extends FormComponent
             'data-no-choices-text' => lang('Common.forms.multiSelect.noChoicesText'),
             'data-max-item-text'   => lang('Common.forms.multiSelect.maxItemText'),
         ];
-        $extra = [...$defaultAttributes, ...$this->attributes];
+        $this->attributes = [...$defaultAttributes, ...$this->attributes];
 
-        return form_dropdown($this->name, $this->options, old($this->name, $this->selected !== '' ? [$this->selected] : []), $extra);
+        $options = '';
+        $selected = $this->value ?? $this->defaultValue;
+        foreach ($this->options as $option) {
+            $options .= '<option value="' . $option['value'] . '"' . ($option['value'] === $selected ? ' selected' : '') . '>' . $option['label'] . '</option>';
+        }
+
+        $this->attributes['name'] = $this->name;
+
+        return <<<HTML
+        <select {$this->getStringifiedAttributes()}>{$options}</select>
+        HTML;
     }
 }
