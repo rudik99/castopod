@@ -40,10 +40,10 @@ $isEpisodeArea = isset($podcast) && isset($episode);
                     <?php if (($isEpisodeArea && $episode->is_premium) || ($isPodcastArea && $podcast->is_premium)): ?>
                         <div class="inline-flex items-center">
                             <x-IconButton uri="<?= route_to('subscription-list', $podcast->id) ?>" glyph="exchange-dollar-fill" variant="secondary" size="large" class="p-0 mr-2 border-0"><?= ($isEpisodeArea && $episode->is_premium) ? lang('PremiumPodcasts.episode_is_premium') : lang('PremiumPodcasts.podcast_is_premium') ?></x-IconButton>
-                            <x-Heading tagName="h1" size="large" class="truncate"><?= $this->renderSection('pageTitle') ?></x-Heading>
+                            <x-Heading tagName="h1" size="large" class="max-w-sm truncate"><?= $this->renderSection('pageTitle') ?></x-Heading>
                         </div>
                     <?php else: ?>
-                            <x-Heading tagName="h1" size="large" class="truncate"><?= $this->renderSection('pageTitle') ?></x-Heading>
+                            <x-Heading tagName="h1" size="large" class="max-w-lg truncate"><?= $this->renderSection('pageTitle') ?></x-Heading>
                     <?php endif; ?>
                         <?= $this->renderSection('headerLeft') ?>
                     </div>
