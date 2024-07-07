@@ -41,7 +41,7 @@ return [
     ],
     'format' => [
         'landscape' => 'Liggend',
-        'portrait' => 'Portrait',
+        'portrait' => 'Portret',
         'squared' => 'Vierkant',
     ],
     'form' => [
