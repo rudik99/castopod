@@ -1,5 +1,5 @@
 ---
-title: How to install Castopod?
+title: Hoe installeer je Castopod?
 ---
 
 import { Aside } from "@astrojs/starlight/components";
@@ -7,15 +7,15 @@ import { Aside } from "@astrojs/starlight/components";
 Castopod was thought-out to be easy to install. Whether using dedicated or
 shared hosting, you can install it on most PHP-MySQL compatible web servers.
 
-## Requirements
+## Vereisten
 
-- PHP v8.3 or higher
+- PHP v8.3 of hoger
 - MySQL version 5.7 or higher or MariaDB version 10.2 or higher
-- HTTPS support
+- HTTPS-ondersteuning
 - An [ntp-synced clock](https://wiki.debian.org/NTP) to validate federation's
   incoming requests
 
-### PHP v8.3 or higher
+### PHP v8.3 of hoger
 
 PHP version 8.3 or higher is required, with the following extensions installed:
 
@@ -54,15 +54,15 @@ want to generate Video Clips. The following extensions must be installed:
 - **FreeType 2** library for
   [gd](https://www.php.net/manual/en/image.installation.php).
 
-### (Optional) Other recommendations
+### (Optioneel) Andere aanbevelingen
 
 - Redis for better cache performances.
 - CDN for static files caching and better performances.
 - e-mail gateway for lost passwords.
 
-## Install instructions
+## Instructies voor installeren
 
-### Pre-requisites
+### Voorvereisten
 
 0. Get a Web Server with [requirements](#requirements) installed
 1. Create a MySQL database for Castopod with a user having access and
@@ -90,12 +90,12 @@ want to generate Video Clips. The following extensions must be installed:
    - Generating video clips -
      [requires FFmpeg](#optional-ffmpeg-v418-or-higher-for-video-clips)
 
-### (recommended) Install Wizard
+### (aanbevolen) Installeer Wizard
 
 1. Run the Castopod install script by going to the install wizard page
    (`https://your_domain_name.com/cp-install`) in your favorite web browser.
-2. Follow the instructions on your screen.
-3. Start podcasting!
+2. Volg de instructies op uw scherm.
+3. Begin met podcasten!
 
 <Aside>
 
@@ -142,17 +142,17 @@ email.SMTPPass="your_smtp_password"
 
 #### Email config options
 
-| Variable name    | Type                 | Default      |
-| ---------------- | -------------------- | ------------ |
-| **`fromEmail`**  | string               | `undefined`  |
-| **`fromName`**   | string               | `"Castopod"` |
-| **`SMTPHost`**   | string               | `undefined`  |
-| **`SMTPUser`**   | string               | `undefined`  |
-| **`SMTPPass`**   | string               | `undefined`  |
-| **`SMTPPort`**   | number               | `25`         |
-| **`SMTPCrypto`** | [`"tls"` or `"ssl"`] | `"tls"`      |
+| Naam variabele    | Type                     | Standaard      |
+| ----------------- | ------------------------ | -------------- |
+| **`fromEmail`**   | tekenreeks               | `undefined`    |
+| **`fromName`**    | tekenreeks               | `"Castopod"`   |
+| **`SMTPHost`**    | tekenreeks               | `undefined`    |
+| **`SMTPUser`**    | tekenreeks               | `undefined`    |
+| **`SMTPPass`**    | tekenreeks               | `undefined`    |
+| **`SMTPPort`**    | nummer                   | `25`           |
+| **`SMTPCrypto`**  | [`"tls"` or `"ssl"`]     | `"tls"`        |
 
-### Media storage
+### Mediaopslag
 
 By default, files are saved to the `public/media` folder using the file system.
 If you need to relocate the `media` folder to a different location, you can
@@ -185,16 +185,16 @@ media.s3.region="your_s3_region"
 
 #### S3 config options
 
-| Variable name           | Type    | Default     |
-| ----------------------- | ------- | ----------- |
-| **`endpoint`**          | string  | `undefined` |
-| **`key`**               | string  | `undefined` |
-| **`secret`**            | string  | `undefined` |
-| **`region`**            | string  | `undefined` |
-| **`bucket`**            | string  | `castopod`  |
-| **`protocol`**          | number  | `undefined` |
-| **`pathStyleEndpoint`** | boolean | `false`     |
-| **`keyPrefix`**         | string  | `undefined` |
+| Naam variabele           | Type        | Standaard     |
+| ------------------------ | ----------- | ------------- |
+| **`endpoint`**           | tekenreeks  | `undefined`   |
+| **`key`**                | tekenreeks  | `undefined`   |
+| **`secret`**             | tekenreeks  | `undefined`   |
+| **`region`**             | string      | `undefined`   |
+| **`bucket`**             | string      | `castopod`    |
+| **`protocol`**           | number      | `undefined`   |
+| **`pathStyleEndpoint`**  | boolean     | `false`       |
+| **`keyPrefix`**          | string      | `undefined`   |
 
 ## Community packages
 
