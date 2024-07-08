@@ -2,6 +2,8 @@
 title: 安全问题
 ---
 
+import { Aside } from "@astrojs/starlight/components";
+
 Castopod 构建于 [CodeIgniter4](https://codeigniter.com/), PHP 框架上，鼓励
 [更好的安全实践](https://codeigniter.com/user_guide/concepts/security.html)。
 
@@ -21,6 +23,12 @@ sudo chown -R www-data:www-data /path/to/castopod/public/media
 ```
 
 ## Third-party Plugins
+
+<Aside type="caution" title="Disclaimer">
+  Installing untrusted third-party plugins on Castopod carries inherent security
+  risks, such as unauthorized access to sensitive user data, data breaches, data
+  tampering, and injecting malicious code.
+</Aside>
 
 Since v2's [Plugins Architecture](../../plugins), Castopod can be extended with
 all sorts of cool features. Anyone can choose to create their own plugins and
