@@ -23,9 +23,9 @@ Denne teksten blir sett inn i ein \<podcast:txt purpose="verify">-knagg. Roller 
 
 ### Løyve på nettstaden
 
-{/_ AUTH-INSTANCE-PERMISSIONS-LIST:START - Do not remove or modify this section _/}
+{/_ AUTH-INSTANCE-PERMISSIONS-LIST:START - Ikkje endre eller fjern denne delen _/}
 
-| permission              | description                                                                      |
+| løyve                   | skildring                                                                        |
 | ----------------------- | -------------------------------------------------------------------------------- |
 | admin.access            | Kan bruka styringspanelet for Castopod.                                          |
 | admin.settings          | Kan få tilgang til innstillingane for Castopod.                                  |
@@ -40,13 +40,13 @@ Denne teksten blir sett inn i ein \<podcast:txt purpose="verify">-knagg. Roller 
 
 {/_ AUTH-INSTANCE-PERMISSIONS-LIST:END _/}
 
-## 2. Per podcast roles and permissions
+## 2. Roller og løyve per podkast
 
 ### Roller pr. podkast
 
-{/_ AUTH-PODCAST-ROLES-LIST:START - Do not remove or modify this section _/}
+{/_ AUTH-PODCAST-ROLES-LIST:START - Ikkje slett eller endre denne delen _/}
 
-| role           | description                                                      | permissions                                                                                                                                                                                                                                                                                 |
+| rolle          | skildring                                                        | løyve                                                                                                                                                                                                                                                                                       |
 | -------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Administrator  | Har full kontroll over podkasten #{id}.                          | \*                                                                                                                                                                                                                                                                                          |
 | Redaktør       | Styrer innhald og publisering for podkasten #{id}.               | view, edit, manage-import, manage-persons, manage-platforms, manage-publications, manage-notifications, interact-as, episodes.view, episodes.create, episodes.edit, episodes.delete, episodes.manage-persons, episodes.manage-clips, episodes.manage-publications, episodes.manage-comments |
@@ -57,16 +57,16 @@ Denne teksten blir sett inn i ein \<podcast:txt purpose="verify">-knagg. Roller 
 
 ### Løyve pr. podkast
 
-{/_ AUTH-PODCAST-PERMISSIONS-LIST:START - Do not remove or modify this section _/}
+{/_ AUTH-PODCAST-PERMISSIONS-LIST:START - Ikkje fjern eller endre denne delen _/}
 
-| permission                   | description                                                                             |
+| løyve                        | skildring                                                                               |
 | ---------------------------- | --------------------------------------------------------------------------------------- |
 | view                         | Kan sjå styringspanelet og analysedata for podkasten #{id}.                             |
 | edit                         | Kan redigera podkasten #{id}.                                                           |
 | delete                       | Kan sletta podkasten #{id}.                                                             |
 | manage-import                | Kan synkronisera den importerte podkasten #{id}.                                        |
 | manage-persons               | Kan handtera abonnement for podkasten #{id}.                                            |
-| manage-subscriptions         | Can manage subscriptions of podcast #{id}.                                              |
+| manage-subscriptions         | Kan styra abonnement på podkast nr. {id}.                                               |
 | manage-contributors          | Kan handtera bidragsytarar for podkasten #{id}.                                         |
 | manage-platforms             | Kan oppretta og fjerna plattformlenkjer for podkasten #{id}.                            |
 | manage-publications          | Kan publisera podkasten #{id}.                                                          |
