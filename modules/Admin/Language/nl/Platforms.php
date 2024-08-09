@@ -24,7 +24,7 @@ return [
         'social' => 'Jouw ID',
         'funding' => 'Your CTA',
     ],
-    'your_cta' => 'Your call to action',
+    'your_cta' => 'Uw oproep tot actie',
     'visible' => 'Display in podcast homepage?',
     'on_embed' => 'Display on embeddable player?',
     'remove' => '{platformName} verwijderen',
@@ -38,6 +38,6 @@ return [
     'description' => [
         'podcasting' => 'The podcast ID on this platform',
         'social' => 'The podcast account ID on this platform',
-        'funding' => 'Call to action message',
+        'funding' => 'Oproep tot actie bericht',
     ],
 ];
