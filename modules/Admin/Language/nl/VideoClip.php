@@ -21,7 +21,7 @@ return [
             'running_hint' => 'Clip is being generated.',
             'failed' => 'mislukt',
             'failed_hint' => 'Clip could not be generated: script failure.',
-            'passed' => 'passed',
+            'passed' => 'geslaagd',
             'passed_hint' => 'Clip was generated successfully!',
         ],
         'clip' => 'Clip',
