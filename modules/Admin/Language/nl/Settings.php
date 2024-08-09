@@ -11,12 +11,12 @@ declare(strict_types=1);
 return [
     'title' => 'Algemene instellingen',
     'instance' => [
-        'title' => 'Instance',
+        'title' => 'Instantie',
         'site_icon' => 'Site icon',
         'site_icon_delete' => 'Delete site icon',
         'site_icon_hint' => 'Site icons are what you see on your browser tabs, bookmarks bar, and when you add a website as a shortcut on mobile devices.',
         'site_icon_helper' => 'Icon must be squared and at least 512px wide and tall.',
-        'site_name' => 'Site name',
+        'site_name' => 'Naam van site',
         'site_description' => 'Site description',
         'submit' => 'Opslaan',
         'editSuccess' => 'Instance has been updated successfully!',
