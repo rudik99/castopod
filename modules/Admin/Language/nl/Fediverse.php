@@ -22,7 +22,7 @@ return [
         'handle' => 'Account handle',
         'handle_hint' => 'Input @username@domain account.',
         'domain' => 'Domeinnaam',
-        'submit' => 'Block!',
+        'submit' => 'Blokkeren!',
     ],
     'list' => [
         'actor' => 'Account',
