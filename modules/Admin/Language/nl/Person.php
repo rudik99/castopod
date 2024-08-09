@@ -41,11 +41,11 @@ return [
         'add_section_subtitle' => 'U kunt meerdere personen en rollen kiezen.',
         'persons' => 'Personen',
         'persons_hint' =>
-            'You may select one or several persons with the same roles. You need to create the persons first.',
+            'U kunt een of meerdere personen met dezelfde rollen selecteren. U moet eerst de personen aanmaken.',
         'roles' => 'Rollen',
         'roles_hint' =>
             'You may select none, one or several roles for a person.',
-        'submit_add' => 'Add person(s)',
+        'submit_add' => 'Persoon/personen toevoegen',
         'remove' => 'Verwijderen',
     ],
     'episode_form' => [
@@ -54,11 +54,11 @@ return [
         'add_section_subtitle' => 'U kunt meerdere personen en rollen kiezen.',
         'persons' => 'Personen',
         'persons_hint' =>
-            'You may select one or several persons with the same roles. You need to create the persons first.',
+            'U kunt een of meerdere personen met dezelfde rollen selecteren. U moet eerst de personen aanmaken.',
         'roles' => 'Rollen',
         'roles_hint' =>
             'You may select none, one or several roles for a person.',
-        'submit_add' => 'Add person(s)',
+        'submit_add' => 'Persoon/personen toevoegen',
         'remove' => 'Verwijderen',
     ],
     'credits' => 'Credits',
