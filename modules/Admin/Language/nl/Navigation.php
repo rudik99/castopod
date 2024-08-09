@@ -11,7 +11,7 @@ declare(strict_types=1);
 return [
     'toggle_sidebar' => 'Zijbalk tonen/verbergen',
     'go_to_website' => 'Ga naar website',
-    'go_to_admin' => 'Go to admin',
+    'go_to_admin' => 'Ga naar beheerder',
     'not-authorized' => 'Niet geautoriseerd',
     'dashboard' => 'Dashboard',
     'admin' => 'Hoofdpagina',
