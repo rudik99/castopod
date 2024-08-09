@@ -38,7 +38,7 @@ a required "name" field and optional "email" and "url" fields:
 }
 ```
 
-Or you can shorten the object into a single string:
+Of je kunt het object inkorten tot een enkele tekenreeks:
 
 ```json
 "Jean Deau <jean.deau@example.com> (https://example.com/)"
@@ -76,7 +76,7 @@ not run it.
 Declare settings forms for persisting user data. The plugin's settings forms can
 be declared at three levels: `general`, `podcast`, and `episode`.
 
-Each level accepts one or more fields, identified by a key.
+Elk niveau accepteert een of meer velden, geïdentificeerd door een sleutel.
 
 ```json
 {
@@ -97,29 +97,29 @@ Each level accepts one or more fields, identified by a key.
 The `general`, `podcast`, and `episode` settings are of `Fields` object with
 each property being a field key and the value being a `Field` object.
 
-#### Field object
+#### Veld object
 
 A field is a form element:
 
-| Eigenschap         | Type                                                                                                                                                          | Notitie                                                            |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| `type`             | `checkbox` \| `datetime` \| `email` \| `markdown` \| `number` \| `radio-group` \| `select-multiple` \| `select` \| `text` \| `textarea` \| `toggler` \| `url` | Default is `text`                                                  |
-| `label` (required) | `tekenreeks`                                                                                                                                                  | Can be translated (see i18n)                                       |
-| `hint`             | `tekenreeks`                                                                                                                                                  | Can be translated (see i18n)                                       |
-| `helper`           | `tekenreeks`                                                                                                                                                  | Can be translated (see i18n)                                       |
-| `optional`         | `boolean`                                                                                                                                                     | Default is `false`                                                 |
-| `opties`           | `Opties`                                                                                                                                                      | Required for `radio-group`, `select-multiple`, and `select` types. |
+| Eigenschap          | Type                                                                                                                                                          | Notitie                                                            |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| `type`              | `checkbox` \| `datetime` \| `email` \| `markdown` \| `number` \| `radio-group` \| `select-multiple` \| `select` \| `text` \| `textarea` \| `toggler` \| `url` | Standaard is `tekst`                                               |
+| `label` (verplicht) | `tekenreeks`                                                                                                                                                  | Kan worden vertaald (zie i18n)                                     |
+| `hint`              | `tekenreeks`                                                                                                                                                  | Kan worden vertaald (zie i18n)                                     |
+| `helper`            | `tekenreeks`                                                                                                                                                  | Kan worden vertaald (zie i18n)                                     |
+| `optioneel`         | `boolean`                                                                                                                                                     | Standaard is 'onwaar'                                              |
+| `opties`            | `Opties`                                                                                                                                                      | Required for `radio-group`, `select-multiple`, and `select` types. |
 
-#### Options object
+#### Opties object
 
 The `Options` object properties are option keys and the value is an `Option`.
 
 ##### Optie object
 
-| Eigenschap          | Type         | Notitie                      |
-| ------------------- | ------------ | ---------------------------- |
-| `label` (verplicht) | `tekenreeks` | Can be translated (see i18n) |
-| `hint`              | `tekenreeks` | Can be translated (see i18n) |
+| Eigenschap          | Type         | Notitie                        |
+| ------------------- | ------------ | ------------------------------ |
+| `label` (verplicht) | `tekenreeks` | Kan worden vertaald (zie i18n) |
+| `hint`              | `tekenreeks` | Kan worden vertaald (zie i18n) |
 
 ### bestanden
 
@@ -128,5 +128,5 @@ plugin is installed.
 
 ### repository
 
-Repository where the plugin's code lives. Helpful for people who want to
-contribute.
+Repository where the plugin's code lives. Behulpzaam voor mensen die
+willen bijdragen.
