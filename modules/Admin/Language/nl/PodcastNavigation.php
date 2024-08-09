@@ -9,7 +9,7 @@ declare(strict_types=1);
  */
 
 return [
-    'go_to_page' => 'Go to podcast page',
+    'go_to_page' => 'Ga naar de podcastpagina',
     'rss_feed' => 'RSS feed',
     'dashboard' => 'Podcast dashboard',
     'podcast-view' => 'Hoofdpagina',
