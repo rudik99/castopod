@@ -163,7 +163,7 @@ return [
     ],
     'publish_form' => [
         'back_to_episode_dashboard' => 'Back to episode dashboard',
-        'post' => 'Your announcement post',
+        'post' => 'Jouw aankondigingsbericht',
         'post_hint' =>
             "Write a message to announce the publication of your episode. The message will be broadcasted to all your followers in the fediverse and be featured in your podcast's homepage.",
         'message_placeholder' => 'Schrijf uw bericht…',
@@ -186,7 +186,7 @@ return [
     ],
     'publish_date_edit_form' => [
         'new_publication_date' => 'Nieuwe publicatiedatum',
-        'new_publication_date_hint' => 'Must be set to a past date.',
+        'new_publication_date_hint' => 'Moet worden ingesteld op een datum in het verleden.',
         'submit' => 'Publicatiedatum bewerken',
     ],
     'unpublish_form' => [
@@ -197,8 +197,8 @@ return [
     ],
     'delete_form' => [
         'disclaimer' =>
-            "Deleting the episode will delete all media files, comments, video clips and soundbites associated with it.",
-        'understand' => 'I understand, I want to delete the episode',
+            "Bij het verwijderen van deze aflevering worden alle mediabestanden, reacties, videoclips en soundbites die ermee verbonden zijn verwijderd.",
+        'understand' => 'Ik begrijp het, ik wil deze aflevering verwijderen',
         'submit' => 'Verwijderen',
     ],
     'embed' => [
@@ -208,9 +208,9 @@ return [
         'clipboard_iframe' => 'Copy embeddable player to clipboard',
         'clipboard_url' => 'Kopieer adres naar klembord',
         'dark' => 'Donker',
-        'dark-transparent' => 'Dark transparent',
+        'dark-transparent' => 'Donker transparant',
         'light' => 'Licht',
-        'light-transparent' => 'Light transparent',
+        'light-transparent' => 'Licht transparant',
     ],
     'publication_status_banner' => [
         'draft_mode' => 'conceptmodus',
