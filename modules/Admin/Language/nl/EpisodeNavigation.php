@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 return [
     'go_to_page' => 'View episode page',
-    'dashboard' => 'Episode dashboard',
+    'dashboard' => 'Aflevering dashboard',
     'episode-view' => 'Hoofdpagina',
     'episode-edit' => 'Aflevering bewerken',
     'episode-persons-manage' => 'Personen beheren',
@@ -19,5 +19,5 @@ return [
     'video-clips-list' => 'Videoclips',
     'video-clips-create' => 'Nieuwe videoclip',
     'soundbites-list' => 'Soundbites',
-    'soundbites-create' => 'New soundbite',
+    'soundbites-create' => 'Nieuwe soundbite',
 ];
