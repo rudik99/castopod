@@ -9,7 +9,7 @@ declare(strict_types=1);
  */
 
 return [
-    'installed' => 'Plugins installed',
+    'installed' => 'Plug-ins geïnstalleerd',
     'about' => 'Over',
     'website' => 'Website',
     'repository' => 'Code repository',
@@ -41,7 +41,7 @@ return [
     'noDescription' => 'Geen beschrijving',
     'noReadme' => 'Geen README-bestand gevonden.',
     'messages' => [
-        'saveSettingsSuccess' => '{pluginTitle} settings were successfully saved!',
+        'saveSettingsSuccess' => '{pluginTitle} instellingen zijn succesvol opgeslagen!',
     ],
     'errors' => [
         'manifestError' => 'Plugin manifest has errors',
