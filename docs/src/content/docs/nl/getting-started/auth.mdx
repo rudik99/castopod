@@ -15,11 +15,11 @@ niveaus:
 
 {/_ AUTH-INSTANCE-ROLES-LIST:START - Do not remove or modify this section _/}
 
-| role            | description                                | permissions                                                                                            |
-| --------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| Super beheerder | Heeft de volledige controle over Castopod. | admin.\*, plugins.\*, podcasts.\*, users.manage, persons.manage, pages.manage, fediverse.manage-blocks |
-| Beheerder       | Beheert de inhoud van Castopod.            | podcasts.create, podcasts.import, persons.manage, pages.manage                                         |
-| Podcaster       | Algemene gebruikers van Castopod.          | admin.access                                                                                           |
+| rol             | description                                | machtigingen                                                                                            |
+| --------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------- |
+| Super beheerder | Heeft de volledige controle over Castopod. | admin.\*, plugins.\*, podcasts.\*, users.manage, persons.manage, pages.manage, fediverse.manage-blocks  |
+| Beheerder       | Beheert de inhoud van Castopod.            | podcasts.create, podcasts.import, persons.manage, pages.manage                                          |
+| Podcaster       | Algemene gebruikers van Castopod.          | admin.access                                                                                            |
 
 {/_ AUTH-INSTANCE-ROLES-LIST:END _/}
 
@@ -27,7 +27,7 @@ niveaus:
 
 {/_ AUTH-INSTANCE-PERMISSIONS-LIST:START - Do not remove or modify this section _/}
 
-| permission              | description                                                                            |
+| permission              | beschrijving                                                                           |
 | ----------------------- | -------------------------------------------------------------------------------------- |
 | admin.access            | Kan toegang krijgen tot de beheeromgeving van Castopod.                                |
 | admin.settings          | Kan toegang krijgen tot de instellingen van Castopod.                                  |
@@ -48,12 +48,12 @@ niveaus:
 
 {/_ AUTH-PODCAST-ROLES-LIST:START - Do not remove or modify this section _/}
 
-| role       | description                                                        | permissions                                                                                                                                                                                                                                                                                 |
-| ---------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Beheerder  | Heeft de volledige controle over podcast #{id}.                    | \*                                                                                                                                                                                                                                                                                          |
-| Redacteur  | Beheert inhoud en publicaties van podcast #{id}.                   | view, edit, manage-import, manage-persons, manage-platforms, manage-publications, manage-notifications, interact-as, episodes.view, episodes.create, episodes.edit, episodes.delete, episodes.manage-persons, episodes.manage-clips, episodes.manage-publications, episodes.manage-comments |
-| Auteur     | Beheert de inhoud van podcast #{id} maar kan deze niet publiceren. | view, manage-persons, episodes.view, episodes.create, episodes.edit, episodes.manage-persons, episodes.manage-clips                                                                                                                                                                         |
-| Gast       | Algemene bijdrager van podcast #{id}.                              | view, episodes.view                                                                                                                                                                                                                                                                         |
+| rol        | beschrijving                                                       | machtigingen                                                                                                                                                                                                                                                                                 |
+| ---------- | ------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Beheerder  | Heeft de volledige controle over podcast #{id}.                    | \*                                                                                                                                                                                                                                                                                           |
+| Redacteur  | Beheert inhoud en publicaties van podcast #{id}.                   | view, edit, manage-import, manage-persons, manage-platforms, manage-publications, manage-notifications, interact-as, episodes.view, episodes.create, episodes.edit, episodes.delete, episodes.manage-persons, episodes.manage-clips, episodes.manage-publications, episodes.manage-comments  |
+| Auteur     | Beheert de inhoud van podcast #{id} maar kan deze niet publiceren. | view, manage-persons, episodes.view, episodes.create, episodes.edit, episodes.manage-persons, episodes.manage-clips                                                                                                                                                                          |
+| Gast       | Algemene bijdrager van podcast #{id}.                              | view, episodes.view                                                                                                                                                                                                                                                                          |
 
 {/_ AUTH-PODCAST-ROLES-LIST:END _/}
 
@@ -61,26 +61,26 @@ niveaus:
 
 {/_ AUTH-PODCAST-PERMISSIONS-LIST:START - Do not remove or modify this section _/}
 
-| permission                   | description                                                                                    |
-| ---------------------------- | ---------------------------------------------------------------------------------------------- |
-| view                         | Kan dashboard en analyses van podcast #{id} zien.                                              |
-| edit                         | Kan podcast #{id} wijzigen.                                                                    |
-| delete                       | Kan podcast #{id} verwijderen.                                                                 |
-| manage-import                | Kan de geïmporteerde podcast #{id} synchroniseren.                                             |
-| manage-persons               | Kan abonnementen van podcast #{id} beheren.                                                    |
-| manage-subscriptions         | Can manage subscriptions of podcast #{id}.                                                     |
-| manage-contributors          | Kan bijdragers van podcast #{id} beheren.                                                      |
-| manage-platforms             | Kan platform links van podcast #{id} instellen of verwijderen.                                 |
-| manage-publications          | Kan podcast #{id} publiceren.                                                                  |
-| manage-notifications         | Kan meldingen bekijken en markeren als gelezen voor podcast #{id}.                             |
-| interact-as                  | Kan als podcast #{id} handelen om te favorieten, te delen of te reageren op berichten.         |
-| episodes.view                | Kan dashboard en analyses van de afleveringen van podcast #{id} zien.                          |
-| episodes.create              | Kan afleveringen voor podcast #{id} aanmaken.                                                  |
-| episodes.edit                | Kan afleveringen van podcast #{id} wijzigen.                                                   |
-| episodes.delete              | Kan afleveringen van podcast #{id} verwijderen.                                                |
-| episodes.manage-persons      | Kan aflevering personen van podcast #{id} beheren.                                             |
-| episodes.manage-clips        | Kan videoclips of soundbites van podcast #{id} beheren.                                        |
-| episodes.manage-publications | Kan afleveringen en berichten van podcast #{id} publiceren/depubliceren.                       |
-| episodes.manage-comments     | Kan opmerkingen van aflevering van podcast van #{id} maken of verwijderen.                     |
+| permission                        | beschrijving                                                                                   |
+| --------------------------------- | ---------------------------------------------------------------------------------------------- |
+| weergeven                         | Kan dashboard en analyses van podcast #{id} zien.                                              |
+| bewerken                          | Kan podcast #{id} wijzigen.                                                                    |
+| verwijderen                       | Kan podcast #{id} verwijderen.                                                                 |
+| manage-import                     | Kan de geïmporteerde podcast #{id} synchroniseren.                                             |
+| manage-persons                    | Kan abonnementen van podcast #{id} beheren.                                                    |
+| manage-subscriptions              | Can manage subscriptions of podcast #{id}.                                                     |
+| manage-contributors               | Kan bijdragers van podcast #{id} beheren.                                                      |
+| manage-platforms                  | Kan platform links van podcast #{id} instellen of verwijderen.                                 |
+| manage-publications               | Kan podcast #{id} publiceren.                                                                  |
+| manage-notifications              | Kan meldingen bekijken en markeren als gelezen voor podcast #{id}.                             |
+| interact-as                       | Kan als podcast #{id} handelen om te favorieten, te delen of te reageren op berichten.         |
+| episodes.view                     | Kan dashboard en analyses van de afleveringen van podcast #{id} zien.                          |
+| episodes.create                   | Kan afleveringen voor podcast #{id} aanmaken.                                                  |
+| episodes.edit                     | Kan afleveringen van podcast #{id} wijzigen.                                                   |
+| episodes.delete                   | Kan afleveringen van podcast #{id} verwijderen.                                                |
+| episodes.manage-persons           | Kan aflevering personen van podcast #{id} beheren.                                             |
+| episodes.manage-clips             | Kan videoclips of soundbites van podcast #{id} beheren.                                        |
+| episodes.manage-publications      | Kan afleveringen en berichten van podcast #{id} publiceren/depubliceren.                       |
+| episodes.manage-comments          | Kan opmerkingen van aflevering van podcast van #{id} maken of verwijderen.                     |
 
 {/_ AUTH-PODCAST-PERMISSIONS-LIST:END _/}
