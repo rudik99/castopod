@@ -9,7 +9,7 @@ Plugins are ways to extend Castopod's core features.
 ## Plugin folder structure
 
 <FileTree>
-  * hello-world
+  * hallo-wereld
     * i18n
       * en.json
       * fr.json
@@ -25,7 +25,7 @@ Plugins reside in the `plugins/` directory under a `vendor/` folder, ie. the
 organisation or person who authored the plugin.
 
 <FileTree>
-  * **plugins**
+  * **plug-ins**
     * acme
       * hello-world/
       * …
@@ -75,7 +75,7 @@ class AcmeHelloWorldPlugin extends BasePlugin
 }
 ```
 
-<Aside type="note">
+<Aside type="notitie">
   The Plugin class name is determined by its `vendor/name` pair.\
   For example, a plugin living under the `acme/hello-world` folder must be named
   `AcmeHelloWorldPlugin`:
@@ -98,7 +98,7 @@ In addition to specifying [the license in the manifest](./manifest#license), you
 may add a `LICENSE.md` file. Just as the `README.md` file, its contents will be
 loaded into the plugin's view page for the user to read.
 
-### Plugin icon
+### Plug-in pictogram
 
 The plugin icon is displayed next to its title, it is an SVG file intended to
 give a graphical representation of the plugin.
@@ -125,7 +125,7 @@ The translation strings allow you to translate the title, description and
 settings keys (ie. labels, hints, helpers, etc.).
 
 <Tabs>
-  <TabItem label="English">
+  <TabItem label="Engels">
     ```json
     // i18n/en.json
     {
@@ -145,7 +145,7 @@ settings keys (ie. labels, hints, helpers, etc.).
     ```
   </TabItem>
 
-  <TabItem label="French">
+  <TabItem label="Frans">
     ```json
     // i18n/fr.json
     {
