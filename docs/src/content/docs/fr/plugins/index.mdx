@@ -1,12 +1,12 @@
 ---
-title: Castopod Plugins
+title: Plugins Castopod
 ---
 
 import { FileTree, Aside, Tabs, TabItem } from "@astrojs/starlight/components";
 
-Plugins are ways to extend Castopod's core features.
+Les plugins permettent d'étendre les fonctionnalités de base de Castopod.
 
-## Plugin folder structure
+## Structure des répertoires de plugins
 
 <FileTree>
   * hello-world
@@ -21,8 +21,7 @@ Plugins are ways to extend Castopod's core features.
     * README.md
 </FileTree>
 
-Plugins reside in the `plugins/` directory under a `vendor/` folder, ie. the
-organisation or person who authored the plugin.
+Les plugins se trouvent dans le répertoire `plugins/` dans un sous-dossier `vendor/` nommé d'après l'organisation ou la personne à l'origine du plugin.
 
 <FileTree>
   * **plugins**
@@ -41,14 +40,13 @@ Ce fichier détermine si un plugin est valide ou non. Voici les données minimal
 ```json
 ```
 
-Checkout the [manifest.json reference](./manifest).
+Consultez [manifest.json](./manifest) pour référence.
 
 ### Classe Plugin (requis)
 
 C'est ici que vit la logique du plugin.
 
-The Plugin class extends Castopod's BasePlugin class and implements one or more
-[Hooks](./hooks) (methods) intended to be run throughout Castopod's codebase.
+La classe Plugin étend la classe BasePlugin de Castopod et implémente un ou plusieurs [Hooks](./hooks) (méthodes) destinés à être exécutés dans tout le codebase de Castopod.
 
 ```php
 // Plugin.php
@@ -69,13 +67,12 @@ class AcmeHelloWorldPlugin extends BasePlugin
 ```
 
 <Aside type="note">
-  The Plugin class name is determined by its `vendor/name` pair.\
-  For example, a plugin living under the `acme/hello-world` folder must be named
-  `AcmeHelloWorldPlugin`:
+  Le nom de classe du plugin est déterminé par la paire `vendor/name`.\
+  Par exemple, un plugin se trouvant sous le dossier `acme/hello-world` doit être nommé `AcmeHelloWorldPlugin` :
 
-  * the first letter of every word is capitalized (ie. PascalCase)
-  * any special caracter is removed
-  * the `Plugin` suffix is added
+  * la première lettre de chaque mot doit être une capitale (PascalCase)
+  * tout caractère spécial est supprimé
+  * le suffixe `Plugin` est ajouté
 </Aside>
 
 ### Plugin README
