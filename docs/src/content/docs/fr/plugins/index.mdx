@@ -32,27 +32,20 @@ organisation or person who authored the plugin.
     * atlantis/
 </FileTree>
 
-### Plugin manifest (required)
+### Manifeste du plugin (requis)
 
-The plugin manifest is a JSON file containing the plugin's metadata and
-declarations.
+Le manifeste du plugin est un fichier JSON contenant les métadonnées et les déclarations du plugin.
 
-This file will determine whether a plugin is valid or not. The minimal required
-data being:
+Ce fichier détermine si un plugin est valide ou non. Voici les données minimales requises :
 
 ```json
-// manifest.json
-{
-  "name": "acme/hello-world",
-  "version": "1.0.0"
-}
 ```
 
 Checkout the [manifest.json reference](./manifest).
 
-### Plugin class (required)
+### Classe Plugin (requis)
 
-This is where the plugin's logic lives.
+C'est ici que vit la logique du plugin.
 
 The Plugin class extends Castopod's BasePlugin class and implements one or more
 [Hooks](./hooks) (methods) intended to be run throughout Castopod's codebase.
