@@ -9,39 +9,39 @@ declare(strict_types=1);
  */
 
 return [
-    'installed' => 'Plugins installed',
-    'about' => 'About',
-    'website' => 'Website',
-    'repository' => 'Code repository',
-    'authors' => 'Authors',
-    'author_email' => 'Email {authorName}',
-    'author_homepage' => '{authorName} homepage',
+    'installed' => 'Plugin installé',
+    'about' => 'À propos',
+    'website' => 'Site web',
+    'repository' => 'Dépôt du code',
+    'authors' => 'Auteurs',
+    'author_email' => 'Envoyer un email à {authorName}',
+    'author_homepage' => 'Page de {authorName}',
     'declaredHooks' => 'Declared hooks',
-    'settings' => 'Settings',
+    'settings' => 'Paramètres',
     'settingsTitle' => '{type, select,
-        podcast {{pluginTitle} podcast settings}
-        episode {{pluginTitle} episode settings}
-        other {{pluginTitle} general settings}
+        podcast {{pluginTitle} Paramètres du podcast}
+        episode {{pluginTitle} Paramètres de l\'épisode}
+        other {{pluginTitle} Paramètres généraux}
     }',
-    'view' => 'View',
-    'activate' => 'Activate',
-    'deactivate' => 'Deactivate',
-    'active' => 'Active',
-    'inactive' => 'Inactive',
-    'invalid' => 'Invalid',
+    'view' => 'Voir',
+    'activate' => 'Activer',
+    'deactivate' => 'Désactiver',
+    'active' => 'Actif',
+    'inactive' => 'Inactif',
+    'invalid' => 'Invalide',
     'incompatible' => 'Incompatible',
-    'incompatible_hint' => 'Plugin requires Castopod v{minCastopodVersion} minimum.',
-    'uninstall' => 'Uninstall',
+    'incompatible_hint' => 'Le plugin nécessite Castopod v{minCastopodVersion} au minimum.',
+    'uninstall' => 'Désinstaller',
     'keywords' => [
         'podcasting20' => 'Podcasting 2.0',
-        'seo' => 'SEO',
-        'analytics' => 'Analytics',
-        'accessibility' => 'Accessibility',
+        'seo' => 'Optimisation pour les moteurs de recherche (SEO)',
+        'analytics' => 'Mesures d’audience',
+        'accessibility' => 'Accessibilité',
     ],
-    'noDescription' => 'No description',
-    'noReadme' => 'No README file found.',
+    'noDescription' => 'Aucune description',
+    'noReadme' => 'Aucun fichier README trouvé.',
     'messages' => [
-        'saveSettingsSuccess' => '{pluginTitle} settings were successfully saved!',
+        'saveSettingsSuccess' => 'Les paramètres du plugin {pluginTitle} ont été enregistrés avec succès !',
     ],
     'errors' => [
         'manifestError' => 'Plugin manifest has errors',
