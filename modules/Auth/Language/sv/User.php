@@ -13,9 +13,9 @@ return [
     'ban' => 'Ban',
     'unban' => 'Unban',
     'delete' => 'Radera',
-    'create' => 'New user',
+    'create' => 'Ny användare',
     'view' => "{username}'s info",
-    'all_users' => 'All users',
+    'all_users' => 'Alla användare',
     'list' => [
         'user' => 'User',
         'role' => 'Role',
@@ -26,19 +26,19 @@ return [
         'username' => 'Användarnamn',
         'password' => 'Lösenord',
         'new_password' => 'Nytt lösenord',
-        'role' => 'Role',
-        'roles' => 'Roles',
+        'role' => 'Roll',
+        'roles' => 'Roller',
         'permissions' => 'Permissions',
-        'submit_create' => 'Create user',
-        'submit_edit' => 'Save',
+        'submit_create' => 'Skapa användare',
+        'submit_edit' => 'Spara',
         'submit_password_change' => 'Change!',
     ],
     'delete_form' => [
-        'title' => 'Delete {user}',
+        'title' => 'Radera {user}',
         'disclaimer' =>
             "You are about to delete {user} permanently. They will not be able to access the admin area anymore.",
         'understand' => 'I understand, I want to delete {user} permanently',
-        'submit' => 'Delete',
+        'submit' => 'Radera',
     ],
     'messages' => [
         'createSuccess' =>
