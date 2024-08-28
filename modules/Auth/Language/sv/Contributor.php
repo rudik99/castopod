@@ -21,7 +21,7 @@ return [
         'role' => 'Roll',
     ],
     'form' => [
-        'user' => 'User',
+        'user' => 'Användare',
         'user_placeholder' => 'Select a user…',
         'role' => 'Roll',
         'role_placeholder' => 'Select its role…',
