@@ -12,8 +12,7 @@ byggjeprosessen:
 - [**`castopod/web-server`**](https://hub.docker.com/r/castopod/web-server):eit
   nginx-oppsett for Castopod
 
-Additionally, Castopod requires a MySQL-compatible database. A Redis database
-can be added as a cache handler.
+I tillegg krev Castopod ein MySQL-kompatibel database. Du kan leggja til ein Redis-database for å handtera mellomlager.
 
 ## Støtta merkelappar
 
@@ -92,8 +91,7 @@ can be added as a cache handler.
 
 3. Set opp ein revers-mellomlagertenar for TLS (SSL/HTTPS)
 
-   TLS is mandatory for ActivityPub to work. This job can easily be handled by
-   a reverse proxy, for example with [Caddy](https://caddyserver.com/):
+   Du må ha TLS for at ActivityPub skal fungera. Denne jobben kan ein baklengs mellomlagertenar handtera enkelt, td. [Caddy](https://caddyserver.com/):
 
    ```
    #castopod
@@ -106,7 +104,7 @@ can be added as a cache handler.
    `https://castopod.eksempel.com/cp-install` for å gjera ferdig
    Castopod-oppsettet!
 
-5. You're all set, start podcasting! 🎙️🚀
+5. Du er klar, start med podkastinga di! 🎙️🚀
 
 ## Systemvariablar
 
