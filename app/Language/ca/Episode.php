@@ -23,8 +23,8 @@ return [
     'back_to_episodes' => 'Tornar als episodis de {podcast}',
     'comments' => 'Comentaris',
     'activity' => 'Activitat',
-    'chapters' => 'Chapters',
-    'transcript' => 'Transcript',
+    'chapters' => 'Capítols',
+    'transcript' => 'Transcripció',
     'description' => 'Descripció de l\'episodi',
     'number_of_comments' => '{numberOfComments, plural,
         one {# comentari}
@@ -33,18 +33,18 @@ return [
     'all_podcast_episodes' => 'Tots els episodis del podcast',
     'back_to_podcast' => 'Tornar al podcast',
     'preview' => [
-        'title' => 'Preview',
-        'not_published' => 'Not published',
+        'title' => 'Vista prèvia',
+        'not_published' => 'No publicat',
         'text' => '{publication_status, select,
-            published {This episode is not yet published.}
-            scheduled {This episode is scheduled for publication on {publication_date}.}
-            with_podcast {This episode will be published at the same time as the podcast.}
-            other {This episode is not yet published.}
+            published {L\'episodi ja s\'ha publicat.}
+            scheduled {L\'episodi està programat perquè es publiqui a {publication_date}.}
+            with_podcast {Aquest episodi es publicarà alhora que el podcast.}
+            other {Aquest episodi encara no s\'ha publicat.}
         }',
-        'publish' => 'Publish',
-        'publish_edit' => 'Edit publication',
+        'publish' => 'Publica',
+        'publish_edit' => 'Edita la publicació',
     ],
-    'no_chapters' => 'No chapters are available for this episode.',
-    'download_transcript' => 'Download transcript ({extension})',
-    'no_transcript' => 'No transcript available for this episode.',
+    'no_chapters' => 'Aquest episodi no està dividit en capítols.',
+    'download_transcript' => 'Descarrega\'n la transcripció ({extension})',
+    'no_transcript' => 'Aquest episodi no té transcripció.',
 ];
