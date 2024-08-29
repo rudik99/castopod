@@ -22,7 +22,7 @@ return [
     'all_podcast_episodes' => 'Tots els episodis del podcast',
     'back_to_podcast' => 'Tornar al podcast',
     'edit' => 'Editar',
-    'preview' => 'Preview',
+    'preview' => 'Previsualitza',
     'publish' => 'Publicar',
     'publish_edit' => 'Editar la publicació',
     'publish_date_edit' => 'Edita la data de publicació',
@@ -56,7 +56,7 @@ return [
         }',
         'episode' => 'Episodi',
         'visibility' => 'Visibilitat',
-        'downloads' => 'Downloads',
+        'downloads' => 'Descàrregues',
         'comments' => 'Comentaris',
         'actions' => 'Accions',
     ],
@@ -81,13 +81,13 @@ return [
             audio {l\'àudio}
             other {el material}
         } de l\'episodi.',
-        'deleteFileError' => 'Failed to delete {type, select,
-            transcript {transcript}
-            chapters {chapters}
-            image {cover}
-            audio {audio}
-            other {media}
-        } file {file_key}. You may manually remove it from your disk.',
+        'deleteFileError' => 'No s\'ha pogut esborrar el fitxer {file_key} {type, select,
+            transcript {de la transcripció}
+            chapters {dels episodis}
+            image {de la portada}
+            audio {de l\'àudio}
+            other {del material}
+        }. Podeu esborrar-los manualment del disc.',
         'sameSlugError' => 'Ja existeix un episodi amb aquest àlies.',
     ],
     'form' => [
@@ -139,9 +139,9 @@ return [
         'location_name' => 'Nom i adreça de la ubicació',
         'location_name_hint' => 'Pot ser una ubicació real o fictícia',
         'transcript' => 'Transcripció (subtítols)',
-        'transcript_hint' => 'Only .srt or .vtt are allowed.',
+        'transcript_hint' => 'Només es permeten els formats .srt i .vtt.',
         'transcript_download' => 'Baixar la transcripció',
-        'transcript_file' => 'Transcript file (.srt or .vtt)',
+        'transcript_file' => 'Arxiu de subtítols (.srt o .vtt)',
         'transcript_remote_url' => 'URL remota per a la transcripció',
         'transcript_file_delete' => 'Eliminar el fitxer de la transcripció',
         'chapters' => 'Capítols',
@@ -213,13 +213,13 @@ return [
         'light-transparent' => 'Clar i transparent',
     ],
     'publication_status_banner' => [
-        'draft_mode' => 'draft mode',
+        'draft_mode' => 'mode esborrany',
         'text' => '{publication_status, select,
-            published {This episode is not yet published.}
-            scheduled {This episode is scheduled for publication on {publication_date}.}
-            with_podcast {This episode will be published at the same time as the podcast.}
-            other {This episode is not yet published.}
+            published {L\'episodi ja s\'ha publicat.}
+            scheduled {L\'episodi està programat perquè es publiqui a {publication_date}.}
+            with_podcast {Aquest episodi es publicarà alhora que el podcast.}
+            other {Aquest episodi encara no s\'ha publicat.}
         }',
-        'preview' => 'Preview',
+        'preview' => 'Vista prèvia',
     ],
 ];
