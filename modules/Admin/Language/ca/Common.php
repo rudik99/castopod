@@ -40,7 +40,7 @@ return [
         ],
         'upload_file' => 'Pujar un fitxer',
         'remote_url' => 'URL remota',
-        'save' => 'Save',
+        'save' => 'Desa',
     ],
     'play_episode_button' => [
         'play' => 'Reproduir',
