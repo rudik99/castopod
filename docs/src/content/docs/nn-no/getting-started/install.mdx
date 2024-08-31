@@ -11,24 +11,23 @@ Det er meininga at Castopod skal vera lett å installera. Uansett om du bruker e
 - PHP v8.3 eller nyare
 - MySQL versjon 5.7 eller nyare, eller MariaDB versjon 10.2 eller nyare
 - Støtte for HTTPS
-- An [ntp-synced clock](https://wiki.debian.org/NTP) to validate federation's
-  incoming requests
+- Ei [ntp-synkronisert klokke](https://wiki.debian.org/NTP) for å stadfesta innkomande førespurnader frå allheimen
 
-### PHP v8.3 or higher
+### PHP v8.3 eller nyare
 
-PHP version 8.3 or higher is required, with the following extensions installed:
+Du må ha PHP version 8.3 eller nyare, og med desse utvidingane:
 
 - [intl](https://php.net/manual/en/intl.requirements.php)
 - [libcurl](https://php.net/manual/en/curl.requirements.php)
 - [mbstring](https://php.net/manual/en/mbstring.installation.php)
-- [gd](https://www.php.net/manual/en/image.installation.php) with **JPEG**,
-  **PNG** and **WEBP** libraries.
+- [gd](https://www.php.net/manual/en/image.installation.php) med **JPEG**,
+  **PNG** og **WEBP**-biblioteka.
 - [exif](https://www.php.net/manual/en/exif.installation.php)
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+I tillegg må du sjå til at desse utvidingane er slått på i PHP-oppsettet ditt:
 
-- json (enabled by default - don't turn it off)
-- xml (enabled by default - don't turn it off)
+- json (skrudd på som standardval - ikkje skru det av)
+- xml (skrudd på som standardval - ikkje skru det av)
 - [mysqlnd](https://php.net/manual/en/mysqlnd.install.php)
 
 ### MySQL compatible database
