@@ -45,7 +45,6 @@ return [
     'monetization-other' => 'other monetization',
     'analytics' => 'analytics',
     'locations' => 'locations',
-    'webpages' => 'web pages',
     'unique-listeners' => 'unique listeners',
     'players' => 'players',
     'listening-time' => 'listening time',

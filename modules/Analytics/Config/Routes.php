@@ -15,11 +15,11 @@ declare(strict_types=1);
  */
 $routes->addPlaceholder(
     'class',
-    '\bPodcastByCountry|\bPodcastByEpisode|\bPodcastByHour|\bPodcastByPlayer|\bPodcastByRegion|\bPodcastByService|\bPodcast|\bWebsiteByBrowser|\bWebsiteByEntryPage|\bWebsiteByReferer',
+    '\bPodcastByCountry|\bPodcastByEpisode|\bPodcastByHour|\bPodcastByPlayer|\bPodcastByRegion|\bPodcastByService|\bPodcast',
 );
 $routes->addPlaceholder(
     'filter',
-    '\bWeekly|\bYearly|\bByDay|\bByWeekday|\bByMonth|\bByAppWeekly|\bByAppYearly|\bByOsWeekly|\bByDeviceWeekly|\bBots|\bByServiceWeekly|\bBandwidthByDay|\bUniqueListenersByDay|\bUniqueListenersByMonth|\bTotalListeningTimeByDay|\bTotalListeningTimeByMonth|\bByDomainWeekly|\bByDomainYearly|\bTotalBandwidthByMonth|\bTotalStorageByMonth',
+    '\bWeekly|\bYearly|\bByDay|\bByWeekday|\bByMonth|\bByAppWeekly|\bByAppYearly|\bByOsWeekly|\bByDeviceWeekly|\bBots|\bByServiceWeekly|\bBandwidthByDay|\bUniqueListenersByDay|\bUniqueListenersByMonth|\bTotalListeningTimeByDay|\bTotalListeningTimeByMonth|\bTotalBandwidthByMonth|\bTotalStorageByMonth',
 );
 
 $routes->group('', [

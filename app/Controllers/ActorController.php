@@ -10,13 +10,10 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
-use Modules\Analytics\AnalyticsTrait;
 use Modules\Fediverse\Controllers\ActorController as FediverseActorController;
 
 class ActorController extends FediverseActorController
 {
-    use AnalyticsTrait;
-
     /**
      * @var list<string>
      */
@@ -24,9 +21,6 @@ class ActorController extends FediverseActorController
 
     public function followView(): string
     {
-        // @phpstan-ignore-next-line
-        $this->registerPodcastWebpageHit($this->actor->podcast->id);
-
         helper(['form', 'components', 'svg']);
         // @phpstan-ignore-next-line
         set_follow_metatags($this->actor);

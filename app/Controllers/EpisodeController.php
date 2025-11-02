@@ -20,7 +20,6 @@ use CodeIgniter\Database\BaseBuilder;
 use CodeIgniter\Exceptions\PageNotFoundException;
 use CodeIgniter\HTTP\ResponseInterface;
 use Config\Embed;
-use Modules\Analytics\AnalyticsTrait;
 use Modules\Fediverse\Objects\OrderedCollectionObject;
 use Modules\Fediverse\Objects\OrderedCollectionPage;
 use Modules\Media\FileManagers\FileManagerInterface;
@@ -28,8 +27,6 @@ use SimpleXMLElement;
 
 class EpisodeController extends BaseController
 {
-    use AnalyticsTrait;
-
     protected Podcast $podcast;
 
     protected Episode $episode;
@@ -64,8 +61,6 @@ class EpisodeController extends BaseController
 
     public function index(): string
     {
-        $this->registerPodcastWebpageHit($this->episode->podcast_id);
-
         $cacheName = implode(
             '_',
             array_filter([
@@ -108,8 +103,6 @@ class EpisodeController extends BaseController
 
     public function activity(): string
     {
-        $this->registerPodcastWebpageHit($this->episode->podcast_id);
-
         $cacheName = implode(
             '_',
             array_filter([
@@ -153,8 +146,6 @@ class EpisodeController extends BaseController
 
     public function chapters(): string
     {
-        $this->registerPodcastWebpageHit($this->episode->podcast_id);
-
         $cacheName = implode(
             '_',
             array_filter([
@@ -208,8 +199,6 @@ class EpisodeController extends BaseController
 
     public function transcript(): string
     {
-        $this->registerPodcastWebpageHit($this->episode->podcast_id);
-
         $cacheName = implode(
             '_',
             array_filter([
@@ -269,8 +258,6 @@ class EpisodeController extends BaseController
     public function embed(string $theme = 'light-transparent'): string
     {
         header('Content-Security-Policy: frame-ancestors http://*:* https://*:*');
-
-        $this->registerPodcastWebpageHit($this->episode->podcast_id);
 
         $session = service('session');
 

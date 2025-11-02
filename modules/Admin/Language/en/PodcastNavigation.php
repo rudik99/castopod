@@ -23,7 +23,6 @@ return [
     'plugins' => 'Plugins',
     'analytics' => 'Analytics',
     'podcast-analytics' => 'Audience overview',
-    'podcast-analytics-webpages' => 'Web pages visits',
     'podcast-analytics-locations' => 'Locations',
     'podcast-analytics-unique-listeners' => 'Unique listeners',
     'podcast-analytics-players' => 'Players',

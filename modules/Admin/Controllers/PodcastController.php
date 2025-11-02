@@ -29,9 +29,6 @@ use Modules\Analytics\Models\AnalyticsPodcastByHourModel;
 use Modules\Analytics\Models\AnalyticsPodcastByPlayerModel;
 use Modules\Analytics\Models\AnalyticsPodcastByRegionModel;
 use Modules\Analytics\Models\AnalyticsPodcastModel;
-use Modules\Analytics\Models\AnalyticsWebsiteByBrowserModel;
-use Modules\Analytics\Models\AnalyticsWebsiteByEntryPageModel;
-use Modules\Analytics\Models\AnalyticsWebsiteByRefererModel;
 use Modules\Media\Entities\Image;
 use Modules\Media\FileManagers\FileManagerInterface;
 use Modules\Media\Models\MediaModel;
@@ -94,19 +91,6 @@ class PodcastController extends BaseController
             0 => $podcast->at_handle,
         ]);
         return view('podcast/analytics/index', $data);
-    }
-
-    public function analyticsWebpagesView(Podcast $podcast): string
-    {
-        $data = [
-            'podcast' => $podcast,
-        ];
-
-        $this->setHtmlHead($podcast->title);
-        replace_breadcrumb_params([
-            0 => $podcast->at_handle,
-        ]);
-        return view('podcast/analytics/webpages', $data);
     }
 
     public function analyticsLocationsView(Podcast $podcast): string

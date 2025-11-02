@@ -38,7 +38,6 @@ $podcastNavigation = [
             'podcast-analytics-players',
             'podcast-analytics-locations',
             'podcast-analytics-time-periods',
-            'podcast-analytics-webpages',
         ],
         'items-permissions' => [
             'podcast-analytics'                  => 'view',
@@ -47,7 +46,6 @@ $podcastNavigation = [
             'podcast-analytics-players'          => 'view',
             'podcast-analytics-locations'        => 'view',
             'podcast-analytics-time-periods'     => 'view',
-            'podcast-analytics-webpages'         => 'view',
         ],
     ],
     'broadcast' => [

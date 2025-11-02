@@ -20,13 +20,11 @@ use CodeIgniter\Exceptions\PageNotFoundException;
 use CodeIgniter\HTTP\RedirectResponse;
 use CodeIgniter\HTTP\URI;
 use CodeIgniter\I18n\Time;
-use Modules\Analytics\AnalyticsTrait;
 use Modules\Fediverse\Controllers\PostController as FediversePostController;
 use Override;
 
 class PostController extends FediversePostController
 {
-    use AnalyticsTrait;
 
     protected Podcast $podcast;
 
@@ -82,8 +80,6 @@ class PostController extends FediversePostController
 
     public function view(): string
     {
-        $this->registerPodcastWebpageHit($this->podcast->id);
-
         $cacheName = implode(
             '_',
             array_filter([
@@ -257,8 +253,6 @@ class PostController extends FediversePostController
 
     public function remoteActionView(string $action): string
     {
-        $this->registerPodcastWebpageHit($this->podcast->id);
-
         set_remote_actions_metatags($this->post, $action);
         $data = [
             'podcast' => $this->podcast,

@@ -186,14 +186,6 @@ $routes->group(
                         'filter' => 'permission:podcast$1.view',
                     ]);
                     $routes->get(
-                        'webpages',
-                        'PodcastController::analyticsWebpagesView/$1',
-                        [
-                            'as'     => 'podcast-analytics-webpages',
-                            'filter' => 'permission:podcast$1.view',
-                        ],
-                    );
-                    $routes->get(
                         'locations',
                         'PodcastController::analyticsLocationsView/$1',
                         [

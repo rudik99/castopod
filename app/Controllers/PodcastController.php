@@ -18,14 +18,11 @@ use App\Models\PodcastModel;
 use App\Models\PostModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
 use CodeIgniter\HTTP\ResponseInterface;
-use Modules\Analytics\AnalyticsTrait;
 use Modules\Fediverse\Objects\OrderedCollectionObject;
 use Modules\Fediverse\Objects\OrderedCollectionPage;
 
 class PodcastController extends BaseController
 {
-    use AnalyticsTrait;
-
     protected Podcast $podcast;
 
     public function _remap(string $method, string ...$params): mixed
@@ -58,8 +55,6 @@ class PodcastController extends BaseController
 
     public function activity(): string
     {
-        $this->registerPodcastWebpageHit($this->podcast->id);
-
         $cacheName = implode(
             '_',
             array_filter([
@@ -103,8 +98,6 @@ class PodcastController extends BaseController
 
     public function about(): string
     {
-        $this->registerPodcastWebpageHit($this->podcast->id);
-
         $cacheName = implode(
             '_',
             array_filter([
@@ -150,8 +143,6 @@ class PodcastController extends BaseController
 
     public function episodes(): string
     {
-        $this->registerPodcastWebpageHit($this->podcast->id);
-
         $yearQuery = $this->request->getGet('year');
         $seasonQuery = $this->request->getGet('season');
 
