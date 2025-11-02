@@ -51,10 +51,6 @@ class EpisodeAudioController extends Controller
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
 
-        set_user_session_deny_list_ip();
-        set_user_session_location();
-        set_user_session_player();
-
         $this->analyticsConfig = config('Analytics');
     }
 
@@ -123,33 +119,19 @@ class EpisodeAudioController extends Controller
             }
         }
 
-        $session = service('session');
-
+        // Determine service name from query parameter
         $serviceName = '';
         if ($this->request->getGet('_from')) {
             $serviceName = $this->request->getGet('_from');
-        } elseif ($session->get('embed_domain') !== null) {
-            $serviceName = $session->get('embed_domain');
-        } elseif ($session->get('referer') !== null && $session->get('referer') !== '- Direct -') {
-            $serviceName = parse_url((string) $session->get('referer'), PHP_URL_HOST);
         }
 
         $audioFileSize = $this->episode->audio->file_size;
-        $audioFileHeaderSize = $this->episode->audio->header_size;
         $audioDuration = $this->episode->audio->duration;
 
-        // bytes_threshold: number of bytes that must be downloaded for an episode to be counted in download analytics
-        // - if audio is less than or equal to 60s, then take the audio file_size
-        // - if audio is more than 60s, then take the audio file_header_size + 60s
-        $bytesThreshold = $audioDuration <= 60
-        ? $audioFileSize
-        : $audioFileHeaderSize +
-        (int) floor((($audioFileSize - $audioFileHeaderSize) / $audioDuration) * 60);
-
+        // PF3A proportional counting - no bytesThreshold needed
         podcast_hit(
             $this->episode->podcast_id,
             $this->episode->id,
-            $bytesThreshold,
             $audioFileSize,
             $audioDuration,
             $this->episode->published_at->getTimestamp(),

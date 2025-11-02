@@ -24,17 +24,4 @@ class Analytics extends BaseConfig
         'analytics-data'          => 'permission:podcast$1.view',
         'analytics-filtered-data' => 'permission:podcast$1.view',
     ];
-
-    /**
-     * --------------------------------------------------------------------------
-     * Secret Salt
-     * --------------------------------------------------------------------------
-     *
-     * The secret salt is a string of random characters that is used when hashing data.
-     * Each Castopod instance has its own secret salt so keys will never be the same.
-     *
-     * Example:
-     *    Z&|qECKBrwgaaD>~;U/tXG1U%tSe_oi5Tzy)h>}5NC2npSrjvM0w_Q>cs=0o=H]*
-     */
-    public string $salt = '';
 }
