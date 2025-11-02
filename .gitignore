@@ -131,6 +131,9 @@ _modules/*
 .history/
 tmp/
 
+# Claude Code
+.claude/
+
 /results/
 /phpunit*.xml
 
