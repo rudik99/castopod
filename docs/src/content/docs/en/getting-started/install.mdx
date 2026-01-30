@@ -7,6 +7,67 @@ import { Aside } from "@astrojs/starlight/components";
 Castopod was thought-out to be easy to install. Whether using dedicated or
 shared hosting, you can install it on most PHP-MySQL compatible web servers.
 
+## Quick Install (Linux)
+
+For a fully automated installation on a fresh Linux server:
+
+```bash
+curl -fsSL https://castopod.org/install | sudo bash
+```
+
+The script installs all dependencies (FrankenPHP, MariaDB, Redis, FFmpeg),
+configures SSL certificates automatically via Caddy, and sets up your Castopod
+instance.
+
+**Tested on:** Ubuntu 24.04, Debian 13, Fedora 43
+
+### Script options
+
+| Option | Description |
+| ------ | ----------- |
+| `-y` | Non-interactive mode, skip all prompts |
+| `--package-url <url>` | Install a specific Castopod version |
+| `--env-file <path>` | Append custom configuration to each instance's `.env` |
+
+### Examples
+
+```bash
+# Interactive mode (guided prompts)
+sudo ./install-castopod.sh
+
+# Non-interactive: install for multiple domains
+sudo ./install-castopod.sh -y podcast1.com podcast2.com
+
+# Install a specific version
+sudo ./install-castopod.sh -y podcast.com \
+  --package-url https://code.castopod.org/.../castopod-1.13.7.zip
+
+# Use default configuration for all instances
+sudo ./install-castopod.sh -y podcast.com --env-file default.env
+```
+
+<Aside type="caution">
+
+Never blindly run scripts from the internet with `sudo`. For security, download
+and review the script first:
+
+```bash
+wget https://castopod.org/install-castopod.sh
+less install-castopod.sh
+chmod +x install-castopod.sh
+sudo ./install-castopod.sh
+```
+
+</Aside>
+
+<Aside>
+
+This is the first public release of this installation script. If you encounter
+issues, please [report them](https://code.castopod.org/adaures/castopod/-/issues)
+or submit a [merge request](https://code.castopod.org/adaures/castopod/-/merge_requests).
+
+</Aside>
+
 ## Requirements
 
 - PHP v8.1 or higher
