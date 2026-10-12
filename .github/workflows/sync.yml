@@ -1,0 +1,146 @@
+name: Sync from upstream
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  packages: write
+
+concurrency:
+  group: sync
+  cancel-in-progress: false
+
+env:
+  UPSTREAM_GIT: https://code.castopod.org/adaures/castopod.git
+  UPSTREAM_API: https://code.castopod.org/api/v4/projects/2
+  IMAGE_SRC: docker.io/castopod/castopod
+  IMAGE_DST: ghcr.io/rudik99/castopod
+  MIN_VERSION: 1.13.5
+  CRANE_VERSION: v0.22.1
+  CRANE_SHA256: 0ab7a1d6932a213aed964ce97666c3077fe691c8606413674a8b3e0b9ec4cda0
+
+jobs:
+  git:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mirror branches and tags (never delete, never force protected refs)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git init -q --bare mirror && cd mirror
+          git fetch -q --no-tags "$UPSTREAM_GIT" '+refs/heads/*:refs/upstream/heads/*' '+refs/tags/*:refs/tags/*'
+          refspecs=()
+          for b in $(git for-each-ref --format='%(refname:strip=3)' refs/upstream/heads); do
+            case "$b" in
+              sync) echo "::warning::upstream has a 'sync' branch; skipped" ;;
+              main|develop|next|alpha|beta) refspecs+=("refs/upstream/heads/$b:refs/heads/$b") ;;
+              *) refspecs+=("+refs/upstream/heads/$b:refs/heads/$b") ;;
+            esac
+          done
+          # Fails the job if any ref is rejected (non-fast-forward or a changed tag).
+          git push "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
+            "${refspecs[@]}" 'refs/tags/*:refs/tags/*'
+          {
+            echo "### Upstream heads"
+            git for-each-ref --format='- `%(refname:strip=3)` %(objectname:short) %(committerdate:short)' refs/upstream/heads/main refs/upstream/heads/develop
+            echo "- tags: $(git tag | wc -l)"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install crane
+        run: |
+          set -euo pipefail
+          curl -fsSL -o crane.tgz "https://github.com/google/go-containerregistry/releases/download/${CRANE_VERSION}/go-containerregistry_Linux_x86_64.tar.gz"
+          echo "${CRANE_SHA256}  crane.tgz" | sha256sum -c -
+          tar -xzf crane.tgz crane && sudo mv crane /usr/local/bin/
+      - name: Copy new stable image tags (never overwrite)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          ver_ge() { [ "$(printf '%s\n' "$1" "$2" | sort -V | head -n1)" = "$2" ]; }
+          crane auth login ghcr.io -u "$GITHUB_ACTOR" -p "$GH_TOKEN"
+          url="https://hub.docker.com/v2/repositories/castopod/castopod/tags?page_size=100"
+          : > tags.txt
+          while [ -n "$url" ] && [ "$url" != null ]; do
+            page=$(curl -fsSL "$url")
+            echo "$page" | jq -r '.results[].name' >> tags.txt
+            url=$(echo "$page" | jq -r '.next')
+          done
+          echo "### Images" >> "$GITHUB_STEP_SUMMARY"
+          for t in $(grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' tags.txt | sort -V); do
+            ver_ge "$t" "$MIN_VERSION" || continue
+            src=$(crane digest "$IMAGE_SRC:$t")
+            dst=$(crane digest "$IMAGE_DST:$t" 2>/dev/null || true)
+            if [ -z "$dst" ]; then
+              crane copy "$IMAGE_SRC:$t" "$IMAGE_DST:$t"
+              echo "- copied \`$t\` ($src)" >> "$GITHUB_STEP_SUMMARY"
+            elif [ "$dst" != "$src" ]; then
+              alt="$t-${src#sha256:}"; alt="${alt:0:$(( ${#t} + 13 ))}"
+              echo "::warning::upstream re-published $t ($dst -> $src); kept ours, storing new one as $alt"
+              crane digest "$IMAGE_DST:$alt" >/dev/null 2>&1 || crane copy "$IMAGE_SRC:$t" "$IMAGE_DST:$alt"
+              echo "- \`$t\` re-published upstream; new digest stored as \`$alt\`" >> "$GITHUB_STEP_SUMMARY"
+            fi
+          done
+
+  releases:
+    needs: git
+    runs-on: ubuntu-latest
+    steps:
+      - name: Copy new stable release packages
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          ver_ge() { [ "$(printf '%s\n' "$1" "$2" | sort -V | head -n1)" = "$2" ]; }
+          : > releases.jsonl
+          for page in 1 2 3 4 5; do
+            r=$(curl -fsSL "$UPSTREAM_API/releases?per_page=100&page=$page")
+            [ "$(echo "$r" | jq length)" -eq 0 ] && break
+            echo "$r" | jq -c '.[] | select(.tag_name | test("^v[0-9]+\\.[0-9]+\\.[0-9]+$"))' >> releases.jsonl
+          done
+          echo "### Releases" >> "$GITHUB_STEP_SUMMARY"
+          for tag in $(jq -r .tag_name releases.jsonl | sort -V); do
+            ver_ge "${tag#v}" "$MIN_VERSION" || continue
+            gh release view "$tag" >/dev/null 2>&1 && continue
+            rel=$(jq -c --arg t "$tag" 'select(.tag_name == $t)' releases.jsonl)
+            rm -rf dl && mkdir dl
+            for u in $(echo "$rel" | jq -r '.assets.links[].url'); do
+              curl -fsSL -o "dl/$(basename "$u")" "$u"
+            done
+            {
+              echo "Mirrored from https://code.castopod.org/adaures/castopod/-/releases/$tag"
+              echo
+              echo "$rel" | jq -r '.description // ""'
+            } > notes.md
+            gh release create "$tag" --verify-tag --title "Castopod $tag" --notes-file notes.md dl/*
+            echo "- created \`$tag\` ($(ls dl | tr '\n' ' '))" >> "$GITHUB_STEP_SUMMARY"
+          done
+
+  keepalive:
+    if: always()
+    needs: [git, images, releases]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: sync
+      - name: Commit every 30 days so GitHub keeps the schedule enabled
+        run: |
+          set -euo pipefail
+          last=$(git log -1 --format=%ct)
+          if [ $(( $(date +%s) - last )) -gt $(( 30 * 86400 )) ]; then
+            date -u +%FT%TZ > .github/keepalive
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add .github/keepalive
+            git commit -qm "chore: keepalive"
+            git push -q origin sync
+          fi
